@@ -53,7 +53,7 @@ if(obj!=null) login = (String)obj;
 %>
 		<tr>
 			<!-- logo -->
-			<td colspan="5"><img src="/web01/img/logo.png"></td>
+			<td colspan="5"><a href="/web01/index.jsp"><img src="/web01/img/logo.png"></a></td>
 
 		</tr>
     

@@ -70,7 +70,7 @@ a {
 		sql += "(select * from notice where " + key + " like '%" + word + "%')) ";
 		sql += "where rwn between " + startNum + " and " + endNum + "order by ref desc, no";
 		String sql2 = "select count(*) from notice where " + key + " like '%" + word + "%'"; //총 게시글 수
-		SimpleDateFormat sdf1 = new SimpleDateFormat("hh:mm"); //오늘 게시글 시간
+		SimpleDateFormat sdf1 = new SimpleDateFormat("HH:mm"); //오늘 게시글 시간
 		SimpleDateFormat sdf2 = new SimpleDateFormat("yy-MM-dd");//오늘 아닌 게시글 날짜
 		Date date = new Date();
 		String today = sdf2.format(date); //오늘 날짜 yy-MM-dd, 게시글 날짜와 비교용. 

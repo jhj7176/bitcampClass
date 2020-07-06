@@ -5,7 +5,9 @@
   <% 
   String writer = request.getParameter("writer");
  int num = Integer.parseInt(request.getParameter("num"));
- 
+ String content = request.getParameter("content");
+ String title = request.getParameter("title");
+
  System.out.println(num);
   %>
 <!DOCTYPE html>
@@ -22,12 +24,12 @@
 	<form action = "update.jsp">
 	<table border ="0"  width = "700" align = "center">
 	<tr>
-	<td colspan="2"><h1>글쓰기</h1></td>
+	<td colspan="2"><h1>글수정하기</h1></td>
 	</tr>
 	
 	<tr align = "center">
 	<td bgcolor="#d2e1ff" width = "150">제목</td>
-	<td><textarea name = "title" rows="1" cols="80" placeholder="제목을 입력해 주세요." ></textarea></td>
+	<td><textarea name = "title" rows="1" cols="80" ><%=title %></textarea></td>
 	</tr>
 	
 	<tr align = "center">
@@ -38,7 +40,7 @@
 	<tr>
 	<td bgcolor="#d2e1ff" ></td>
 	<td>
-	<textarea name="content" rows="20" cols="80" wrap = "hard"></textarea>
+	<textarea name="content" rows="20" cols="80" wrap = "hard"><%=content.replace("<br>","\r\n")%></textarea>
 	</td>
 	</tr>
 	

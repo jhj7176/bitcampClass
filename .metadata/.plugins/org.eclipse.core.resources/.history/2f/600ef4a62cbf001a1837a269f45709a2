@@ -1,0 +1,18 @@
+package com.bit.emp;
+
+public class Emp02Insert {
+
+	
+	public Emp02Insert(){
+		
+	}
+	
+	public void emp02Insert(){
+		String sql="{call emp02insert(8921, '이재용', 9900000)}"; // 자바에서 프로시저 호출
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

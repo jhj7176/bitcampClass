@@ -20,6 +20,21 @@
 	String content = request.getParameter("content");
 	System.out.println("check:" + title + "," + writer);
 
+	
+	if(title.isEmpty())title="제목없음";
+	if(writer.isEmpty())writer="";
+	title=title.replace("<", "&lt");	// 인젝션 공격 방지. 
+	title=title.replace(">", "&gt");
+	title=title.replace("--", "--");
+	title=title.replace(" ", "&nbsp;");
+	title=title.replace("'", "｀");
+	content=content.replace("<", "&lt");	// 인젝션 공격 방지. 
+	content=content.replace(">", "&gt");
+	content=content.replace("--", "--");
+	content=content.replace(" ", "&nbsp;");
+	content=content.replace("'", "｀");
+	
+	
 	try {
 		String back = request.getParameter("back");
 		if (back.equals("글목록")) {

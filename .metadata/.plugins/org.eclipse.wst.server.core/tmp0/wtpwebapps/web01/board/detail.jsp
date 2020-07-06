@@ -27,6 +27,8 @@ a{
 			SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd hh:mm:ss");
 			int num = Integer.parseInt(request.getParameter("num"));
 			String writer = request.getParameter("writer");
+			String content="";
+			String title = "";
 		try {
 			String sql = "select * from board where num =" + num;
 			conn = DriverManager.getConnection(url, info);
@@ -37,6 +39,9 @@ a{
 				
 				String creationTime = rs.getString("wtime").substring(0, rs.getString("wtime").indexOf("."));
 				//게시글 작성 날짜. 년월일 시간분초
+				content = rs.getString("content").replace("\r\n", "<br>");
+				title = rs.getString("title");
+				
 		%>
 		<tr>
 			<th align="center" style="font-size: 150%;"><%=rs.getString("title")%></th>
@@ -68,7 +73,7 @@ a{
 	<br>
 	<table align = "center">
 	<tr><td>
-	<a href = "edit.jsp?num=<%=num%>&writer=<%=writer%>"><button>수정</button></a>
+	<a href = "edit.jsp?num=<%=num%>&writer=<%=writer%>&title=<%=title%>&content=<%=content%>"><button>수정</button></a>
 	<a href = "reply.jsp?ref=<%=ref%>&no=<%=no%>&lev=<%=lev%>"><button>답글</button></a>
 	<a href = "delete.jsp?num=<%= num%>"><button>삭제</button></a>
 	<a href = "list.jsp"><button>글목록</button></a>

@@ -5,8 +5,8 @@
 		
 		<tr align="center">
 			<td bgcolor="#ff6666"> &nbsp;</td>
-			<th width="200" bgcolor="#ff6666"><a style= "color:white;" href="/web06/">HOME</a></th>
-			<td width="200" bgcolor="#ff6666"><a style= "color:white;" href="/web06/emp/list.jsp">E M P</a></td>
+			<th width="200" bgcolor="#ff6666"><a style= "color:white;" href="/web06/index.jsp">HOME</a></th>
+			<td width="200" bgcolor="#ff6666"><a style= "color:white;" href="list.jsp">E M P</a></td>
 			<td width="200" bgcolor="#ff6666"><a style= "color:white;" href="/web06/dept/list.jsp">DEPT</a></td>
 			<%
 			

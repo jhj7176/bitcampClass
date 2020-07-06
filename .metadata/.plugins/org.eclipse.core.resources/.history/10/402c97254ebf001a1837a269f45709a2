@@ -1,0 +1,54 @@
+package com.bit.emp;
+
+
+import java.sql.*;
+
+public class Emp02Detail {
+	
+	
+	public Emp02Bean detail(int sabun){
+		
+		String sql="{call emp02detail("+sabun+", ?)}";
+		Connection conn = null;
+		CallableStatement stmt = null;
+		ResultSet rs = null;
+		try {
+			conn=Oracle.getConnection();
+			stmt = conn.prepareCall(sql);
+			
+			stmt.registerOutParameter(1, oracle.jdbc.OracleTypes.CURSOR);
+			stmt.execute();
+			rs=(ResultSet) stmt.getObject(1);
+			
+			if(rs.next()){
+				System.out.println(rs.getInt(1));
+				System.out.println(rs.getString(2));
+				System.out.println(rs.getDate(3));
+				System.out.println(rs.getInt(4));
+			}//if
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(stmt!=null)stmt.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}//finally
+		
+	}
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Emp02Detail me = new Emp02Detail();
+		me.detail(7777);
+
+	}
+
+}
