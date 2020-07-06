@@ -1,0 +1,5 @@
+INDEX VERSION 1.127
+C:\WebWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1755401707.index
+\practice\src
+C:\WebWorkspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1327677279.index
+\web05\src

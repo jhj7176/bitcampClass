@@ -1,0 +1,40 @@
+select * from (select rownum as rn, sabun from emp01 order by sabun desc) 
+where rn between 10 and 20 order by sabun desc;
+
+
+서브쿼리 먼저 수행 후 row넘버매긴다. 
+SQL> select rownum, sabun from (select sabun from emp01 where name ='홍길동' order by sabun desc);
+
+    ROWNUM      SABUN
+---------- ----------
+         1         46
+         2         41
+         3         36
+         4         31
+         5         26
+         6         21
+         7         16
+         8         11
+         9          6
+        10          1
+
+10 개의 행이 선택되었습니다.
+
+
+
+SQL> select * from (select rownum as rn, sabun, from (select sabun from emp01 order by sabun desc)) where rn between 11 and 20;
+
+        RN      SABUN
+---------- ----------
+        11         40
+        12         39
+        13         38
+        14         37
+        15         36
+        16         35
+        17         34
+        18         33
+        19         32
+        20         31
+
+10 개의 행이 선택되었습니다.

@@ -1,0 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+    
+		
+		<tr align="center">
+			<td bgcolor="eee8aa"> &nbsp;</td>
+			<th width="100" bgcolor="eee8aa"><a style= "color:white;" href="/web05/">HOME</a></th>
+			<td width="100" bgcolor="eee8aa"><a href="/web05/emp/list.jsp">E M P</a></td>
+			<td width="100" bgcolor="eee8aa"><a href="/web05/dept/list.jsp">DEPT</a></td>
+			<td width="100" bgcolor="eee8aa"><a href="/web05/login/form.jsp">LOGIN</a></td>
+			<td bgcolor="eee8aa">&nbsp;</td>
+		</tr>
+		
+		
+		
+		<tr>
+			<td colspan="6"> 
+		<!-- content start -->
+			
+			

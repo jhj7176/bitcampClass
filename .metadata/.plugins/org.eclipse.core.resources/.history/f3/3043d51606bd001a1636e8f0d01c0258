@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    
+    
+<%
+  //	request.setCharacterEncoding("EUC-KR");
+
+	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "scott";
+	String password = "tiger";
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	Class.forName(driver);
+	java.util.Properties info = new java.util.Properties();
+	info.setProperty("user", user);
+	info.setProperty("password", password);
+	java.sql.Connection conn = null;
+	java.sql.Statement stmt = null;
+	java.sql.ResultSet rs = null;  
+%>
+      
+<table border = "0" width="100%" height = "100%" align="center" bgcolor = "white">
+
+		<tr>
+			<td colspan="6">
+			<img src="/web05/img/img2.png">
+			<img src="/web05/img/char.png">
+			<label style = text-align : right;>
+			<%
+			Object obj=null;
+			try{
+			 obj = session.getAttribute("name");
+			//String loginName = (String)session.getAttribute("name");
+
+			if(obj != null){
+				String loginName = (String)obj;
+				out.print(loginName+" login");
+			}
+			
+			
+			}catch(Exception e){
+				
+			}
+			%>
+			</label>
+			</td>
+		</tr>
