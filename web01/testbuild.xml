@@ -17,8 +17,11 @@
 	<property name="docs.home" value="${docsdir}/docs" />
 	<property name="web.home" value="${basedir}/WebContent" />
 
-	<property file="${web.home}/server.properties" />
 
+	<property name="url" value="http://localhost:8080/manager"/>
+	<property name="userid" value="deploy"/>
+	<property name="userpw" value="tomcat"/>
+	
 
 	<path id="project.classpath">
 		<fileset dir="${tomcat.home}/lib">
@@ -81,8 +84,6 @@
 		<delete file="${ant.project.name}.war" />
 
 	</target>
-
-
 
 </project>
 

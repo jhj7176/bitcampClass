@@ -1,31 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.GotoLineAction$GotoLineDialog_dialogBounds">
+		<item value="729" key="DIALOG_X_ORIGIN"/>
+		<item value="423" key="DIALOG_Y_ORIGIN"/>
+	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="td" key="selection"/>
+		<item value="emp02" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="td"/>
-			<item value="eee8aa"/>
-			<item value="#ff3333"/>
-			<item value="ff3333"/>
-			<item value="&quot;ff3333&quot;"/>
-			<item value="50d2ff"/>
-			<item value="64d6ff"/>
-			<item value="50c2ff"/>
+			<item value="emp01"/>
+			<item value="board"/>
+			<item value="#d2e1ff"/>
+			<item value="title"/>
+			<item value="sub"/>
+			<item value="dist.home"/>
+			<item value="tomcat7"/>
+			<item value="emp02Insert"/>
 		</list>
 		<list key="replacehistory">
-			<item value="th"/>
+			<item value="emp02"/>
+			<item value="notice"/>
 			<item value="#ff6666"/>
-			<item value="#ff3333"/>
-			<item value="ff3333"/>
-			<item value="eee8aa"/>
-			<item value="50d2ff"/>
-			<item value="64d6ff"/>
-			<item value="50c2ff"/>
+			<item value="content"/>
+			<item value="title"/>
+			<item value="build.home"/>
+			<item value="tomcat"/>
+			<item value="insert"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
