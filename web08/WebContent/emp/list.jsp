@@ -18,14 +18,19 @@ a {
 </head>
 <body>
 
-	<%@ include file="../template/header.jspf"%>
-	<%@ include file="../template/menu.jspf"%>
+<jsp:include page="../template/header.jsp"><jsp:param value="../" name="path"/></jsp:include>
+<jsp:include page="../template/menu.jsp"><jsp:param value="../" name="path"/></jsp:include>
+
 
 	<br>
 	<br>
+	<h1 align="center">EMP List</h1>
 	<br>
-	<h1 align="center">List Page</h1>
+	
+	
+	
 	<table width = "45%" align="center">
+	<tr><td colspan="4"><a style = "color:black;" href="add.jsp"><b>ADD</b></a></td></tr>
 		<tr align="center">
 			<th>Num</th>
 			<th>Name</th>
@@ -40,7 +45,7 @@ a {
 		%>
 		<tr align ="center">
 			<td><%=bean.getSabun()%></td>
-			<td><%=bean.getName()%></td>
+			<td><a style="color:black;" href="detail.jsp?sabun=<%=bean.getSabun()%>"><%=bean.getName()%></a></td>
 			<td><%=bean.getHiredate()%></td>
 			<td><%=bean.getPay()%></td>
 		</tr>
@@ -55,7 +60,7 @@ a {
 	<br>
 
 
-	<%@ include file="../template/footer.jspf"%>
+<jsp:include page="../template/footer.jsp"><jsp:param value="../" name="path"/></jsp:include>
 
 
 </body>

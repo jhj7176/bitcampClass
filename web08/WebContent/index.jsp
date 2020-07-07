@@ -13,20 +13,23 @@ a {
 </style>
 </head>
 <body>
+	<%
+		String path = "./";
+	%>
 
-	<%@ include file="template/header.jspf"%>
-	<%@ include file="template/menu.jspf"%>
-	
-	<br>
-	<table align = "center">
-	<tr align = "center"><td>
-	<img  width = "60%" src = "img/tree.png">
-	</td></tr>
-</table>
-	<br>
-	
-	
-	<%@ include file="template/footer.jspf"%>
+<jsp:include page="template/header.jsp"><jsp:param value="./" name="path"/></jsp:include>
+<jsp:include page="template/menu.jsp"><jsp:param value="./" name="path"/></jsp:include>
+
+
+	<table align="center">
+		<tr align="center">
+			<td><img width="50%" src="img/tree.png"></td>
+		</tr>
+	</table>
+
+
+
+	<%@ include file="./template/footer.jspf"%>
 
 
 </body>

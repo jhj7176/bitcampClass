@@ -24,7 +24,7 @@ if(obj!=null) login = (String)obj;
 %>
 
 
-	<table width="100%">
+	<table border="0"  width="100%">
 	
 	
 	
@@ -51,9 +51,10 @@ if(obj!=null) login = (String)obj;
 		<%	
 	}
 %>
-		<tr>
+		<tr height="40">
 			<!-- logo -->
-			<td colspan="5"><a href="/web08/index.jsp"><img src="/web08/img/logo.png"></a></td>
+			<td colspan="5">
+			<a href="<%=path %>index.jsp"><img src="<%=path %>img/char.png"></a></td>
 
 		</tr>
     

@@ -4,9 +4,9 @@
     <tr align="center">
 			<!-- menu -->
 			<td bgcolor = "#6262d7">&nbsp;</td>
-			<td bgcolor = "#6262d7" width="250"><a style="color:white;" href="/web08/index.jsp">HOME</a></td>
-			<td bgcolor = "#6262d7" width="250"><a style="color:white;" href="/web08/emp/list.jsp">EMP</a></td>
-			<td bgcolor = "#6262d7" width="250"><a style="color:white;" href="/web08/dept/list.jsp">DEPT</a></td>
+			<td bgcolor = "#6262d7" width="250"><a style="color:white;" href="<%=path %>index.jsp">HOME</a></td>
+			<td bgcolor = "#6262d7" width="250"><a style="color:white;" href="<%=path %>emp/list.jsp">EMP</a></td>
+			<td bgcolor = "#6262d7" width="250"><a style="color:white;" href="<%=path %>dept/list.jsp">DEPT</a></td>
 			<td bgcolor = "#6262d7">&nbsp;</td>
 
 		</tr>

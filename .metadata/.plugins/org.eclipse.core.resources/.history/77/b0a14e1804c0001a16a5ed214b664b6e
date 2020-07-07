@@ -1,0 +1,97 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.bit.emp.EmpDto"%>
+<%@page import="com.bit.emp.EmpSQL"%>
+<%@page import="com.bit.util.MyOracle"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+a {
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+	<%@ include file="../template/header.jspf"%>
+	<%@ include file="../template/menu.jspf"%>
+
+	<br>
+	<br>
+	<br>
+	<h1 align="center">Detail Page</h1>
+	
+	<jsp:useBean id="bean" class ="com.bit.emp.EmpDto"></jsp:useBean>
+	<jsp:setProperty property="num" name="bean"/>
+	
+	<%
+	
+	bean = EmpSQL.detail(bean.getSabun());
+
+	%>
+	
+	
+	
+	<table width = "45%" align="center">
+	
+	
+	<tr>
+	<th bgcolor = "#6262d7" style = "color:white;" width = "300">Num</th>
+	<td align = "center"><%=bean.getSabun() %></td>
+	</tr>
+	<tr>
+	<th bgcolor = "#6262d7"  style = "color:white;" >Name</th>
+	<td align = "center"><%=bean.getName() %></td>
+	</tr>
+	<tr>
+	<th bgcolor = "#6262d7"  style = "color:white;" >HireDate</th>
+	<td align = "center"><%=bean.getHiredate() %></td>
+	</tr>
+	<tr>
+	<th bgcolor = "#6262d7"  style = "color:white;" >Pay</th>
+	<td align = "center"><%=bean.getPay() %></td>
+	</tr>
+	
+	
+	
+<%--
+	<tr><td colspan="4"><a style = "color:black;" href="add.jsp"><b>ADD</b></a></td></tr>
+		<tr align="center">
+			<th>Num</th>
+			<th>Name</th>
+			<th>HireDate</th>
+			<th>Pay</th>
+		</tr>
+
+		<%
+			ArrayList<EmpDto> list = EmpSQL.list();
+			for (int i = 0; i < list.size(); i++) {
+				EmpDto bean = list.get(i);
+		%>
+		<tr align ="center">
+			<td><%=bean.getSabun()%></td>
+			<td><a style="color:black;" href="detail.jsp"><%=bean.getName()%></a></td>
+			<td><%=bean.getHiredate()%></td>
+			<td><%=bean.getPay()%></td>
+		</tr>
+		<%
+			}
+		%>
+
+--%>
+	</table>
+	<br>
+	<br>
+	<br>
+
+
+	<%@ include file="../template/footer.jspf"%>
+
+
+</body>
+</html>

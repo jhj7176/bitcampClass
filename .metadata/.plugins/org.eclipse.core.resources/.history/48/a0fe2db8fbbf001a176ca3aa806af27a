@@ -1,0 +1,66 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.bit.emp.EmpDto"%>
+<%@page import="com.bit.emp.EmpSQL"%>
+<%@page import="com.bit.util.MyOracle"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+<%@ page trimDirectiveWhitespaces="true"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style>
+a {
+	text-decoration: none;
+}
+</style>
+</head>
+<body>
+
+	<%@ include file="../template/header.jspf"%>
+	<%@ include file="../template/menu.jspf"%>
+
+	<br>
+	<br>
+	<br>
+	<h1 align="center">Add Page</h1>
+	
+	<form method = "post" action="insert.html">
+	<table width = "50%" align="center">
+		<tr>
+		<th>Num</th>
+		<td><input type = "text" name = "sabun"></td>
+		<tr>	
+	
+		<tr>
+		<th>Name</th>
+		<td><input type = "text" name = "name"></td>
+		<tr>	
+	
+		<tr>
+		<th>Pay</th>
+		<td><input type = "text" name = "pay"></td>
+		<tr>	
+		<tr>
+		
+		<td><input type = "submit" value ="submit"></td>
+		<tr>	
+	
+	
+	
+	
+	
+	
+	</table>
+	</form>
+	<br>
+	<br>
+	<br>
+
+
+	<%@ include file="../template/footer.jspf"%>
+
+
+</body>
+</html>
