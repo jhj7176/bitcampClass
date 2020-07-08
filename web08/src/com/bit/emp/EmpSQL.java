@@ -134,7 +134,38 @@ public class EmpSQL {
 		return bean;
 	}
 
-	public static void delete() {
-	}
+	public static void delete(int sabun) {
+		EmpDto emp = new EmpDto();
+		String sql ="delete from emp02 where sabun = "+sabun;
+		
+		try {
+			conn = MyOracle.getConnection();
+			stmt = conn.createStatement();
+			stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(stmt!=null) stmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}//finally
+		
+	}//delete
 
+	
 }// EmpSQL
+
+
+
+
+
+
+
+
+
+

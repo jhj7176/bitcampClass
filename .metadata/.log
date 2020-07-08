@@ -4153,3 +4153,295 @@ org.eclipse.core.runtime.AssertionFailedException: assertion failed:
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:648)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:603)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1465)
+!SESSION 2020-07-08 09:06:43.686 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_251
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-07-08 09:06:53.995
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\bitcamp'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jst.server.tomcat.core 4 0 2020-07-08 09:44:43.569
+!MESSAGE Publishing failed with multiple errors
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 09:44:43.569
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptDto.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptDto.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:496)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:435)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:141)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:82)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1335)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:954)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3157)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 09:44:43.569
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptSQL.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptSQL.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:496)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:435)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:141)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:82)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1335)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:954)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3157)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 09:44:43.569
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\emp\EmpDto.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\emp\EmpDto.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:496)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:435)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:141)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:82)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1335)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:954)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3157)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 09:44:43.569
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\emp\EmpSQL.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\emp\EmpSQL.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:496)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:435)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:141)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:82)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1335)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:954)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3157)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 09:44:43.569
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\emp\Insert.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\emp\Insert.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:496)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:435)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:141)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:82)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1335)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:954)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3157)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 09:44:43.569
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\emp\Update.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\emp\Update.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:496)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:435)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:141)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:82)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1335)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:954)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3157)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 09:44:43.569
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\util\MyOracle.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\util\MyOracle.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:279)
+	at org.eclipse.wst.server.core.util.PublishHelper.copyFile(PublishHelper.java:496)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:435)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.wst.server.core.util.PublishHelper.publishDelta(PublishHelper.java:459)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.publishDir(PublishOperation2.java:141)
+	at org.eclipse.jst.server.tomcat.core.internal.PublishOperation2.execute(PublishOperation2.java:82)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.performTasks(ServerBehaviourDelegate.java:1335)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:954)
+	at org.eclipse.wst.server.core.model.ServerBehaviourDelegate.publish(ServerBehaviourDelegate.java:774)
+	at org.eclipse.wst.server.core.internal.Server.publishImpl(Server.java:3157)
+	at org.eclipse.wst.server.core.internal.Server$PublishJob.run(Server.java:345)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2020-07-08 10:34:53.844
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from model repositories. Are you offline?
+!SESSION 2020-07-08 13:47:29.969 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_251
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.egit.ui 2 0 2020-07-08 13:47:41.291
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\bitcamp'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.core 4 4 2020-07-08 15:00:07.661
+!MESSAGE JavaBuilder handling CoreException
+!STACK 1
+org.eclipse.core.runtime.CoreException: File not found: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptSQL.class.
+	at org.eclipse.core.internal.filesystem.Policy.error(Policy.java:55)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:386)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.jdt.internal.core.util.Util.getResourceContentsAsByteArray(Util.java:1133)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileCheck(IncrementalImageBuilder.java:889)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileContents(IncrementalImageBuilder.java:831)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.writeClassFile(AbstractImageBuilder.java:859)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.acceptResult(AbstractImageBuilder.java:190)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:510)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:367)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.compile(IncrementalImageBuilder.java:330)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:304)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.build(IncrementalImageBuilder.java:135)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:267)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:195)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptSQL.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	... 26 more
+!SUBENTRY 1 org.eclipse.core.filesystem 4 271 2020-07-08 15:00:07.661
+!MESSAGE File not found: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptSQL.class.
+!STACK 0
+java.io.FileNotFoundException: C:\WebWorkspace\web08\build\classes\com\bit\dept\DeptSQL.class (지정된 경로를 찾을 수 없습니다)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(Unknown Source)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.openInputStream(LocalFile.java:377)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.read(FileSystemResourceManager.java:797)
+	at org.eclipse.core.internal.resources.File.getContents(File.java:290)
+	at org.eclipse.jdt.internal.core.util.Util.getResourceContentsAsByteArray(Util.java:1133)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileCheck(IncrementalImageBuilder.java:889)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.writeClassFileContents(IncrementalImageBuilder.java:831)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.writeClassFile(AbstractImageBuilder.java:859)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.acceptResult(AbstractImageBuilder.java:190)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:510)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:367)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.compile(IncrementalImageBuilder.java:330)
+	at org.eclipse.jdt.internal.core.builder.AbstractImageBuilder.compile(AbstractImageBuilder.java:304)
+	at org.eclipse.jdt.internal.core.builder.IncrementalImageBuilder.build(IncrementalImageBuilder.java:135)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildDeltas(JavaBuilder.java:267)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:195)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:206)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:246)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:299)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:302)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:358)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:381)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:143)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:241)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2020-07-08 15:19:19.749
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from model repositories. Are you offline?

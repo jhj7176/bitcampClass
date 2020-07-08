@@ -1,0 +1,11 @@
+package com.bit;
+
+public class MyOracle {
+
+	
+	
+	
+	private static Connection conn;
+	
+	
+}

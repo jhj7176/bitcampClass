@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import com.bit.emp.EmpDto;
 import com.bit.util.MyOracle;
 
 public class DeptSQL {
@@ -19,7 +18,7 @@ public class DeptSQL {
 		ArrayList<DeptDto> list = new ArrayList<>();
 		String sql = "select * from dept01 order by num";
 
-		conn = com.bit.util.MyOracle.getConnection();
+		conn = MyOracle.getConnection();
 		stmt = conn.createStatement();
 		rs = stmt.executeQuery(sql);
 		try {
@@ -110,7 +109,7 @@ public class DeptSQL {
 
 	public void login(DeptDto bean) throws SQLException {
 
-		String sql = "select dname, lev from dept01 where id= '"
+		String sql = "select dname, lev, num from dept01 where id= '"
 				+ bean.getId() + "' and";
 		sql += " pw='" + bean.getPw() + "'";
 
@@ -124,6 +123,7 @@ public class DeptSQL {
 				bean.setName(rs.getString("dname"));
 				bean.setLev(rs.getString("lev"));
 				bean.setResult(true);
+				bean.setNum(rs.getInt("num"));
 			}// if
 
 		} finally {
@@ -135,4 +135,72 @@ public class DeptSQL {
 
 	}
 
+	public void delete(DeptDto bean) {
+
+		String sql = "delete from dept01 where num = " + bean.getNum();
+
+		try {
+			conn = MyOracle.getConnection();
+			stmt = conn.createStatement();
+			stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (stmt != null)
+					stmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}// finally
+
+	}// delete
+
+	public void update(DeptDto bean) {
+		
+		String sql = "update dept01 set pw = '"+bean.getPw()+"', dname = '"+bean.getName()+"' where id = "+bean.getId();
+	
+		try {
+			conn = com.bit.util.MyOracle.getConnection();
+			stmt = conn.createStatement();
+			stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if(stmt!=null) stmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}//finally
+	}//update
+
 }// DeptSql
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
