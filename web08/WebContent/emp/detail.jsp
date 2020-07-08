@@ -49,13 +49,19 @@ a {
 		int idx = bean.getSabun();
 	%>
 
-
-
+	<form method="post" action = "delete.jsp">
+	
+	<table align = "center">
+	<tr><td align="right" colspan="2">
+	<input type="hidden" name = "sabun" value="<%=idx %>">
+	<input type="submit" value = "delete">
+	</td></tr>
+	
+	
+	</table>
+	</form>
+	
 	<table width="45%" align="center">
-		<tr>
-			<td colspan="2" align="right"><a style="color: black;"
-				href="delete.jsp"><button>Delete</button></a></td>
-		</tr>
 		<tr>
 			<td>&nbsp;</td>
 		</tr>

@@ -38,10 +38,6 @@
 
 	</target>
 
-	<target name="compile" depends="create">
-		<javac srcdir="${src.home}" includeantruntime="false" destdir="${build.home}/WEB-INF/classes" classpathref="project.classpath" />
-	</target>
-
 	<target name="create" depends="delete">
 		<mkdir dir="${build.home}" />
 		<mkdir dir="${build.home}/WEB-INF" />
@@ -58,6 +54,10 @@
 		</copy>
 
 	</target>
+	<target name="compile" depends="create">
+		<javac srcdir="${src.home}" includeantruntime="false" destdir="${build.home}/WEB-INF/classes" classpathref="project.classpath" />
+	</target>
+
 
 	<target name="War" depends="compile">
 		<war destfile="${ant.project.name}.war" webxml="${web.home}/WEB-INF/web.xml">

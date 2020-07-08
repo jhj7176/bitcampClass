@@ -17,12 +17,12 @@ public class Delete extends HttpServlet {
 			
 			String param1 = req.getParameter("sabun");
 			int sabun = Integer.parseInt(param1.trim());
-			
 			com.bit.emp.EmpSQL.delete(sabun);
 			resp.sendRedirect("list.jsp");
 			
 		
 	}
 	
+
 	
 }

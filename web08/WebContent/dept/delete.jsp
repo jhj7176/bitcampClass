@@ -8,17 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
+<jsp:include page="../template/header.jsp"><jsp:param value="../" name="path"/> </jsp:include>
 	<jsp:useBean id="bean" class="com.bit.dept.DeptDto"></jsp:useBean>
-	<jsp:setProperty property="sabun" name="bean" />
-	<%@ include file="../template/header.jspf"%>
+	<jsp:setProperty property="num" name="bean" />
 	<%
-		String param = request.getParameter("sabun");
-	int sabun = Integer.parseInt(param.trim());
+		//String param = request.getParameter("num");
+		//int num = Integer.parseInt(param.trim());
 
-	DeptSQL dept = new DeptSQL();
-	dept.delete(bean);
+		DeptSQL dept = new DeptSQL();
+		dept.delete(bean);
 
-	response.sendRedirect("list.jsp");
+		response.sendRedirect("list.jsp");
 	%>
 
 

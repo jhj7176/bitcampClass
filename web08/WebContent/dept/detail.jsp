@@ -46,7 +46,7 @@ a {
 	<table width="45%" align="center">
 		<tr>
 			<td colspan="2" align="right"><a style="color: black;"
-				href="delete.jsp"><button>Delete</button></a></td>
+				href="delete.jsp?num=<%= bean.getNum()%>"><button>Delete</button></a></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>

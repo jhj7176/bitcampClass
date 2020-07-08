@@ -135,7 +135,6 @@ public class EmpSQL {
 	}
 
 	public static void delete(int sabun) {
-		EmpDto emp = new EmpDto();
 		String sql ="delete from emp02 where sabun = "+sabun;
 		
 		try {
