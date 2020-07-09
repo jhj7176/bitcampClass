@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style rel="stylesheet" type="text/css">
+        h2 {
+            color: burlywood;
+            text-shadow: 10px 10px 0 #3333
+        }
+
+        #id01 {
+            color: rosybrown;
+        }
+
+        .cl01 {
+            color: firebrick;
+        }
+
+        #id02 {
+            font-size: 20px;
+        }
+
+        .cl02 {
+            text-shadow: 5px 5px 0 #3333;
+            text-align: center;
+            background-color: aliceblue;
+        }
+        
+        p{
+            color: dimgrey;
+            font-style: italic;
+        }
+        
+        li{
+            font-size: 20px;
+        }
+        
+        a{
+            color: darkkhaki;
+            padding: 10px 15px; margin: 0px;
+            -o-transition:0.2s;
+            -webkit-transition:0.2;
+        }
+        a:hover{padding: 15px 20px; margin: -6px; opacity: 0.8;}
+    </style>
+</head>
+    
+    
+    
+
+<body>
+    <header>
+        <h1>선택자</h1>
+    </header>
+    <section>
+        <h2>선택자의 종류</h2>
+        <ul><!--ul 이하에는 li만 올 수 있다-->
+            <li>태그 선택자</li>
+            <li>아이디 선택자</li>
+            <li>클래스 선택자</li>
+        </ul>
+        <h2>선택자의 우선순위</h2>
+        <p>동등레벨에서의 선택자는 코드라인 젤 아래쪽에 있는 속성이 적용된다</p>
+        <p>
+        
+            서로 다른 선택자로 적용시 <br/>
+            인라인 속성부여>id선택자>class선택자>tag선택자
+        
+        </p>
+        
+        <ol>
+            <li>item1 nothing</li>
+            <li id="id01">item2 id01</li>
+            <!--아이디는 하나만 존재해야함-->
+            <li class="cl01">item3 cl01</li>
+            <li id="id02">item4 id02</li>
+            <li class="cl02">item5 cl02</li>
+            <li class="cl01 cl02">item6 cl01 cl02</li>
+            <li>item7 nothing</li>
+            <li class="cl01">item8 cl01</li>
+            <!--클래스는 여러개 생성가능-->
+            
+            <li><a href="#">transiton</a></li>
+            <li><a href="#">aaaa</a></li>
+            <li><a href="#">aaaa</a></li>
+            <li><a href="#">aaaa</a></li>
+            <li><a href="#">aaaa</a></li>
+            <li><a href="#">aaaa</a></li>
+            <li><a href="#">aaaa</a></li>
+            <li><a href="#">aaaa</a></li>
+            <li><a href="#">aaaa</a></li>
+        </ol>
+
+
+    </section>
+
+
+
+</body></html>

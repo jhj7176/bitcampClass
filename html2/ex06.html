@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <style rel="stylesheet" type="text/css">
+        h1,
+        p {
+
+            font-style: oblique;
+            text-shadow: 10px 10px 0 #3333;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        li {
+            font-size: 30px;
+        }
+
+
+        div>h1 {
+            color: firebrick;
+        }
+
+        div {
+            color: forestgreen
+        }
+
+        div+p {
+            /*div바로 다음에 나오는 두번째 p태그*/
+            color: firebrick;
+        }
+
+        /* ' + ' : next 기호이다.    */
+        div+p+p {
+            /*div뒤에 나오는 세번째 p태그*/
+            color: aquamarine;
+        }
+
+        h2+div+p {
+            color: dodgerblue;
+        }
+
+        /*div~p{color:red;} div다음에 나오는 p태그들
+        */
+        div+p+p+ul>li {
+            color: blueviolet;
+        }
+
+        ul ol {
+            /*자손관계일때만 ul>li>ol에서 ul>ol을 간략히 표현*/
+            color: indianred;
+        }
+
+        ol>li:first-child {
+            color: cadetblue;
+        }
+
+        li:first-child {
+            color: dodgerblue;
+        }
+
+        ul>li:last-child {
+            color: darkseagreen;
+        }
+
+        li:nth-child(7) {
+            color: black;
+        }
+
+        /*
+        li:nth-child(odd){
+            color: black;
+        } 홀수만 적용. ol안에 li는 적용안되고 바깐쪽 li순서대로 적용.
+        ( 2n -1 )이나 (2n)으로 단순한 연산으로도 적용가능함.
+        (2*2)
+*/
+        /*        자식노드에 스타일 부여*/
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>EX06</h1>
+    </header>
+    <h1>h1 선택자1</h1>
+    <h2>h2 선택자2</h2>
+    <div>
+        <h1>h1 선택자3</h1>
+        <p>p 선택자1</p>
+    </div>
+    <p>p 선택자2</p>
+    <p>p 선택자3</p>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <ol>
+            <li>olli4</li>
+            <li>olli5</li>
+            <li>olli6</li>
+
+        </ol>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+
+
+
+    </ul>
+
+
+
+
+</body></html>

@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="oracle.jdbc.OracleTypes"/>
 <fullyQualifiedTypeName name="com.bit.emp.Emp02Delete"/>
 <fullyQualifiedTypeName name="com.sun.net.httpserver.HttpsConfigurator"/>
-<fullyQualifiedTypeName name="com.bit.emp.EmpDto"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="com.bit.MyOracle"/>
@@ -19,4 +18,5 @@
 <fullyQualifiedTypeName name="com.bit.util.MyOracle"/>
 <fullyQualifiedTypeName name="com.bit.emp.Delete"/>
 <fullyQualifiedTypeName name="com.bit.emp.EmpSQL"/>
+<fullyQualifiedTypeName name="com.bit.emp.EmpDto"/>
 </qualifiedTypeNameHistroy>
