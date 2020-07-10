@@ -1,0 +1,97 @@
+<!dochtml html>
+    <html>
+
+    <head>
+
+    <meta charset="utf-8">
+    <style rel="stylesheet" type="text/css">
+        h1,
+        p {
+            background-color: darkseagreen;
+            color: beige;
+        }
+        h1{
+            text-align: center;
+            margin: 4px auto 4px;
+            border-radius: 10px
+            
+        }
+
+        p {
+            
+            width: 80%;
+            height: 200px;
+            overflow-x: auto;
+            margin: 5px auto 5px;
+            
+
+
+        }
+
+        /*앨리먼트사이즈는 컨텐츠를 기준으로 맞추지만
+         높이 너비를 지정해주면 컨텐츠와 상관없이 지정한 사이즈가된다.
+        */
+
+        nav {
+            background-color: aquamarine;
+          overflow: hidden;
+             border-radius: 10px
+        }
+
+        nav>ul {
+            background-color: brown;
+/*            재 랜더링하게 되서 사라진 ul배경이 나타남*/
+            width: 404;
+            padding: 0px;
+            margin: 5px auto 8px;
+            overflow: hidden;
+            border-radius: 10px
+        }
+
+        ul>li {
+            float: left;
+            /*li가 떠버려서 ul은 하위컨텐츠가 사라지게되고
+            ul이 컨텐츠가 없으므로 배경이 안타나게된다
+            overflow hidden으로 재랜더링하면 사라진 배경이 나타난다.
+            */
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+        
+            color: white;
+            list-style: none;
+            padding: 0px;
+            text-align: center;
+            border-left: 1px solid white;
+            border-radius: 10px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>제목</h1>
+    <nav>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+
+
+
+        </ul>
+
+
+
+    </nav>
+
+
+    <p>아파치 앤트(영어: Apache Ant)는 자바 프로그래밍 언어에서 사용하는 자동화된 소프트웨어 빌드 도구이다. 유닉스나 리눅스에서 사용되는 make와 비슷하나 자바언어로 구현되어 있어 자바 실행환경이 필요하며 자바 프로젝트들을 빌드하는데 표준으로 사용된다.<br />
+
+        make와 눈에 띄는 가장 다른 부분은 빌드를 위한 환경구성을 XML 파일을 사용한다는 점이다. 기본적인 빌드 파일명은 build.xml이다.<br />
+        로고는 이름(ANT)에 따라 개미 모양으로 만들어졌으나 이는 Another Neat Tool의 약어이다. <br />
+        최초 빌드 도구로서 제작되었으나 점점 많은 기능이 추가되면서 빌드와 배포, 유닛 테스트 등을 포함하는 통합 툴로서 발전되고 있다.</p>
+
+
+</body></html>
