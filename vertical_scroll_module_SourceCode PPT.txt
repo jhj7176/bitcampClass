@@ -1,0 +1,26 @@
+Sub AddAndPopulateATextBox()
+
+   Dim oTextBox As Shape
+   Dim strText As String
+
+
+    strText = ""
+                 
+    
+
+    Set oTextBox = ActiveWindow.Selection.SlideRange.Shapes.AddOLEObject(Left:=114, _
+                 Top:=48, _
+                 Width:=522, _
+                 Height:=450, _
+                 ClassName:="Forms.TextBox.1", _
+                 Link:=msoFalse)
+
+   With oTextBox.OLEFormat.Object
+                  .MultiLine = True
+                  .WordWrap = True
+                  .ScrollBars = 2  ' fmScrollBarsVertical(세로 스크롤바)
+                 .Text = strText
+   End With
+
+End Sub
+
