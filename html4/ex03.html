@@ -1,0 +1,66 @@
+<!dochtml html>
+    <html>
+
+    <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--디바이스 매체 너비에 맞춰서 조절함 모바일 뷰포트 넓이에 맞추지 안으면
+    콘텐츠가 너무 작게보임. -->
+    <style rel="stylesheet" type="text/css">
+        body {
+            background-color: antiquewhite;
+            color: chocolate;
+        }
+
+        h1 {
+            background-color: azure;
+        }
+
+        p {
+            background-color: aliceblue;
+        }
+
+        /*
+        all, print, screen, speech 네종류가있다.
+        
+        */
+        @media screen and (min-width:1024px) {
+
+            /*인쇄화면에서 적용되는 style*/
+            body {
+                background-color: coral;
+                color: white;
+            }
+
+            h1 {
+                background-color: darkgreen;
+            }
+
+            p {
+                background-color: darkgoldenrod;
+            }
+        }
+
+        @media screen and (max-width:1000px) {
+            body{
+            background-color: yellow;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>MEDIA TAG</h1>
+    <p>media tag</p>
+    <ul>
+        <li>디바이스 종류에 따라 다르게 표현합니다.</li>
+        <li>다음</li>
+        <li>다음</li>
+        <li>다음</li>
+    </ul>
+    <p></p>
+
+
+
+</body></html>

@@ -1,0 +1,99 @@
+<!dochtml html>
+    <html>
+
+    <head>
+
+    <meta charset="utf-8">
+    <style rel="stylesheet" type="text/css">
+        div{
+            background-color: antiquewhite;
+        }
+        div>span {
+            /*            margin-left: 200px;*/
+            background-color: gray;
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            background-image: url(img/car.jpg);
+            background-size: 100px;
+            background-repeat: no-repeat;
+            border: 0.2px solid;
+            transition-duration: 4s;
+            animation-name: ani02;
+            animation-duration: 4s;
+            animation-timing-function: ease-in;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        div>span:hover {
+            margin-left: 400px;
+            background-color: red;
+            /*커서가 위에 있으면 마진이 400까지 늘어난다
+                duration 4초동안. */
+        }
+
+
+        @keyframes ani02 {
+            0% {
+                margin-left: 0px;
+            }
+
+            25%{margin-top: 200px;
+            margin-left: 100px;}
+            50% {
+                background-color: aquamarine;
+                margin-top: 300px;
+                margin left: 400px;
+            }
+            75%{margin-top: 100px;
+            margin-left: 200px}
+
+            100% {
+                margin-left: 0px;
+                background-color: red;
+            }
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @keyframes ani01 {
+            from {
+                margin-left: 0px;
+            }
+
+            /*마진 0 부터 400까지 움직인다. duration 4초동안 점점빠르게 ease-in
+                애니메이션 처음과 마지막 동작을 제어.
+                중간 프레임은 시스템이 알아서 메꿔줌 
+            정교한 제어는 불가.
+                */
+            to {
+                background-color: rebeccapurple;
+                margin-left: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Animation</h1>
+    <div>
+        <span></span>
+    </div>
+
+
+
+</body></html>
