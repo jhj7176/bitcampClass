@@ -5,6 +5,9 @@
     .containerw {
         width: 100%;
     }
+    .row {
+        clear: both;
+    }
 
     .mgrid_1,
     .mgrid_2,

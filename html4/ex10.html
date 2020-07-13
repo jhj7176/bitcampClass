@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script type="text/javascript">
+        // var a;/*변수선언, 선언안해도 초기화만해도 잘나옴*/
+
+
+        /*
+        javaScript data type
+        
+        0x0000 - 0xffff memory주소 
+        a객체는 메모리주소를 갖는다. (객체타입object) 
+        
+        
+        
+        */
+        a = 1234 + 4; /*변수초기화*/
+        /*연산 후 a객체에 대입. like auto wrapping,unwrapping
+        a=a+1 > a unwrapping 후 숫자를 꺼내서 1과 연산후
+        결과를 wrapping하고 a에 주소값을 대입. 
+        
+        숫자 : number 타입
+        short, int, float >> 나뉘지않고 모두 실수타입 >>정확한 값이 아님.
+        문자 : String, 문자 char타입이 없고  한 문자 이상은 전부 문자열." ' 구분X
+        (json은 "" '' 구분함)
+        boolean타입: 연산자에서 특이사항 확인
+        Object  object {}
+        array타입 object []
+        null 타입 object null
+        function 타입
+        undefine타입
+        
+        */
+      /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        
+        a = 1;
+        a = a + 1;
+        document.write("<br/>a=" + a);
+        console.log(a); /*콘솔에 출력*/
+/*number 타입*/
+        a = 7;
+        a = a / 4.0;
+        document.write("<br/>a=" + a);
+        console.log(a); /*콘솔에 출력*/
+
+        /*문자열 타입*/
+        a = '\'A\'';
+        a = a + "'sadf'";
+        document.write("<br/>a=" + a);
+        console.log(typeof a, a); /*콘솔에 출력*/
+
+        /*boolean타입*/
+        a = true;
+        //        a = a + 1;
+        document.write("<br/>a=" + a);
+        console.log(typeof a, a); /*콘솔에 출력*/
+
+/*object타입*/
+        var a;
+        a = new Object();//object {}
+        document.write("<br/>a=" + a);
+        console.log(typeof a, a); /*콘솔에 출력*/
+
+        /*array타입*/
+        var a;
+        a = new Array();//object []
+        a[0]=111; a[1]=221; a[2]=331; a[3]=441;
+        document.write("<br/>a=" + a);
+        console.log(typeof a, a); /*콘솔에 출력*/
+
+      
+        /*null타입*/
+        var a;
+        a = null;//object null
+        document.write("<br/>a=" + a);
+        console.log(typeof a, a); /*콘솔에 출력*/
+        
+        
+        /*함수형 타입*/
+        function fun01(){
+            a = 1;
+            b = 100;
+            return a+b+"String";
+        }
+        document.write("<br/>fun01=" + fun01());
+        console.log(typeof fun01(), fun01());// number 101
+        //fun01의 return type에 따라 fun01의 type이 결정된다.
+        //return이 없으면 undefined type으로나옴.
+
+        
+        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        
+        
+        a = 1;
+        var b;
+        b = a + 1;
+        console.log(b);
+        document.write("<br/>b=" + b); /*브라우저에 출력*/
+        var c;
+        c = 'C';
+        console.log(c);
+        document.write("<br/>c=" + c);
+        var d;
+        d = 67.34;
+        console.log(d);
+
+        a = "hello"; /*변수에 정수 실수 문자열 다 들어감.*/
+        console.log(a);
+        document.write("<br/>a=" + a);
+    </script>
+</head>
+
+<body>
+
+</body></html>

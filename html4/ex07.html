@@ -6,36 +6,137 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
 
-<link rel="stylesheet" type="text/css" href="myGrid.css">
-<style rel ="stylesheet" type="text/css">
-    div{
-        background-color: antiquewhite;
-    }
-    
+    <link rel="stylesheet" type="text/css" href="myGrid.css">
+    <style rel="stylesheet" type="text/css">
+        div {
+            background-color: white;
+        }
+
+        #header>div>img {
+            float: left;
+        }
+
+        #nav>div {
+            margin: auto;
+
+        }
+
+
+        #nav>div>ul {
+            background-color: beige;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        #nav>div>ul>li {
+            border: 0.5px solid;
+            margin: 10px -100px 10px 200px;
+            list-style: none;
+            float: left;
+            padding: 0;
+        }
+
+
+
+        #content>div:nth-child(1) {
+            height: 700px;
+
+        }
+
+        #content>div:nth-child(1)>img {
+            width: 335px;
+        }
+
+        #content>div:nth-child(1)>p {
+
+            height: 200px;
+            overflow: auto;
+        }
+
+        #content>div+div {
+            width: 670px;
+            height: 700px;
+            border: 1px solid;
+        }
+
+        #content>div+div>h2 {
+/*            text-align: center;*/
+            margin: 10px 10px 10px 10px;
+            border: 0.5px solid;
+        }
+
+        #content>div+div>div {
+            margin: 10px 10px 10px 10px;
+            border: 0.5px solid;
+        }
+
+        #article>div {
+            background-color: white;
+        }
+
+        #footer>div {
+            text-align: center;
+            background-color: beige;
+            overflow: hidden;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="mgrid_4 grid_1">@media tag</div>
-            <div class="mgrid_8 grid_11">11</div>
+        <div class="row" id="header">
+            <div class="mgrid_4 grid_3"><img src="img/char.png"></div>
+            <div class="mgrid_8 grid_9">Bitcamp</div>
         </div>
 
-        <div class="row">
-            <div class="mgrid_6 grid_2">2</div>
-            <div class="mgrid_6 grid_10">10</div>
+        <div class="row" id="nav">
+            <div class="mgrid_6 grid_12">
+                <ul>
+                    <li>menu1</li>
+                    <li>menu2</li>
+                    <li>menu3</li>
+                    <li>menu4</li>
+                </ul>
+            </div>
         </div>
 
 
-        <div class="row">
-            <div class="mgrid_6 grid_3">3</div>
-            <div class="mgrid_6 grid_9">9</div>
+        <div class="row" id="content">
+            <div class="mgrid_6 grid_4">
+                <img src="img/12.png">
+
+
+                <p>양어장 주변에서 살아가는 길고양이들이 자꾸 잉어에게 줄 사료봉투를 찢어 놓는 바람에 대신한 먹을 것과 물고기를 잡아다 주는 것에서 시작한 유튜브 채널이다. 야외에서 키우는 개 천하와 태평, 이들의 자식인 주황, 보라도 등장한다. 보통 집 안이나 도심에서 촬영하는 유튜버들과 달리 시골이 주 무대다. 고양이/개/야생 동물/양식업/낚시/요리/먹방/힐링/DIY/ASMR까지 다양한 분야를 두루 섭렵한 독보적인 채널이라 할 수 있다.</p>
+
+            </div>
+            <div class="mgrid_6 grid_7">
+                <h2>&#9679; haha ha 채널 특징</h2>
+                <div>
+                    <div>
+                        <p>&nbsp;야생의 여러 고양이들과 본인이 교감하고 상생하는 모습을 담담하고 꾸밈없이 보여주는 영상이 대부분이다. 여타 동물 유튜버는 대부분 동물을 집 안에서 기르고 사람이 행동을 유도하는 경향이 어느 정도 있지만, haha ha는 그런 것 없이 자연스러운 고양이의 모습을 있는 그대로 보여준다. 이 점이 다른 반려동물 유튜버와는 차별화된 점이라 할 수 있다. 즉, 다른 반려동물 유튜버들은 동물과 동거[6]하지만, 이 채널은 같은 자연 속에서 인간과 고양이들이 공존하는 모습을 보인다. 함께 오랜 시간을 보낸 후로 고양이들이 실제 야생 고양이와는 다르게 사람사실상 대장 고양이인 하저씨의 손을 많이 타는 모습도 보여준다. 현재로서는 야외에서 활동하는 집 고양이라고 봐도 어색하지 않을 정도.[7] 한 마디로 몇 대를 거치면서 야생 고양이에서 집 고양이로 저절로 변모해 가는 과정을 볼 수 있는 유튜브 채널이다. 다들 좋은 환경에서 밥 잘 먹고 잘 놀다 보니, 털에는 윤기가 흐르고 몸은 포동포동해서 건강하고 귀여워 보인다. 계절에 따라 변화하는 한적한 시골 풍경, 각기 개성이 다른 동물들이 한데 어우러진 모습이 자연·동물 다큐멘터리 못지않은 편안함과 힐링을 선사해 준다.<br />&nbsp;
+
+                            만들기나 낚시·먹방 영상은 보통 10분 내외로 편집하여 올리지만, 5분 미만의 짧은 영상도 많이 올리는 편이다. 영상 업로드 요일이나 시간은 정해져 있지 않으며, 대개 일주일에 두 번 정도 영상을 올린다.</p>
+                    </div>
+                </div>
+
+                    <div>
+                        
+                       <video autoplay controls src="https://youtu.be/6xaqHiJQYwg"></video>
+                    </div>
+
+
+
+
+            </div>
         </div>
 
-        <div class="row">
-            <div class="mgrid_12 grid_6">@media tag</div>
-            <div class="mgrid_12 grid_6">@media tag</div>
+        <div class="row" id="article">
+            <div class="mgrid_12 grid_12">&nbsp;</div>
+        </div>
+
+        <div class="row" id="footer">
+            <div class="mgrid_12 grid_12">W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright &copy; 1999-2020 by Refsnes Data. All Rights Reserved.
+                Powered by W3.CSS.</div>
         </div>
     </div>
 </body></html>
