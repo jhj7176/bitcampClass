@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        var a = 2.0 + 1;
+        console.log(a);
+        document.write("<br/> a=" + a);
+        /*
+        ()
+        ++, --
+        +, -, *, /, %
+        <,>,>=,<=,==,!=,!==,===
+        &&, ||
+        *=, /=, %=, +=, -=
+        */
+        a = 5 % 2;
+        console.log(a);
+        document.write("<br/> a=" + a);
+
+        a = 2;
+        b = a == 2;
+        console.log(b);
+        b2 = a === 2;
+        console.log(b2);
+        document.write("<br/> b=" + b);
+
+        a = 2;
+        b = '2';
+        console.log(a == b);
+        document.write("<br/>b==a: " + (a == b)); //값 일치
+        console.log(a === b);
+        document.write("<br/>b===a: " + (b === a)); //타입과 값 일치
+        document.write("<br/>typeof a, b = " + (typeof a) + ", " + (typeof b));
+
+        console.log(true && true);
+        document.write("<br/>true&&true : " + (true && true));
+
+
+        var c; //undefined
+        console.log(c + 1);
+        console.log(true + 1); // 2
+        console.log(false + 1); //1
+        console.log(true == 1, true === 1);
+        console.log(false == 0, false === 0);
+        document.write("<br/>true==1 : " + (true == 1)); //true
+        document.write("<br/>flase==0 : " + (false == 0)); //true
+        document.write("<br/>true===1 : " + (true === 1)); //false
+        document.write("<br/>flase===0 : " + (false === 0)); //false
+        console.log(c == 0, c == -1, c === -1); //f,f,false
+        console.log(c == null); //true
+        console.log(c === null); //false, null vs undefined 타입이다름 
+        console.log(null == 0); //false
+        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        document.write("<br/><br/>");
+        var d = '5.3';
+        console.log(d + 1, Number(d) + 1, d - 1, d * 2); //String '51', 4
+        document.write("<br/>d+1 = " + (d + 1));
+        document.write("<br/>Number(d)+1 = " + (Number(d) + 1)); //casting
+        document.write("<br/>d*1+1 = " + (d * 1 + 1)); //casting
+        document.write("<br/>parseInt(d)+1 = " + (parseInt(d) + 1)); //casting
+        document.write("<br/>d-1 = " + (d - 1));
+        document.write("<br/>d*1 = " + (d * 1));
+
+        var e = '500원';
+        console.log(parseInt(e) - 100);
+        document.write("<br/>e-100 = " + (parseInt(e) - 100));
+        document.write("<br/>e-100 = " + (Number(e) - 100));
+        
+        console.log(typeof Number(e));
+        document.write("<br/>typeof number(e) = " + typeof Number(e));
+        
+        document.write("<br/>number(e) = " + Number(e));
+        console.log(Number(e));
+        console.log(typeof 100);
+
+
+        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        a = "aewsf";
+        if (a) { //0이거나 null이거나 "" empty, undefined면 false로 인식. 
+            console.log('참');
+            document.write("<br/>참");
+        } else {
+            console.log('거짓');
+            document.write("<br/>거짓");
+
+        }
+
+        /*ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ*/
+        var b1 = 1;
+        var b1 = 5>3;
+        switch (b1) { //===체크
+            case 5>3:
+                console.log("2입니다.");
+                 document.write("<br/>2입니다.");
+                break;
+            case 1:
+                console.log("1입니다.");
+                 document.write("<br/>1입니다.");
+                break;
+            case 0:
+                console.log("0입니다.");
+                 document.write("<br/>0입니다.");
+                break;
+            case '1':
+                console.log("'1'입니다.");
+                 document.write("<br/>'1'입니다.");
+                break;
+            default:
+                console.log('몰라');
+                 document.write("<br/>몰라.");
+
+
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
