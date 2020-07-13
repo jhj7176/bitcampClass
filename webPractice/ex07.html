@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +30,7 @@
         }
 
         #nav {
-            margin: 0px 10px 10px 0px;
+            margin: 0px 0px 10px -10px;
             overflow: hidden;
         }
 
@@ -41,16 +42,27 @@
 
         #nav>div>ul {
             background-color: beige;
-            height: 45px;
+            height: 32px;
+            width: 960px;
             overflow: hidden;
             margin: auto;
+            transition-duration: 2s;
+        }
+
+        #nav>div>ul:hover {
+            transition-duration: 2s;
+            /*            border: 1px solid;*/
+            height: 200px;
         }
 
         #nav>div>ul>li {
-            margin: 10px -100px 10px 200px;
+            width: 120px;
+
+
+            text-align: center;
+            margin: 10px 10px 10px 75px;
             list-style: none;
             float: left;
-
             padding: 0;
         }
 
@@ -64,9 +76,26 @@
             border: 1px solid;
             padding: 1px 1px;
             color: brown;
+
         }
 
+        #nav>div>ul>li>ul {
+            border-top: 1px solid;
+        }
 
+        #nav>div>ul>li>ul>li {
+            margin: 15px 0px 0px 0px;
+        }
+
+        #nav>div>ul>li>ul>li>a {
+
+            text-decoration: none;
+            color: black;
+        }
+
+        #nav>div>ul>li>ul>li>a:hover {
+            color: brown;
+        }
 
         #content>div:nth-child(1) {
             height: 700px;
@@ -84,7 +113,7 @@
         }
 
         #content>div+div {
-            width: 670px;
+            width: 680px;
             height: 700px;
             border: 1px solid;
         }
@@ -103,7 +132,7 @@
         #content>div+div>div+div {
             /*video div*/
 
-            height: 240px;
+            height: 270px;
             width: 650px;
 
         }
@@ -130,6 +159,23 @@
 
         }
 
+        .article>form {
+/*            border: 1px solid;*/
+            margin: 0px 0px 0px 10px;
+
+            width: 330px;
+            float: left;
+/*            overflow: hidden;*/
+        }
+
+        .article>p {
+            width: 680px;
+            margin: auto;
+            border: 1px solid;
+
+                overflow: hidden;
+/*            float: left;*/
+        }
 
         #footer>div {
             margin: 10px 0px 10px 0px;
@@ -152,10 +198,43 @@
         <div class="row" id="nav">
             <div class="mgrid_6 grid_12">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Video</a></li>
-                    <li><a href="#">Info</a></li>
-                    <li><a href="https://www.youtube.com/c/hahahaYouTube/featured">Youtube</a></li>
+                    <li><a href="#">Home</a>
+
+                        <ul>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">Video</a>
+
+                        <ul>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="#">Board</a>
+
+                        <ul>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                        </ul>
+
+                    </li>
+                    <li><a href="https://www.youtube.com/c/hahahaYouTube/featured">Youtube</a>
+
+                        <ul>
+                            <li><a href="#">menu1</a></li>
+                            <li><a href="#">menu1</a></li>
+                        </ul>
+
+                    </li>
+
                 </ul>
             </div>
         </div>
@@ -168,6 +247,7 @@
 
                 <p>양어장 주변에서 살아가는 길고양이들이 자꾸 잉어에게 줄 사료봉투를 찢어 놓는 바람에 대신한 먹을 것과 물고기를 잡아다 주는 것에서 시작한 유튜브 채널이다. 야외에서 키우는 개 천하와 태평, 이들의 자식인 주황, 보라도 등장한다. 보통 집 안이나 도심에서 촬영하는 유튜버들과 달리 시골이 주 무대다. 고양이/개/야생 동물/양식업/낚시/요리/먹방/힐링/DIY/ASMR까지 다양한 분야를 두루 섭렵한 독보적인 채널이라 할 수 있다.</p>
 
+
             </div>
             <div class="mgrid_6 grid_7">
                 <h2>&#9679; haha ha</h2>
@@ -177,6 +257,7 @@
                         <p>&nbsp;야생의 여러 고양이들과 본인이 교감하고 상생하는 모습을 담담하고 꾸밈없이 보여주는 영상이 대부분이다. 여타 동물 유튜버는 대부분 동물을 집 안에서 기르고 사람이 행동을 유도하는 경향이 어느 정도 있지만, haha ha는 그런 것 없이 자연스러운 고양이의 모습을 있는 그대로 보여준다. 이 점이 다른 반려동물 유튜버와는 차별화된 점이라 할 수 있다. 즉, 다른 반려동물 유튜버들은 동물과 동거[6]하지만, 이 채널은 같은 자연 속에서 인간과 고양이들이 공존하는 모습을 보인다. 함께 오랜 시간을 보낸 후로 고양이들이 실제 야생 고양이와는 다르게 사람사실상 대장 고양이인 하저씨의 손을 많이 타는 모습도 보여준다. 현재로서는 야외에서 활동하는 집 고양이라고 봐도 어색하지 않을 정도.[7] 한 마디로 몇 대를 거치면서 야생 고양이에서 집 고양이로 저절로 변모해 가는 과정을 볼 수 있는 유튜브 채널이다. 다들 좋은 환경에서 밥 잘 먹고 잘 놀다 보니, 털에는 윤기가 흐르고 몸은 포동포동해서 건강하고 귀여워 보인다. 계절에 따라 변화하는 한적한 시골 풍경, 각기 개성이 다른 동물들이 한데 어우러진 모습이 자연·동물 다큐멘터리 못지않은 편안함과 힐링을 선사해 준다.<br />&nbsp;
 
                             만들기나 낚시·먹방 영상은 보통 10분 내외로 편집하여 올리지만, 5분 미만의 짧은 영상도 많이 올리는 편이다. 영상 업로드 요일이나 시간은 정해져 있지 않으며, 대개 일주일에 두 번 정도 영상을 올린다.</p>
+
                     </div>
                 </div>
 
@@ -198,9 +279,23 @@
             </div>
         </div>
 
-        <div class="row" id="article">
+        <div class="row">
             <div class="mgrid_12 grid_12">&nbsp;
-                &nbsp;&nbsp;&nbsp;&nbsp;
+                <div class="article">
+                    <form>
+                        <select>
+                            <option>제목</option>
+                            <option>글쓴이</option>
+                            <option>제목+내용</option>
+                            <option>제목+글쓴이</option>
+                        </select>
+                        <input type="text" name="search">
+                        <input type="submit" value="검색">
+                    </form>
+                </div>
+                    <div class="article">
+                        <p>&nbsp;&nbsp;board-title-article-contents</p>
+                    </div>
             </div>
         </div>
 
