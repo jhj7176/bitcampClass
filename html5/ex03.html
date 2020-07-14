@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        var a;
+
+        function fun(a) {
+            console.log(typeof a);
+            if (typeof a == 'funtion') a();
+            else if ((typeof a).toLowerCase() == 'string') console.log(a);
+            else if ((typeof a).toLowerCase() == 'number') console.log(a + 1);
+            else console.log(a[0]);
+        }
+
+        fun('asdfas');
+
+        console.log('----------------------------------------');
+
+        var a = 1234;
+
+        function func01() {
+            console.log(this.a);
+            console.log(self.a);
+            console.log(this == window);
+            console.log(this === window);
+            console.log(self === window);
+            console.log(self == window); //all true
+        }
+
+
+
+
+        var obj = {};
+        
+        obj.key1 = 'test';
+        obj.key2 = function() {
+            console.log('key2 val....');
+            console.log(self == window); //true
+            console.log(this == window); //false
+            console.log(this == obj); //true
+            console.log(this.key1); //'test'
+        };
+
+        obj.getKey1 = function() {
+            return this.key1;
+        };
+        obj.setKey1 = function(a) {
+            this.key1 = a;
+        };
+        
+        console.log(obj.getKey1());
+    </script>
+
+
+</head>
+
+<body>
+
+</body></html>
+
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script type="text/javascript">
+        //closure
+
+
+        /*
+        클로저는 독립적인 (자유) 변수를 가리키는 함수이다. 또는, 클로저 안에 정의된 함수는 만들어진 환경을 ‘기억한다’.
+
+        흔히 함수 내에서 함수를 정의하고 사용하면 클로저라고 한다. 하지만 대개는 정의한 함수를 리턴하고 사용은 바깥에서 하게된다. 말로 설명하면 설명하기가 복잡하니 우선 코드를 보자.
+
+https://poiemaweb.com/js-execution-context
+ref site.
+
+“A closure is the combination of a function and the lexical environment within which that function was declared.”
+함수와 그 함수가 선언됐을 때의 렉시컬 환경(Lexical environment)과의 조합이다.
+변수의 유효범위(Scope)
+렉시컬 환경 = 함수가 선언됐을 때의 스코프
+외부에서 호출 되어도 그 때의 스코프에 접근(기억)할 수 있는 함수=클로저
+클로저가 접근(기억)하는 외부함수의 변수 = 자유변수(free variable)
+
+
+실행 컨텍스트
+실행 가능한 코드를 형상화하고 구분하는 추상적인 개념
+
+변수 : 전역변수, 지역변수, 매개변수, 객체의 프로퍼티
+함수 선언
+변수의 유효범위(Scope)
+this
+
+실행컨텍스트는 variable object, scope chain, this 세가지프로퍼티를 가짐
+
+전역컨텍스트, 함수컨텍스트로 나뉨
+전역컨텍스트는 전역함수 , 전역변수 >실행시 전역객체 생성
+함수 컨텍스트는 함수자체 >실행시 활성객체를 가진다 
+활성객체는 arguments와 내부함수 내부변수를 가짐.
+스코프 체인은 활성객체롸 전역객체를 리스트형태로 저장한다.
+
+외부함수 컨텍스트가 반환되어도 스코프체인에 활성객체리스트가 담겨있고
+그 속에 참조하는 변수들이 있기때문에 <<레시컬환경 기억>>
+클로저함수는 라이프사이클을 벗어났어도 호출이 가능하다.
+
+
+        */
+
+        /*
+                function func01() {
+                    
+                    var z = function(){console.log('test');};
+                    return z;
+                }*/
+
+
+        function func02() {
+            var x; //free variable
+            return function() {
+                console.log('test closer');
+            };
+        }
+        
+        //1회용 함수인데 a를 이용해서 게속 호출할 수 있다. 
+        var a = func02(); //a = z;
+        a(); //a실행
+        console.log(a);
+        document.write(a);
+    </script>
+
+
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>

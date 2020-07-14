@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script type="text/javascript">
+        /*
+        개발자모드 콘솔에서 window.XXX으로 선언한 변수 호출가능 
+        window.a1 = true; 
+        window object에 key로 변수를 선언한다고 볼 수 있다.
+        따라서 선언없이 사용가능한 것이다. 
+        
+        js : function과 method 둘 다 존재.
+        *****Number.parseInt(); 메서드 객체생성, ref를 통해 접근
+        *****function fun01(){} 함수   그냥 호출
+        
+        var obj={'key1':'val1', 'key2':function(){}} 
+        (new Object();) 객체를 직접 찍어내는 것.성능에 영향있음
+        단, 숫자 연산에 경우 boxing unboxing이 최적화가 잘되어있어
+         new Number()하는것이 더 성능에 안좋다. 
+         
+        obj.key2를 통해 value function에 접근. >>> 따라서 method이다. 
+    --type--
+    */
+        //boolean true==1, false==0, true!==1 false!==0
+        var a1;
+        a1 = true;
+        a1 = new Boolean(true); //객체생성. 
+        console.log(a1 === true); //false, object:boolean
+        /*--------------------------------------------------*/
+        //number
+        var b1;
+        b1 = 1234;
+        b1 = 3.14;
+        b1 = new Number(3.14);
+        console.log(b1, typeof b1);
+        console.log(Number.isNaN(parseInt('$100.5'))) //true
+
+        //https://www.w3schools.com/jsref/jsref_obj_number.asp
+        /*--------------------------------------------------*/
+        //string
+
+        /*
+        slice=subString(start, end) index
+        substr(start, length)
+        */
+        var c1;
+        c1 = '문자열';
+        c1 = new String('adsaf');
+        console.log(c1, typeof c1);
+
+        //object
+        console.log('---------------------------');
+
+        var e1;
+        e1 = new Object(); //object{};
+        e1 = { //java Map이랑 비슷
+            'key1': 'val1',
+            'key2': 'val2'
+        };
+        e1['key3'] = 'val3'; //key값으로 숫자를 쓰면 array이랑 헷갈린다. 주의.
+        e1['key4'] = 'val4';
+        e1['key5'] = [3, 5, 7, 9];
+        console.log("e1[key5][2] = " + e1['key5'][2]);
+        console.log("e1.key5[1] = " + e1.key5[1]); //object ref e1.key5(array)의 1st element
+        console.log("e1.key9 정의한적없음 = " + e1.key9); //undefine
+        console.log(e1, typeof e1);
+        e1.key10 = function() {
+            console.log('key10의 value');
+        };
+        console.log("e1.key10 = " + e1.key10);
+        e1.key10();
+
+        for (var key in e1) {
+            console.log("e1 = " + e1['key1']);
+        }
+        //{key1: "val1", key2: "val2", key3: "val3", key4: "val4",  key5: Array(4)}
+
+        console.log('---------------------------');
+        /*--------------------------------------------------*/
+
+        //array
+        //배열이면서 arraylist성질을 가짐 
+        var d1;
+        d1 = new Array(); //object[]
+        d1 = [1, 2, 3, 4];
+        console.log(d1, typeof d1);
+
+        d1 = new Array(1, 2, 3, 4, 5, 6);
+        console.log(d1.length, typeof d1);
+
+        for (var i = 0; i < 10; i++) {
+            d1[i] = i;
+        }
+        console.log(d1);
+
+        d1.sort(); //오름차순
+        d1.reverse(); //내림차순
+        d1.push(314); //값입력
+        console.log(d1.pop()); //stack structure, last value out and remove
+        d1.push(10);
+        d1.push(11);
+
+        d1.push(function() {
+            console.log('d1[12](); = array func');
+        });
+        d1[12]();
+
+
+
+
+        d1.forEach(function func01(item, idx) {
+            console.log(item, idx);
+        });
+
+        //        while(true){
+        //            if(d1.length==0){break;}
+        //            console.log(d1.pop());
+        //        }
+        //
+        //        while(d1.length!=0){
+        //            
+        //            console.log(d1.pop());
+        //        }
+        //        while (length) { //0==false 이므로 길이가 0되면 반복탈출
+        //            console.log(d1.pop());
+        //        }
+
+        for (var i = 0; i < 10; i++) {
+            d1[i] = i;
+        }
+        var tmp;
+        while (tmp = d1.pop()) { //undefine >> false 이므로 반복탈출
+            console.log("tmp=" + tmp, typeof tmp);
+
+        }
+        tmp = d1.pop();
+        console.log("tmp=", typeof tmp);
+
+        d1 = new Array();
+        for (var i = 0; i < 10; i++) {
+            d1.push(i);
+        }
+        console.log(d1);
+        d1.reverse();
+        console.log(d1);
+        d1.push(12);
+        d1.push(15);
+        d1.push(35);
+        d1.sort();
+        d1.reverse();
+        d1.sort();
+        console.log(d1); //정렬이 첫번째 자리수에 맞춰서 정렬됨
+        //[0, 1, 12, 15, 2, 3, 35, 4, 5, 6, 7, 8, 9]
+
+        d1.sort(function(a, b) {
+            return a - b;
+        }); //오름차순
+        //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 15, 35]
+        /*
+        When the sort() method compares two values, 
+        it sends the values to the compare function, 
+        and sorts the values according 
+        to the returned (negative, zero, positive) value.
+        sort메서드에서 a-b의 부호를 이용해서 두 값을 비교함
+        */
+        console.log(d1);
+
+        d1.sort(function(a, b) {
+            return b - a;
+        }); //내림차순
+        console.log(d1);
+        //[35, 15, 12, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+        //sort정렬은 문자열로 비교함. 첫 문자의 알파벳 순으로
+        //정렬한다. 첫 문자의 오름차순. 
+        d2 = ['basd', 'asd', 'eadsf', 'aaaa', 'ddesa', 'ffea'];
+        d2.sort();
+        console.log(d2);
+        /*--------------------------------------------------*/
+
+
+        //function
+        func11(); //function 호출은 선언위치와 관계없다.
+        //parameter를 받을 수 있고 parameter를 안주고도 호출이 된다. 
+        //단 f11 = undefine
+        function func11(f11) { //java : static void func(){}
+            console.log('func11 run...' + f11);
+            return 'fun11() return...';
+        } //return , return value 선택적. 
+        func11();
+        console.log(func11());
+
+        function func11(x, y) {
+            console.log('func11 run...' + (x + y));
+        }
+        func11(1, 3);
+        func11(1); //두번째 정의된 func11이 호출된다. 오버로딩X
+
+
+        /*--------------------------------------------------*/
+        var x = 1234; //전역변수
+        function func02() {
+            var x = 4321; //지역변수
+            console.log("x = " + x);
+            return;
+        }
+        func02(); //지역변수 x가 출력됨 
+        console.log('x = ' + x); //전역변수 호출   
+
+
+        var x1 = 1234; //전역변수
+        function func03() {
+            x1 = 4321; //지역변수
+            console.log("x1 = " + x1);
+            return;
+        }
+        func03(); //전역변수 x = 4321로 바뀜 
+        console.log('x1 = ' + x1); //4321 호출
+
+        /*  
+            x = 4321
+            x = 1234
+            x1 = 4321
+            x1 = 4321
+                
+        */
+        /*--------------------------------------------------*/
+
+        (function() { //익명함수
+            var a = 1234;
+            var b = 4566;
+            console.log('a+b = ' + (a + b));
+        })();
+        //a+b = 5800
+        /*--------------------------------------------------*/
+
+        function fun05() {
+            console.log('x = ' + arguments, typeof arguments);
+            return;
+        }
+
+        fun05(); // [object Arguments] object
+
+
+        /*
+        자바스크립트에서는 함수를 호출할 때 인수들과 함께 
+        암묵적으로 arguments 객체가 함수 내부로 전달된다.
+        arguments 객체는 함수를 호출할 때 넘긴 인자들이 
+        배열 형태로 저장된 객체를 의미한다.
+        특이한 점은 실재 배열이 아닌 마치 배열 형태처럼 
+        숫자로 인덱싱된 프로퍼티가 있는 객체다.
+        */
+
+        /*--------------------------------------------------*/
+        function fun06() {
+            for (var idx in arguments) {
+                console.log(arguments[idx]);
+            }
+
+            return;
+        }
+        fun06(1, 2, 3); //1, 2 , 3 출력됨
+        /*--------------------------------------------------*/
+
+        function func07() {
+            if (arguments[1]) return arguments[0] + arguments[1];
+            else if (arguments[0]) return arguments[0];
+            //parameter가 2개일 때, 1개일 때
+            return 0;
+        }
+        var f7 = func07(100, 10);
+        console.log(f7);
+        /*--------------------------------------------------*/
+
+        function fun08() {
+            console.log("fun08 run...");
+        }
+        (fun08)();
+        /*--------------------------------------------------*/
+
+        var fn01 = function() {
+            console.log("fn01 run...");
+        }; //익명함수를 변수로 받을 수 있다. 익명함수 선언 이전 라인에서는 함수를 호출할 수 없다.
+        fn01();
+        console.log(typeof fn01); //funtion type
+
+        /*--------------------------------------------------*/
+        /*call back함수*/
+
+        function fn02(a) {
+            console.log('fn02 run..');
+            console.log(typeof a);
+        }
+        fn02('asdf');
+
+        function fn03(a) {
+            console.log('fn03 run..');
+            console.log(typeof a);
+            a();
+        }
+        fn03(fn01); //parameter 로 함수를 받을 수 있다.
+        fn01(); //fun01호출
+
+
+        /*--------------------------------------------------*/
+        /*
+        call back함수
+        콜백 함수는 함수 안에서 어떤 특정한 시점에 호출되는 함수 보통 콜백 함수는 함수의 매개변수로 전달하여 특정 시점에서 콜백 함수를 호출      
+        */
+        var arr = [3, 7, 1, 5];
+
+        var fn04 = function(a, b) { //콜백함수
+            console.log(a, b);
+            return a - b;
+        }
+
+        arr.forEach(function func01(item, idx) {
+            console.log(item, idx);
+        });
+        arr.forEach(fn04);
+
+        console.log('-------------------------');
+
+        arr.sort(fn04); //sort의 매개변수로 fn04 callback함수를 호출함
+
+        console.log(arr);
+        /*--------------------------------------------------*/
+
+
+
+        //null
+        //undefine
+    </script>
+</head>
+
+<body>
+
+</body></html>

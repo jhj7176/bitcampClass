@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        
+       //var objkey = new Object();
+        var objkey2 = {'ky':'vl'};
+        //둘 다 같으 객체. 주소값. 
+        //ref가 달라도 타입과 값이 같으면 같다고 인식함.
+
+        var object=new Object();
+        object.key111 = 'baba';
+        object.key222 = 'dada';
+        
+        
+        var obj = {};
+        obj['key1'] = 'val1';
+        obj.key2 = 'val2';
+        obj.objkey = 'val4'; //key값이 문자여로 저장됨.
+        obj['object'] = object;//key값이 object type으로 저장됨.
+        
+        
+        console.log(obj.objkey);
+       // console.log(obj[objkey]);
+        console.log("object" , obj.object);
+        console.log(obj.object.key111);
+        console.log(obj.object.key222);
+        
+        for (var key in obj) {
+            console.log(typeof key, typeof obj[key], key, obj[key]);
+        }
+   
+     //console.log({}, obj[objkey]); 
+        //    obj.forEach(function(val, key){
+        //        
+        //       console.log(val, key); 
+        //    });
+        // object는 forEach 불가능         
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+</body>
+
+</html>
