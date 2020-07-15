@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title> Title </title>
+    <style rel="stylsheet" type="text/css">
+        ul {
+            overflow: hidden;
+            width: 500px;
+            height: 496px;
+            padding: 0px;
+            margin: 0px 0 0 0;
+            border: 1px solid;
+        }
+
+        ul>li {
+            list-style: none;
+            float: left;
+/*            margin: -5px 0 0 0;*/
+        }
+
+        ul>li>img {
+            width: 260px;
+            height: 250px;
+            margin: 0px 0 0 0;
+            float: left;
+              
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><img src="img/samsek.jpg" alt=""></li>
+        <li><img src="img/samsek1.jpg" alt=""></li>
+        <li><img src="img/samsek2.jpg" alt=""></li>
+        <li><img src="img/samsek3.jpg" alt=""></li>
+        <li><img src="img/samsek4.jpg" alt=""></li>
+        <li><img src="img/samsek5.jpg" alt=""></li>
+    </ul>
+
+
+    <script type="text/javascript">
+        var ul = document.querySelector('ul');
+        var cloop;
+        function loop() {
+            var first = ul.firstElementChild;
+            var copyli = first.cloneNode();
+            var copyimg = first.firstElementChild.cloneNode();
+            copyli.appendChild(copyimg);
+            ul.appendChild(copyli);
+            ul.removeChild(first);
+            
+            cloop = setTimeout(loop, 1000);
+        }
+        loop();
+        window.setTimeout(function() {
+            clearTimeout(cloop);
+
+        }, 10000)
+    </script>
+</body></html>

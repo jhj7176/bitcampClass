@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script type="text/javascript">
+        //               var frame = window.open('https://www.naver.com');
+        //window.open(URL, name, specs, replace)
+        var frame;
+
+        function func01() {
+
+            frame = window.open('https://www.naver.com', '_blank', 'width=400,height=400');
+            frame.focus();
+
+
+        }
+        //         window.frames[0] = frame;
+        function func02() {
+            frame.close();
+        }
+
+        //               setTimeout(func02, 2000);
+        //    window.location.replace('https://www.naver.com');
+        //history가 안남아서 뒤로가기가 안된다.
+        //    window.location.href('https://www.naver.com');
+        //window.location.href;
+        function func03() {
+            window.frame.resizeBy(0, 70);
+            frame.focus();
+        }
+    </script>
+
+</head>
+
+<body>
+    <button onclick="func01();">open</button>
+    <button onclick="func02();">close</button>
+    <button onclick="func03();">resizeBY</button>
+</body></html>

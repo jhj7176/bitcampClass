@@ -1,0 +1,157 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    
+    <script type="text/javascript">
+        window.document.write('<h1>test</h1>');
+        //    window.alert("sadf\r\nsadf");
+        //JS컴파일 빠름, html&css 인터프리터 느림
+
+        var cnt = 1;
+        var arr = new Array();
+
+        function newInstance(name, kor, eng, math) {
+
+            var obj = {
+                'num': cnt,
+
+                'getNum': function() {
+                    return obj.num;
+                },
+                'getName': function() {
+                    return obj.name;
+                },
+                'getKor': function() {
+                    return obj.kor;
+                },
+                'getEng': function() {
+                    return obj.eng;
+                },
+                'getMath': function() {
+                    return obj.math;
+                },
+                'setName': function(name) {
+                    this.name = name;
+                },
+                'setKor': function(kor) {
+                    this.kor = kor;
+                },
+                'setEng': function(eng) {
+                    this.eng = eng;
+                },
+                'setMath': function(math) {
+                    this.math = math;
+                }
+
+            };
+            obj.setName(name);
+            obj.setKor(kor);
+            obj.setEng(eng);
+            obj.setMath(math);
+            cnt++;
+            return obj;
+        };
+        //        var stu = newInstance();
+        //        stu.setNum(1);
+        //        stu.setName('settername');
+        //        stu.setKor(88);
+        //        stu.setEng(31);
+        //        stu.setMath(53);
+        //        arr.push(stu);
+        //        
+        //        var stu = newInstance();
+        //        stu.setNum(2);
+        //        stu.setName('settername22');
+        //        stu.setKor(88);
+        //        stu.setEng(31);
+        //        stu.setMath(53);
+        //        arr.push(stu);      
+        //        
+        //        var stu = newInstance();
+        //        stu.setNum(2);
+        //        stu.setName('삼번');
+        //        stu.setKor(22);
+        //        stu.setEng(45);
+        //        stu.setMath(33);
+        //        arr.push(stu);
+
+        arr.push(newInstance('tester' + cnt, 44, 53, 77));
+        arr.push(newInstance('tester' + cnt, 55, 53, 89));
+        arr.push(newInstance('tester' + cnt, 44, 53, 52));
+        arr.push(newInstance('tester' + cnt, 33, 73, 99));
+
+        //
+        //        obj = {
+        //            'num': 2,
+        //            'name': 'test2',
+        //            'kor': 77,
+        //            'eng': 88,
+        //            'math': 94
+        //        };
+        //        arr.push(obj);
+        //        obj = {
+        //            'num': 3,
+        //            'name': 'test3',
+        //            'kor': 77,
+        //            'eng': 88,
+        //            'math': 94
+        //        };
+        //        arr.push(obj);
+        //        obj = {
+        //            'num': 4,
+        //            'name': 'test4',
+        //            'kor': 77,
+        //            'eng': 88,
+        //            'math': 94
+        //        };
+        //        arr.push(obj);
+
+
+
+        document.write('<table border ="0" width = 40%>');
+        document.write('<tr bgcolor = "#fefed2">');
+        document.write('<th>학번</th>');
+        document.write('<th>이름</th>');
+        document.write('<th>국어</th>');
+        document.write('<th>영어</th>');
+        document.write('<th>수학</th>');
+        document.write('</tr>');
+
+        for (var i = 0; i < arr.length; i++) {
+            var stu = arr[i];
+            /*
+            전역객체 arr, newInstance, cnt
+            활성객체 getter, setter methods
+            자유변수 num, name, kor, eng, math
+            scope chain이 기억함.
+            */
+            //scope chain에서 getnum을 추적해서
+            //getnum의 기능을 사용한다.
+            document.write('<tr align = "center">');
+            document.write('<td>' + stu.getNum() + '</td>');
+            document.write('<td>' + stu.getName() + '</td>');
+            document.write('<td>' + stu.getKor() + '</td>');
+            document.write('<td>' + stu.getEng() + '</td>');
+            document.write('<td>' + stu.getMath() + '</td>');
+            document.write('</tr>');
+        }
+
+        document.write('</table>');
+    </script>
+</head>
+
+
+
+
+
+
+
+
+
+<body>
+</body></html>

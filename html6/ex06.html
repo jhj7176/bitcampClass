@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>selector</title>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+        
+    </script>
+</head>
+
+<body>
+    <h1>선택자</h1>
+    <input type="text" name="input" />
+    <button onclick="add();">추가</button>
+    <button onclick="del();">삭제</button>
+    <ul id="ul01">
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+    </ul>
+
+    <script type="text/javascript">
+        var cnt = 5;
+        var ul = document.querySelector('#ul01');
+
+        function add() {
+            var msg = document.querySelector('input').value;
+            if (msg.trim() == '') return;
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(msg));
+            ul.appendChild(li);
+            document.querySelector('input').value = '';
+
+        }
+
+        function del() {
+            var last = ul.lastElementChild;
+            ul.removeChild(last);
+        }
+    </script>
+
+</body></html>

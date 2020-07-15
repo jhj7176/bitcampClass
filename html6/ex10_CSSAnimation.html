@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <style rel="stylesheet" type="text/css">
+        h1 {}
+
+        h1+div {
+            background-color: antiquewhite;
+            overflow: hidden;
+            width: 400px;
+            height: 200px;
+        }
+
+        h1+div>ul {
+            overflow: hidden;
+            width: 1920px;
+            /*            animation-name: ani1;*/
+            animation-duration: 6s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+            animation-play-state: paused;
+
+        }
+
+        h1+div>ul>li {
+            list-style: none;
+            float: left;
+        }
+
+        h1+div>ul>li>img {
+            float: none;
+            width: 200px;
+            height: 200px;
+        }
+
+        @keyframes ani1 {
+            from {
+                margin-left: 380px;
+            }
+
+            to {
+                margin-left: -1240px;
+            }
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <h1>Animation</h1>
+    <div id="imgli">
+        <ul>
+            <li><img src="img/samsek.jpg" alt="" /></li>
+            <li><img src="img/samsek1.jpg" alt="" /></li>
+            <li><img src="img/samsek2.jpg" alt="" /></li>
+            <li><img src="img/samsek3.jpg" alt="" /></li>
+            <li><img src="img/samsek4.jpg" alt="" /></li>
+            <li><img src="img/samsek5.jpg" alt="" /></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var ul = document.querySelector('ul');
+        ul.style.webkitAnimationName = 'ani1';
+        ul.style.animationPlayState = 'running';
+    </script>
+
+</body></html>

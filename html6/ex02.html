@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript">
+        //window method
+        //window object 
+        //The window object represents an open window in a browser.
+        window.console.log('출력');
+        //        window.alert('알림');//dialog generate
+        //        var result1 = window.confirm('확인');//확인 true 취소false반환
+        //        console.log(result1);
+        //        var msg = window.prompt();
+        //        console.log(msg);
+        //        document.write(msg);
+        //        window.print();//print dialog
+
+        var cb = function() {
+            alert("Hello");
+        }
+        //        window.setTimeout(cb, 1000);
+        var interval = window.setInterval(cb, 2000);
+        //resource낭비 심함. 느려짐.
+        window.setTimeout(function() {
+            window.clearInterval(interval);
+            //parameter로 inteval을 지정하는 target을 전달해준다. 
+        }, 1000);
+
+
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        document.write(w + ', ' + h); //2133, 1118 fullscreen viewport
+
+var target;
+        function print() {
+            console.log(new Date());
+           target=window.setTimeout(print, 1000);
+          
+        }
+        print();
+    
+        
+        window.setTimeout(function() {
+            clearTimeout(target);
+            console.log('clear');
+        }, 3000)
+
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
