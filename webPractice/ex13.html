@@ -6,8 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
+    <link rel="stylesheet" type="text/css" href="myGrid.css" />
+    <script type="text/javascript">
+        var cul, prev, next;
+        var cnt = 0;
 
-    <link rel="stylesheet" type="text/css" href="myGrid.css">
+        function cnext() {
+            cul.style.marginLeft = parseInt(cul.style.marginLeft) - 200 + 'px';
+            /*ul영역을 왼쪽으로 움직인다. 200px만큼씩*/
+
+        }
+
+        function cprev() {
+            cul.style.marginLeft = parseInt(cul.style.marginLeft) + 200 + 'px';
+            /*ul영역을 오른쪽으로 움직인다. 200px만큼씩*/
+        }
+
+
+        var ols;
+        var imgs;
+        window.onload = function() {
+            
+            imgs = document.querySelector('img');
+            
+            
+            
+            
+            /*사진 이동. prev next버튼으로 사진 움직임*/
+            cul = document.querySelector('#content>div>ul');
+
+            cul.style.marginLeft = '-40px'; /*ul의 처음위치 조정. 화면을 보고 상황에 맞게 설정한다*/
+            prev = document.querySelectorAll('#content>div>a')[0];
+            next = document.querySelectorAll('#content>div>a')[1];
+            /*컨텐츠아래 div아래에 a태그가 2개 있는데 selectorAll로 가져온다.*/
+
+            next.onclick = function() {
+                //next에 마우스로 클릭하면 이벤트를 받아 함수 수행한다.
+                //marginLeft를 -200씩 누를때마다 ul영역이 왼쪽으로 움직여 가려진 이미지들이 나타남
+                //누를때마다 cnt는 증가 >> cnt x -200px가 ul에 있는 전체 이미지 길이보다 크면 안됨. 
+                if (cnt++ < 4) {
+                    cnext();
+                } else {
+                    cnt--;
+                }
+                return false;
+            }
+            prev.onclick = function() {
+
+                if (cnt-- > 0) {
+                    cprev();
+                } else {
+                    cnt++;
+                }
+                return false;
+            }
+
+
+        } //onload
+    </script>
+
+
+
+
+
     <style rel="stylesheet" type="text/css">
         a {
             text-decoration: none;
@@ -26,9 +87,11 @@
             margin: -8px auto;
             overflow: hidden;
             position: fixed;
+            z-index: 1;
         }
 
         #header>div {
+            z-index: 1;
             width: 1050px;
             height: 35px;
             overflow: hidden;
@@ -46,6 +109,7 @@
         }
 */
         #header>div>a>img {
+            z-index: 1;
             margin: 8px auto;
             width: 150px;
 
@@ -56,6 +120,7 @@
         }
 
         #header>div>h2 {
+            z-index: 1;
             margin: 0px 0px 10px 0px;
             width: 200px;
             /*            float: left;*/
@@ -65,6 +130,7 @@
         }
 
         #nav {
+            z-index: 1;
             margin: 0px 0px 10px -10px;
             overflow: hidden;
             padding-top: 37px;
@@ -72,6 +138,7 @@
         }
 
         #nav>div {
+            z-index: 1;
             margin: -10px auto;
             width: 1200px;
             overflow: hidden;
@@ -79,8 +146,9 @@
         }
 
         #nav>div>ul {
+            z-index: 1;
             background-color: beige;
-            height: 32px;
+            height: 34px;
             width: 985px;
             overflow: hidden;
             margin: auto 10px;
@@ -88,13 +156,15 @@
         }
 
         #nav>div>ul:hover {
+            z-index: 1;
             transition-duration: 2s;
             /*            border: 1px solid;*/
             height: 200px;
         }
 
         #nav>div>ul>li {
-/*            line-height: 15px;*/
+            z-index: 1;
+            /*            line-height: 15px;*/
             width: 120px;
             text-align: center;
             margin: 10px 10px 10px 75px;
@@ -104,12 +174,14 @@
         }
 
         #nav>div>ul>li>a {
+            z-index: 1;
             text-decoration: none;
             display: block;
             color: black;
         }
 
         #nav>div>ul>li>a:hover {
+            z-index: 1;
             border: 1px solid;
             padding: 1px 1px;
             color: brown;
@@ -117,138 +189,100 @@
         }
 
         #nav>div>ul>li>ul {
+            z-index: 1;
             border-top: 1px solid;
         }
 
         #nav>div>ul>li>ul>li {
+            z-index: 1;
             margin: 15px 0px 0px 0px;
         }
 
         #nav>div>ul>li>ul>li>a {
-
+            z-index: 1;
             text-decoration: none;
             color: black;
         }
 
         #nav>div>ul>li>ul>li>a:hover {
+            z-index: 1;
             color: brown;
         }
 
-        #content {}
+
+        #content {
+
+            border: 1px solid;
+            margin-top: 50px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            /*            background-color: antiquewhite;*/
+        }
 
         #content>div {
-            text-align: center;
-            margin-top: 20px;
-        }
 
-
-        #content>div>div {
+            border: 1px solid;
             /*            border: 1px solid;*/
-            width: 500px;
-            padding: 4px;
-            float: left;
-
-        }
-
-        #content>div>div:nth-child(3) {
-            /*가격*/
-            /*            border: 1px solid;*/
-            float: left;
-            border-top: 1px dotted;
-            border-bottom: 1px dotted;
-            overflow: hidden;
-        }
-
-        /*가격테이블*/
-        table {
-/*            border: 1px solid;*/
-            margin: auto;
-            table-layout: fixed;
-        }
-        tr {
-/*            background-color: antiquewhite;*/
-        }
-        td {
-            /*            background-color: aqua;*/
-            text-align: left;
-            width: 180px;
-        }
-
-        #content>div>div:nth-child(4) {
-            /*            border: 1px solid;*/
-            float: left;
-            /*            text-align: left;*/
-            height: 380px;
-
-        }
-
-        #content>div>div:nth-child(4) {
-            /*책설명*/
-            /*            border: 1px solid;*/
-            float: left;
-            text-align: left;
-            height: 380px;
-            border-bottom: 1px dotted;
-        }
-
-        #content>div>div:nth-child(5) {
-            /*            border: 1px solid;*/
-            float: left;
-        }
-
-        #content>div>div:nth-child(5)>ul {
-            /*            border: 1px solid;*/
-            overflow: hidden;
-        }
-
-        #content>div>div:nth-child(5)>ul>a>li {
-            /*책사러가기*/
-            list-style: none;
             display: block;
-            border: 1px solid;
-            margin: auto 170px;
-            padding: 0px 10px 0px 10px;
+            margin: 10px 10px 10px 200px;
+            width: 600px;
+            height: 200px;
+            overflow: hidden;
+
+        }
+
+        #content>div>a {
+
             float: left;
+            text-decoration: none;
+            color: black;
         }
 
-        #content>div>div+div>img {
-            width: 400px;
-            margin: auto;
-            padding: 0px;
+        #content>div>a {
 
+            position: relative;
+            top: -320px;
+            left: 0px;
+            background-color: chocolate;
+            height: 320px;
+            width: 50px;
+            display: inline-block;
+            opacity: 0.5;
+            line-height: 420px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        #content>div>a:last-child {
+
+            left: 500px;
         }
 
 
 
-
-
-        .article>form {
+        #content>div>ul {
             /*            border: 1px solid;*/
-            margin: 0px 0px 0px 10px;
+            margin: auto;
+            display: block;
+            overflow: hidden;
+            width: 1900px;
+            height: 200px;
 
-            width: 330px;
+        }
+
+        #content>div>ul>li {
+
+            list-style: none;
             float: left;
-            /*            overflow: hidden;*/
+            display: inline-block;
+            margin: 0px auto;
         }
 
-        .article+.article>p {
-            /*검색창 옆 p tag*/
-            width: 680px;
-            margin: auto;
-            border: 1px solid;
-            overflow: hidden;
-            /*            float: left;*/
-        }
 
-        .container>div+div+div+div+div>div>div>p {
 
-            /*검색창 옆 p tag*/
-            width: 1020px;
-            margin: auto;
-            border: 1px solid;
-            overflow: hidden;
-            /*            float: left;*/
-        }
+
+
 
         #footer>div {
             margin: 10px 0px 10px 0px;
@@ -353,66 +387,27 @@
 
 
         <div class="row" id="content">
-
             <div class="mgrid_6 grid_12">
-                <div>
-                    <img src="img/12.png" alt="" />
+                <ul>
+                    <li><img src="img/samsek1.jpg" height="200" width="200" alt=""></li>
+                    <li><img src="img/samsek2.jpg" height="200" width="200" alt=""></li>
+                    <li><img src="img/samsek3.jpg" height="200" width="200" alt=""></li>
+                    <li><img src="img/samsek4.jpg" height="200" width="200" alt=""></li>
+                    <li><img src="img/samsek5.jpg" height="200" width="200" alt=""></li>
+                    <li><img src="img/samsek.jpg" height="200" width="200" alt=""></li>
+                    <li><img src="img/samsek3.jpg" height="200" width="200" alt=""></li>
 
-                </div>
-                <div>
-                    &nbsp;
-                    <h2>인간을 키우는 고양이</h2>
-                    <p>하하하 저/길막이와 삼색이 감수 | 다독임북스 | 2020년 01월 08일</p>
-                    <p><b>★★★★★9.7</b> 회원리뷰(<a href="#"> 31</a>건) | 판매지수 29235 </p>
-                </div>
-
-
-                <div class="price">
-                    <table>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                            <td>정가</td>
-                            <td>15,000원</td>
-                        </tr>
-                        <tr>
-                            <td>판매가</td>
-                            <td><b>13,500원</b> (10% 할인)</td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp;</td>
-                            <td>&nbsp;</td>
-                        </tr>
-                    </table>
-
-
-                </div>
-
-
-                <div>
-                    &nbsp;
-                    <p><br /><br /><br />&nbsp;2017년생 추정, 3세로 추정<br /></p>
-
-                    <p>&nbsp; haha ha 양어장에 굴러들어 온 돌. 노란색+흰색+검은색 털이 섞인 삼색 무늬 암컷 고양이. haha ha 채널의 미모 담당이자 애교 담당. 눈가의 검정 아이라인과 코 옆의 점이 매력 포인트로,[19] 비슷한 고등어 태비 고양이들 사이에서 누가 봐도 한눈에 시선을 사로잡는 미묘다. 과할 정도로 뽀송한 털을 보유하고 있다. 양어장의 고양이들 중에서 독보적으로 높고 가녀린 울음소리를 낸다.</p>
-
-                </div>
-                <div>
-                    <ul><a href="http://www.yes24.com/Product/Goods/85433555">
-                            <li>
-                                <b>책 사러가기</b>
-                            </li>
-                        </a>
-                    </ul>
-                </div>
-
+                </ul>
+                <a href="">prev</a>
+                <a href="">next</a>
+            </div>
+            <div>
+                <img src="img/angry.png" width="360" alt="">
 
             </div>
+            <div>
 
-
-
-
+            </div>
         </div>
         <div class="row" id="footer">
             <div class="mgrid_6 grid_12">W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright &copy; 1999-2020 by Refsnes Data. All Rights Reserved.
