@@ -14,12 +14,14 @@
         }
 
         #header {
+            z-index: 1;
             margin: -8px auto;
             overflow: hidden;
             position: fixed;
         }
 
         #header>div {
+            z-index: 1;
             width: 1050px;
             height: 35px;
             overflow: hidden;
@@ -36,7 +38,7 @@
 
         }
 */
-        #header>div>img {
+        #header>div>a>img {
             margin: 8px auto;
             width: 150px;
 
@@ -56,13 +58,16 @@
         }
 
         #nav {
+            z-index: 1;
             margin: 0px 0px 10px -10px;
             overflow: hidden;
             padding-top: 37px;
 
+
         }
 
         #nav>div {
+            z-index: 1;
             margin: -10px auto;
             width: 1200px;
             overflow: hidden;
@@ -70,6 +75,7 @@
         }
 
         #nav>div>ul {
+            z-index: 1;
             background-color: beige;
             height: 32px;
             width: 985px;
@@ -79,12 +85,14 @@
         }
 
         #nav>div>ul:hover {
+            z-index: 1;
             transition-duration: 2s;
             /*            border: 1px solid;*/
             height: 200px;
         }
 
         #nav>div>ul>li {
+            z-index: 1;
             width: 120px;
             text-align: center;
             margin: 10px 10px 10px 75px;
@@ -94,12 +102,14 @@
         }
 
         #nav>div>ul>li>a {
+            z-index: 1;
             text-decoration: none;
             display: block;
             color: black;
         }
 
         #nav>div>ul>li>a:hover {
+            z-index: 1;
             border: 1px solid;
             padding: 1px 1px;
             color: brown;
@@ -107,20 +117,23 @@
         }
 
         #nav>div>ul>li>ul {
+            z-index: 1;
             border-top: 1px solid;
         }
 
         #nav>div>ul>li>ul>li {
+            z-index: 1;
             margin: 15px 0px 0px 0px;
         }
 
         #nav>div>ul>li>ul>li>a {
-
+            z-index: 1;
             text-decoration: none;
             color: black;
         }
 
         #nav>div>ul>li>ul>li>a:hover {
+            z-index: 1;
             color: brown;
         }
 
@@ -136,6 +149,7 @@
 
         #content>div:nth-child(1)>img {
             width: 335px;
+            margin-right: 10px;
         }
 
         #content>div:nth-child(1)>p {
@@ -146,7 +160,7 @@
 
         #content>div+div {
             width: 680px;
-            height: 700px;
+            height: 680px;
             border: 1px solid;
         }
 
@@ -164,28 +178,39 @@
         #content>div+div>div+div {
             /*video div*/
 
-            height: 270px;
-            width: 650px;
+            height: 250px;
+            width: 655px;
 
         }
 
         #content>div+div>div+div>div:nth-child(1) {
-            margin: 40px 0px 0px 0;
+            margin: 45px 0px 0px 0;
             float: left;
         }
-        .video{ /*비디오 div*/
-          z-index: -1;
+
+        .video {
+            /*비디오 div*/
+            z-index: -1;
         }
-        .video>video { /*비디오 태그*/
+
+        /*
+        .video>video {
+            비디오 태그
             width: 300px;
             height: 160px;
-        
+
+        }  */
+        .video>iframe {
+            /*비디오 태그*/
+            width: 300px;
+            height: 160px;
+
         }
 
         #content>div+div>div+div>div:nth-child(2) {
             /*class >> .vedeoDesc*/
             width: 350px;
-            height: 260px;
+            height: 245px;
             overflow: auto;
 
         }
@@ -240,7 +265,7 @@
             animation-duration: 6s;
             animation-iteration-count: infinite;
             animation-direction: alternate-reverse;
-            animation-play-state: paused;
+            animation-play-state: paused;/**/
 
         }
 
@@ -270,7 +295,7 @@
 <body>
     <div class="container">
         <div class="row" id="header">
-            <div class="mgrid_4 grid_12"><img src="img/sandbox.png">
+            <div class="mgrid_4 grid_12"><a href="ex10.html"><img src="img/sandbox.png"></a>
                 <h2>&nbsp;Hahaha Channel</h2>
             </div>
         </div>
@@ -307,7 +332,7 @@
                         </ul>
 
                     </li>
-                    <li><a href="https://www.youtube.com/c/hahahaYouTube/featured">Youtube</a>
+                    <li><a href="https://youtu.be/2XwShDLtJFI">Youtube</a>
 
                         <ul>
                             <li><a href="ex12.html">Book</a></li>
@@ -321,7 +346,7 @@
         </div>
         <div class="row" id="content">
             <div class="mgrid_6 grid_4">
-                <img src="img/12.png">
+                <img src="img/11.png">
 
 
                 <div id="img">
@@ -352,7 +377,8 @@
                 <div>
 
                     <div class="video">
-                        <video autoplay controls src="https://youtu.be/6xaqHiJQYwg"></video>
+                        <!-- <video autoplay controls src="https://www.youtube.com/embed/6xaqHiJQYwg" poster="img/samsek3.jpg"></video>-->
+                        <iframe width="" height="" src="https://www.youtube.com/embed/6xaqHiJQYwg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="videoDesc">
                         <p>&nbsp;QnA 영상에서, 본인의 사생활 보호를 위해 최소한의 신상 정보 외에는 어떠한 사적인 정보도 공개하지 않겠다고 밝혔다. 거주지를 언급하지 않으며, 얼굴은커녕 목소리를 드러내지 않고, 가끔은 본인의 그림자까지 가린다. QnA에서도 나이 정도만 밝힐 뿐 키나 생일같은 사소한 질문마저 답하지 않았다.<br />
@@ -368,7 +394,7 @@
         </div>
 
         <div class="row">
-            <div class="mgrid_12 grid_12">&nbsp;
+            <div class="mgrid_6 grid_12">&nbsp;
                 <div class="article">
                     <form>
                         <select>
@@ -388,7 +414,7 @@
         </div>
 
         <div class="row">
-            <div class="mgrid_12 grid_12">&nbsp;
+            <div class="mgrid_6 grid_12">&nbsp;
 
                 <div class="article">
                     <p>&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents</p>
@@ -397,7 +423,7 @@
         </div>
 
         <div class="row">
-            <div class="mgrid_12 grid_12">&nbsp;
+            <div class="mgrid_6 grid_12">&nbsp;
 
                 <div class="article">
                     <p>&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />board-title-article-contents&nbsp;&nbsp;<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />contents&nbsp;&nbsp;board-title-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents&nbsp;&nbsp;board-title-article-contents</p>
@@ -407,7 +433,7 @@
 
 
         <div class="row" id="footer">
-            <div class="mgrid_12 grid_12">W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright &copy; 1999-2020 by Refsnes Data. All Rights Reserved.
+            <div class="mgrid_6 grid_12">W3Schools is optimized for learning, testing, and training. Examples might be simplified to improve reading and basic understanding. Tutorials, references, and examples are constantly reviewed to avoid errors, but we cannot warrant full correctness of all content. While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. Copyright &copy; 1999-2020 by Refsnes Data. All Rights Reserved.
                 Powered by W3.CSS.</div>
         </div>
     </div>

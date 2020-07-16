@@ -1,6 +1,16 @@
 /*mobile*/
-@media screen and (max-width:1023px) {
+img{
+        display: block;
+        margin: auto;
+}
 
+@media all and (max-width:1023px) {
+    
+    img{
+        max-width: 70%;
+        
+
+    }
     .container,
     .containerw {
         width: 100%;
@@ -86,8 +96,11 @@
 }
 
 /*Pc*/
-@media screen and (min-width:1024px) {
 
+@media all and (min-width:1024px) {
+
+
+    
     .container {
 
         width: 1024px;
