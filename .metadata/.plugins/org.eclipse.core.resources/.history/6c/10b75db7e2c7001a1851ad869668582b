@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<div id="header">
+	<h1>비트교육센터</h1>
+	<form action="">
+	<input type="text" id="id"/>
+	<input type="text" id="pw"/>
+	
+	</form>
+</div>
+
+</body>
+</html>

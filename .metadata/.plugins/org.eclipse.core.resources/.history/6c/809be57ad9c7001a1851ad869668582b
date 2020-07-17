@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var xhr;
+function io(){
+	xhr = new XMLHttpRequest();
+	xhr.open('ex01.jsp');
+	xhr.send();
+	
+	
+}
+window.onload=function(){
+	
+	var result=document.querySelector("h1+p");
+	result.onclick=function(){
+		window.location.href='ex01.html';
+	}
+	
+}
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<h1>ex01 jps page</h1>
+<p>result</p>
+<p></p>
+<p>result</p>
+</body>
+</html>

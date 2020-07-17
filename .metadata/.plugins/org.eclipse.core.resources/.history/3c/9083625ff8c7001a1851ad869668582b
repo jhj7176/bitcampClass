@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<students>
+	<student>
+	
+		<num>1</num>
+		<name>test</name>
+		<kor>99</kor>
+		<eng>44</eng>
+		<math>69</math>
+
+	</student>
+	<student>
+	
+		<num>2</num>
+		<name>test</name>
+		<kor>83</kor>
+		<eng>27</eng>
+		<math>55</math>
+
+	</student>
+	<student>
+	
+		<num>3</num>
+		<name>test</name>
+		<kor>91</kor>
+		<eng>76</eng>
+		<math>69</math>
+
+	</student>
+</students>

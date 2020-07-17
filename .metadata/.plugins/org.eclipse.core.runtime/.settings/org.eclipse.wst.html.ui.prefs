@@ -1,5 +1,2 @@
-commentBorder=\#c0c0c0 | null | false | false | false | false
-commentText=\#c0c0c0 | null | false | false | false | false
 eclipse.preferences.version=1
-tagBorder=\#ff972f | null | false | false | false | false
-tagName=\#f2b54d | null | true | false | false | false
+newFileTemplateName=New HTML File (5)

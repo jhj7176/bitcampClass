@@ -1,0 +1,50 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var xhr;
+var result
+
+function io(){
+	//비동기방식 통신
+	xhr = new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+		
+		
+	};
+	xhr.open('get','ex01.jsp');
+	xhr.send();
+	
+	
+}
+
+window.onload=function(){
+	
+	result=document.querySelector("h1+p");
+	result.onclick=function(){
+		window.location.href='ex01.html';
+	}
+	
+	io();
+}
+
+</script>
+
+
+
+</head>
+<body>
+
+
+<h1>자바스크립트 통신</h1>
+<p>result</p>
+<p><a href="ex01.html">link</a></p>
+<p><a href="">submit</a></p>
+<p>비동기방식 통신</p>
+</body>
+</html>

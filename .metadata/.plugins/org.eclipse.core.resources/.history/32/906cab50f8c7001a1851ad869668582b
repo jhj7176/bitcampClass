@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<?xml version="1.0" encoding="UTF-8"?>
+<students><!-- 정보를 저장하는 구조를 만들 수 있다.  -->
+	<student>
+	
+		<num>1</num>
+		<name>test</name>
+		<kor>99</kor>
+		<eng>44</eng>
+		<math>69</math>
+
+	</student><!-- 자식 앨리먼트 -->
+	<student>
+	
+		<num>2</num>
+		<name>test</name>
+		<kor>83</kor>
+		<eng>27</eng>
+		<math>55</math>
+
+	</student><!-- 자식 앨리먼트 -->
+	<student>
+	
+		<num>3</num>
+		<name>test</name>
+		<kor>91</kor>
+		<eng>76</eng>
+		<math>69</math>
+
+	</student><!-- 자식 앨리먼트 -->
+</students><!-- 루트앨리먼트 -->

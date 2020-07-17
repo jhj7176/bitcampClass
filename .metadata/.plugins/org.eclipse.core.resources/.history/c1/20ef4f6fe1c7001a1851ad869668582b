@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style rel="stylesheet" type="text/css">
+h1+p {
+	cursor: pointer;
+}
+</style>
+<script type="text/javascript">
+	var xhr;
+	var cnt = 0;
+	var result;
+	function io() {
+		// 비동기통신
+		/*
+		**readyStatus
+		0 객체생성, 아직 요청 안함.  
+		1 open메서드호출 통신 정보
+		2 send메세지호출  통신 실행 status와 헤더 도착안함
+		3 데이터 일부 받음
+		4 데이터 전부 받음, 완료
+		
+		**status
+		200 요청성공 ok
+		403 forbidden 접근거부
+		404 not found 페이지가 없다
+		500 internal server error 서버오류
+
+		 */
+		xhr = new XMLHttpRequest();//통신용 객체
+		xhr.onreadystatechange = function() {
+			console.log(++cnt);
+
+			if (xhr.status == 200) {//서버로부터 응답상태가 요청성공의미
+				if (xhr.readyState == 4) {
+					var msg = xhr.responseText;
+					result.innerHTML = msg;
+				}
+
+			} else {
+			}
+
+			/* 
+			else if(xhr.status==404){
+				result.innerText='페이지없음';
+			} */
+		};
+		xhr.open('get', 'ex01.jsp');//통신정보 ex01.jsp.를 호출정보. get방식으로
+		xhr.send();//통신실행
+	}
+
+	window.onload = function() {
+		result = document.querySelector("h1+p");
+		io();
+	};
+</script>
+</head>
+<body>
+	<h1>자바스크립트 통신</h1>
+	<p>result</p>
+	<p>
+		<a href="ex01.jsp">link</a>
+	</p>
+	<p>자바스크립트의 기본 통신방식은 비동기 통신입니다</p>
+</body>
+</html>
