@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jq/jquery-1.12.4.js"></script>
+    <title> Title </title>
+    <style rel="stylesheet" type="text/css">
+        div {
+            /*
+            width: 400px;
+            overflow: hidden;
+*/
+        }
+
+        div>ul {
+            /*
+            list-style: none;
+            padding: 0px;
+            width: 1200px;
+            overflow: hidden;
+*/
+        }
+
+        div>ul>li {
+            padding: 0px;
+            float: left;
+        }
+
+        div>ul>li>a {}
+
+        div>ul>li>a:hover {}
+
+        div>ul>li>a>img {
+            /*
+            width: 200px;
+            height: 200px;
+*/
+
+        }
+    </style>
+
+
+
+
+
+    <script type="text/javascript">
+        var imgw = '200';//이미지 가로세로크기.
+        var cnt = 2;//화면에 보여질 사진 수. 
+
+        function next() {
+            var before = parseInt($('ul').css('margin-left'));
+//            cnt++;
+            //            console.log(cnt);
+            //                        if (cnt == 4) {
+            if (before == -((imgw * 5) - (imgw * cnt))) {
+                //1200 - 600. 
+          
+                $('ul').css('margin-left', '0px');
+
+                //            $('ul').css('margin-left', parseInt($('ul').css('margin-left')) - 200 + 'px');
+
+            } else {
+
+                //    $('ul').css('margin-left', parseInt($('ul').css('margin-left')) - 200 + 'px');
+                $('ul').css('margin-left', before - imgw + 'px');
+
+            }
+
+        }
+
+        window.onload = function() {
+
+            $('div').css('width', imgw*cnt + 'px').css('height', imgw + 'px').css('overflow',
+                'hidden');
+            $('div>ul').css('list-style', 'none').css('padding', '0px').css('width', (imgw * 5) + 'px').css('overflow', 'hidden');
+            $('div>ul>li>a>img').css('width', imgw + 'px').css('height', imgw + 'px');
+
+
+
+            window.setInterval(next, 1000);
+
+
+        }
+    </script>
+
+
+
+</head>
+
+
+
+<body>
+
+    <div>
+        <ul>
+            <li><a href=""><img src="img/samsek1.jpg" alt=""></a></li>
+            <li><a href=""><img src="img/samsek2.jpg" alt=""></a></li>
+            <li><a href=""><img src="img/samsek3.jpg" alt=""></a></li>
+            <li><a href=""><img src="img/samsek4.jpg" alt=""></a></li>
+            <li><a href=""><img src="img/samsek5.jpg" alt=""></a></li>
+        </ul>
+
+    </div>
+
+
+
+
+
+</body></html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script type="text/javascript" src="jq/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+        window.onload = function() {
+
+            $('form>div').children().filter('label:first-child').css('display', 'inline-block').css('width', '200px').css('background-color', 'beige');
+            console.log($([type = 'password']));
+            //        $(':password').css('color', 'red');
+            $('[type=password]').css('color', 'chocolate');
+
+            console.log($('select').val());
+
+            console.log($(':password').attr('value'));
+
+            //attr('속성명', '속성값') 으로 태그 속성을 제어
+            $('img').attr('src', 'img/samsek.jpg');
+            $('form').attr('action', 'ex02.html');
+
+            // $('select').children().eq(2).attr('selected', 'selected');
+
+            $('#ra2').attr('checked', 'checked');
+            $('#ch3').attr('checked', 'checked');
+            console.log($('#ch3').val()); //on
+            console.log($('#ch3').attr('checked')); //checked
+            console.log($('#ra2').val()); //on
+            console.log($('#ra2').attr('checked')); //checked
+            console.log($('select').val()); //item3
+
+            //properties , attribute
+
+            //js foreach(func(item, idx, arr)) jquery와 반대. 주의!
+            $(':checkbox').each(function(idx, eles) {
+                this.onchange = function() {
+                    console.log($(':checkbox').prop('checked'));
+                    console.log(idx, $(eles).attr('id'));
+                };
+            });
+            //each()메서드가 수행되면서  체크박스에 idx부여함. 
+            //체크박스를 선택하면 onchange메서드가 수행되면서
+            //idx와 박스id와 checked true인지 출력한다
+
+
+            /*            $(':checkbox').onchange = function() {
+                            console.log($(':checkbox').prop('checked'));
+                        };*/
+
+
+            var sel = document.querySelector('select');
+            sel.onchange = function(e) {
+                //            console.log($('select').children().eq(e).prop('selected')); //selected
+                console.log($('select').children().eq(0).prop('selected')); //selected
+                console.log($('select').children().eq(1).prop('selected')); //selected
+                console.log($('select').children().eq(2).prop('selected')); //selected
+                console.log($('select').children().eq(3).prop('selected')); //selected
+                console.log('선택함');
+            };
+
+
+        } //onload
+    </script>
+</head>
+
+<body>
+
+
+    <h1>form tag</h1>
+    <form>
+
+        <div>
+            <label for="id">id</label>
+            <input type="text" id="id" name="id" />
+        </div>
+        <div>
+            <label for="pw">pw</label>
+            <input type="password" value="1234" id="pw" name="pw" />
+        </div>
+        <div>
+            <label for="">range</label>
+            <input type="range" id="ran" name="ran" min="1" max="50" />
+        </div>
+        <div>
+            <label for="ch1">check</label>
+            <input type="checkbox" id="ch1" name="ch" />
+            <input type="checkbox" id="ch2" name="ch" />
+            <input type="checkbox" id="ch3" name="ch" />
+        </div>
+        <div>
+            <label for="ra1">item</label>
+            <input type="radio" id="ra1" name="ra" />
+            <input type="radio" id="ra2" name="ra" />
+            <input type="radio" id="ra3" name="ra" />
+        </div>
+        <div>
+            <select name="sel" id="sel">
+                <option>item1</option>
+                <option>item2</option>
+                <!--                <option selected="selected">item3</option>-->
+                <option>item3</option>
+                <option>item4</option>
+                <option>item5</option>
+
+            </select>
+            <button>submit</button>
+        </div>
+
+
+    </form>
+
+    <img />
+</body></html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> Title </title>
+    <!--    <script type="text/javascript" src="jq/jquery-1.12.4.js">
+    </script>-->
+    <script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+
+    <script type="text/javascript">
+        /*------------------------------------------------------*/
+        window.onload = function() {
+
+            //element추가
+            $('p').add('h1').css('font-style', 'italic');
+
+            var h1 = document.getElementsByTagName('h1');
+            $('p').add(h1).css('background-color', 'beige');
+
+            $('p').each(function(idx, ele) {
+
+                console.log(ele, 'ele type : ' + typeof ele);
+                ele.style.color = 'white'; //js객체
+                // $(ele).css('color',"aqua");//jquery객체
+                $(ele).css('background-color', '#' + idx + 1 + '1000');
+            });
+
+
+
+            $('p').eq(0).css('color', 'chocolate').next().css('color', 'red').next().css('color', 'yellow').next().end().css('color', 'chocolate');
+
+
+            $('li').filter(":nth-child(even)").css('text-shadow', '3px 3px 3px chocolate');
+
+            var content1 = document.querySelector('h1+p');
+            $('body').find(content1).css('color', 'yellow');
+            //find는 자손앨리먼트를 조건에 맞게 찾음
+            /*Get the descendants(자손) of each element in the current set of matched elements, filtered by a selector, jQuery object, or element.*/
+
+
+
+            // $('body').has('h1').css('color','gray');
+            /*Reduce the set of matched elements to those that have a 
+            descendant(자손) that matches the selector or DOM element.*/
+
+            //find : body안의 content1 (자손을 찾아서 select)
+            //has :  a를 자손으로 가지고 있는 li(자손을 이용해서 parent를 select)
+            $('li').has('a').css('color', 'red');
+
+
+
+
+            //js foreach value, idx
+            //jquery each() idx value 순서다름!
+            $('h1,p').each(function() {
+                var h1 = document.querySelector('h1');
+                console.log($(this).is('h1')); //h1만 true
+                console.log($(this), h1);
+                console.log(typeof $(this), typeof h1);
+                console.log($(this) === $(h1)); //false
+
+            })
+
+
+            $('h1,p').not('h1').css('color', 'white');
+            //not: 선택에서 h1을 제외
+
+            $('h1').nextAll().css('background-color', 'pink');
+            /*Get all following siblings of each element in the set of matched elements, optionally filtered by a selector.*/
+
+            $('h1').nextUntil('div').css('background-color', 'beige');
+            /*Get all following siblings of each element up to but not including the element matched by the selector, DOM node, or jQuery object passed.*/
+
+            $('p').last().prevAll().css('color', 'green');
+            $('ol').parents().css('font-size', '110%');
+
+
+
+
+            $('h1').dblclick(function() {
+                $('p').slideToggle(700);
+            });
+        } //onload
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <h1>traversion</h1>
+    <p>내용1</p>
+    <p>내용2</p>
+    <p>내용3</p>
+    <p>내용4</p>
+    <div>
+        <ul>
+            <li>ul1</li>
+            <li>ul2</li>
+            <li>ul3</li>
+            <li><a href="">ul4</a></li>
+
+        </ul>
+        <ol>
+            <li>ol1</li>
+            <li>ol2</li>
+            <li>ol3</li>
+            <li>ol4</li>
+        </ol>
+    </div>
+
+
+</body>
+
+</html>

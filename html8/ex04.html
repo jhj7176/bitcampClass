@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> Title </title>
+    <script type="text/javascript" src="jq/jquery-1.12.4.js">
+    </script>
+
+    <script type="text/javascript">
+        
+        
+        window.onload=function(){
+            var h1 = document.querySelector('h1');
+            
+            $('h1').css('text-shadow', '4px 4px 4px chocolate');
+            $('h1').css('backgroundColor', 'beige');
+            //style css 속성명 >> background-color 
+            $('h1').css('font-style', 'italic');
+            
+            console.log($('h1').css('color'));//rgb(0, 0, 0)
+            /*jquery는 parameter 1개주면 getter역할.
+                    parameter 2개주면 setter역할.
+            */
+            //jquery는 dom 제어만 가능.
+            console.log(h1.style.color);
+            /*<empty string> : 속성값을 부여하지 않아서 값이 없음. 
+            */
+            
+            
+        }//onload
+        
+    </script>
+    
+    <style rel="stylesheet" type="text/css">
+    
+        *{
+            background-color: azure;
+        }
+    
+    </style>
+
+</head>
+
+<body>
+
+
+    <h1>css속성</h1>
+    <p></p>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+        <li>item7</li>
+
+    </ul>
+
+
+</body></html>

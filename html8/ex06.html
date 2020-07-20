@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jq/jquery-1.12.4.js"></script>
+    <title> Title </title>
+    <style rel="stylesheet" type="text/css">
+    
+        h1{
+            text-align: center;
+            width: 200px;
+            height: 100px;
+            margin: 1px;
+            border: 10px solid;
+            padding: 5px;
+        }
+    
+    </style>
+    
+    <script type="text/javascript">
+    
+        window.onload=function(){
+            console.log($(document).width(),$(document).height()); //숫자만
+            console.log(document, typeof document); //object
+            console.log($('body').width(),$('body').height()); //숫자만
+            console.log($('h1').width(),$('h1').height()); //숫자만
+            console.log($('h1').innerWidth(),$('h1').innerHeight()); //++padding
+            console.log($('h1').outerWidth(),$('h1').outerHeight()); //++padding++border
+            
+            console.log($('h1').css('width'),$('h1').css('height')); //43px 단위까지.
+            
+            
+            
+            
+            
+        }
+    
+    </script>
+    
+    
+    
+    </head>
+
+	<body>
+
+
+<h1>etc css</h1>
+
+
+</body>
+</html>

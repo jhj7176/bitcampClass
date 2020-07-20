@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <title> Title </title>
+    <style rel="stylesheet" type="text/css">
+
+        .cl01{
+            background-color: azure;
+        }
+        .cl02{
+            color: chocolate;
+            
+        }
+        
+
+    </style>
+
+    <script type="text/javascript">
+    
+        window.onload=function(){
+            $('h1').addClass('cl01');
+            $('h1').addClass('cl02');
+            $('li').addClass('cl01');//한번에 여러개에 class를 부여할 수 있다. 
+            $('li:gt(3)').removeClass('cl01');//gt(idx) 인덱스가 idx보다 큰 element 가져온다. 
+            console.log($('h1').hasClass('cl02'));
+            
+            
+        }
+        
+    </script>
+
+</head>
+
+<body>
+
+
+    <h1>CSS class</h1>
+    
+    <ul>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+        <li>item</li>
+    </ul>
+    
+    
+</body></html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title> Title </title>
+    <script type="text/javascript" src="jq/jquery-1.12.4.js">
+    </script>
+
+    <script type="text/javascript">
+        var $ = jQuery;
+        console.log(jQuery === $); //true
+        console.log(jQuery, $);
+
+        /*------------------------------------------------------*/
+
+        window.onload = function() {
+
+            //https://api.jquery.com/jQuery/
+
+            $('h1').css('color', 'chocolate');
+            $('h1').css('text-shadow', '5px 3px #333333');
+            $('p').css('color', 'darkgray');
+            //속성
+            $('.cl1').css('color', 'blue'); //클래스
+            $('#it2').css('color', 'red'); //아이디
+            //id>>class>>tag 우선순위. 동등선택=좀더아래line에쓴것이적용.
+            $('h1, p').css('background-color', 'beige');
+
+            $('li:nth-child(2n)').css('text-shadow', '2px 2px 3px chocolate');
+
+            /*-----------------------------------------------*/
+            //  var eles = $('p'); // js object <--> jquery object :type이 변함.
+            // for (var i = 0; eles.length; i++) {
+            //      console.log(eles[i].css('color', 'green'));
+            //else[]는 jquery object가 아니기 때문에 css method를 쓸 수 없다.
+            //}
+            /*error. jQuery(parameter) 파라미터로 String을 받음. 
+                jQuery functoin : return jQuery-Object-type
+                jQuery-object안에 css라는 method가 있기때문에 
+                css를 적용가능함. 
+            */
+            /*-----------------------------------------------*/
+
+
+            $('div>ul').css('background-color', 'beige');
+            //선택하는 방법은 css와 동일하다. 
+
+            var h1 = document.querySelector('h1'); //element
+            //$(h1).css('color', 'pink');
+            //js object >> jquery object로 casting되어서 css사용가능해짐.
+            var p1 = document.querySelector('h1+p');
+            var p2 = document.querySelector('h1+p+p');
+            var ps = [p1, p2]; //array
+            var lis = document.getElementsByTagName('li'); //HTMLCollection
+            var lis2 = document.querySelectorAll('div>ul>li'); //NodeList
+            $(lis).css('background-color', 'beige');
+            $(ps).css('font-style', 'italic');
+            //jQuery( ): jQuery-object-type으로 반환한다.
+
+
+            //div>ul>li중에 특정 li 선택할 때
+            //$('div>ul>li:nth-child(3)').css('font-style', 'italic');
+            //filtering
+
+            $('div>ul>li').eq(1).css('font-style', 'italic');
+            /* .eq( index )
+            Description: Reduce the set of matched elements to the one at the specified index.
+            */
+            //chaining
+            $('div>ul>li').css('font-style', 'italic').eq(3).css('font-style', 'normal'); //li4개를 이탤릭으로 바꿈> 3번째 li를 normal로바꿈. 
+
+            $('div>ul>li').css('font-style', 'italic').eq(0).css('font-style', 'normal').next().css('font-style', 'italic').next().css('font-style', 'normal').next().css('font-style', 'italic');
+            /* eq : 직전에 잡은 노드의 children index로 접근. 
+                eq로 잡은 앨리먼트에 next로 같은레벨의 다음 앨리먼트에 접근.           
+            */
+
+            $("h1+p+p").click(function() {
+                $('div>ul').slideToggle(1000);
+            });
+
+/*            
+            $("h1+p+p").dblclick(function() {
+                $('div>ul').slideUp();
+            });
+            
+            $("h1+p+p").dblclick(function() {
+                $('div>ul').slideDown();
+            });*/
+
+        } //onload
+   $('h1').next().next().next().children().first().parent().children().last().parent().parent().next().children().eq(6).children().eq(2).prev().css('background-color', 'gray');
+//Node 접근
+        
+        
+        
+
+    </script>
+
+    <style rel="stylesheet" type="text/css">
+        /*
+    h1{
+    background-color: beige;
+    font-style: 
+        }
+*/
+
+    </style>
+</head>
+
+<body>
+
+
+    <h1>선택자</h1>
+    <p>앨리먼트 선택</p>
+    <p class="cl1">css의 선택자 그대로</p>
+    <div>
+        <ul>
+            <li>item1</li>
+            <li id="it2">item2</li>
+            <li>item3</li>
+            <li id="it4">item4</li>
+
+
+        </ul>
+    </div>
+    <ul>
+        <li>item1</li>
+        <li class="cl1">item2</li>
+        <li>item3</li>
+        <li class="cl1">item4</li>
+        <li class="cl1">item5</li>
+        <li>item6</li>
+        <li>
+            <ol>
+                <li>item7-1</li>
+                <li>item7-2</li>
+                <li>item7-3</li>
+                <li>item7-4</li>
+            </ol>
+        </li>
+
+    </ul>
+
+
+</body>
+
+</html>
