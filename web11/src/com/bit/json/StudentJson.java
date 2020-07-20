@@ -35,9 +35,10 @@ public class StudentJson extends HttpServlet{
 			rs = stmt.executeQuery(sql);
 			boolean begin = true;
 			while (rs.next()) {
-				if (begin) {
+				
+				if (rs.isFirst()) {//is.first resultset첫번째 row이면 true
 					out.println("{");
-					begin = false;
+					begin = false;//boolean 변수를 만들어서 isFirst처럼 쓸 수 있다.
 				} else {
 					out.println(",{");
 				}
