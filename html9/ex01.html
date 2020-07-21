@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+   <!-- <script src="jq/jquery-1.12.4.js"></script>-->
+   <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <style rel="stylesheet" type="text/css">
+
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function() {
+        
+            $(['a','b','c','d']).each(function(idx, val){
+                console.log(idx, val);
+            });
+            
+            jQuery({'k':'v','k2':'v2'}).each(function(idx, val){
+                console.log(idx, val);
+            });
+            var arr = [{'k':'v','k2':'v2'},{'k':'v','k2':'v2'},{'k':'v','k2':'v2'}];
+            jQuery(arr).each(function(idx, val){
+                console.log('arr : '+idx, val, 'val === arr[idx]: '+(val === arr[idx]));
+            });
+            jQuery(function(){
+                console.log('func');
+            });
+            $('<h1>msg</h1>').each(function(){
+                console.log(this);
+            });
+            var msg = jQuery('h2');
+            var ele2 = jQuery('<h1>msg</h1>');
+            
+            var ele3 = document.createElement('h2');
+            ele3.appendChild(document.createTextNode('msg'));
+
+            $('body').html(ele2);
+//           document.write(ele2.html());
+            
+            //ele2 = ele3 
+            //jquery를 쓰면 노드작업을 거치지 않고 간단하게 앨리먼트를 만들 수 있다.
+            //화면에 배치는 안됨.
+            ele2.each(function(){
+                console.log($(this).text(), msg.text());
+            });
+            
+            ele2.text('수정');
+            ele2.each(function(){
+                console.log($(this).text(), msg.text());
+            });
+            
+        } //onload
+
+    </script>
+
+</head>
+
+<body>
+    <h1>JQuery</h1>
+    <h2>test</h2>
+</body>
+
+</html>

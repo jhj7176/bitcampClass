@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        .size100{
+            width: 100px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function() {
+
+            $('img').attr('src', 'img/samsek.jpg');
+            console.log($('img').prop('src'));
+            $('a').attr('href', 'ex02.html');
+            console.log($('a').prop('href')); //http://127.0.0.1:55524/html9/ex02.html
+            console.log($('a').attr('href'));
+            //ex02.html
+            console.log($('input').val());
+            console.log($('input').prop('readonly'));
+            //chedcked, seledcted, readonly .. 
+            
+              $('img').attr('src', function(idx, val){
+                  return 'img/samsek'+(idx+1)+'.jpg';
+                  
+              });
+
+                $('input').val('44444444');
+            $('img').addClass('size100');
+//            $('img').removeClass('size100');
+            
+
+        } //onload
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>attr method</h1>
+    <a href="#">link</a>
+    <p>내용</p>
+
+
+
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <input type="text" value="1234" readonly/>
+
+
+</body></html>

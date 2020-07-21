@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+
+
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            $('li').css('font-style', function(idx, val) {
+                console.log(idx, val);
+                return 'italic';
+            });
+            $('li').css('background-color', function(idx, val) {
+                var arr = ['#00bfff', '#1eddff', '#32f1ff', '#46ffff', '#96ffff', '#c8ffff'];
+                console.log(idx, val);
+                return arr[idx];
+            });
+            /*function--- parameter 로 인덱스번호와 value를 받는다. 
+            Type: Function( Integer index, String value ) => String or Number
+            A function returning the value to set. this is the current element. Receives the index position of the element in the set and the old value as arguments.*/
+
+            $('li').css({
+                'color': 'black',
+                'text-shadow': '3px 3px 3px chocolate'
+            });
+        } //onload
+    </script>
+
+</head>
+
+<body>
+
+
+    <h1>css method</h1>
+    <ul>
+        <li>item1</li>
+        <li>item2</li>
+        <li>item3</li>
+        <li>item4</li>
+        <li>item5</li>
+        <li>item6</li>
+    </ul>
+
+</body></html>

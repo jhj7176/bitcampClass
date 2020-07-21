@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    
+    
+    <style rel="stylesheet" type="text/css">
+        div {
+            width: 600px;
+            overflow: hidden;
+        }
+
+        div>ul {
+            list-style: none;
+            width: 1200px;
+            padding: 0px;
+        }
+
+        div>ul>li {
+            float: left;
+        }
+
+        div>ul>li>img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function fn01() {
+            var first = $('ul>li').eq(0);
+            //            $('ul').append(document.querySelector('li'));
+            //            $('ul').append(first);
+            $(first).appendTo('ul');
+            //document.createElement(first)
+            //
+            // appendChild(document.createTextNode('msg'));
+            //append와 반대로. 
+            setTimeout(fn01, 1000);
+        }
+        function fn02() {
+            $('ul>li').eq(0).appendTo('ul');
+            //ul의 첫번째 li를 선택해서 자기자신의 ul의 밑에 추가함. li가 밑으로 이동
+            setTimeout(fn02, 1000);
+        }
+
+        function fn03() {
+            var last = $('ul>li').eq(5);
+            $('ul').prepend(last); //append 와 달리 ul첫번째줄에 추가
+            setTimeout(fn02, 1000);
+        }
+        function fn04() {
+            $('ul>li').eq(5).prependTo('ul');
+            setTimeout(fn02, 1000);
+        }
+
+        window.onload = function() {
+
+            /*      $('ul').append('<li>add01</li>');
+                  $('ul').append('<li>add02</li>');
+                  $('ul').append(document.querySelector('li'));
+                  $('ul').append(document.querySelector('li'));
+                  $('ul').append(document.querySelector('li'));*/
+
+            
+            
+            $('ul').before('<p>before</p>');
+            
+            //ul의 앞과 뒤에 위치
+            $('<p>insert before</p>').insertBefore('ul');
+            $('ul').after('<p>after</p>');
+            $('<p>insert after</p>').insertAfter('ul');
+            //나중에 추가한 것일수록 ul과 가까운 곳에 위치함. 
+            
+            
+            // fn01(); 
+            // fn02();
+            // fn03();
+            fn04();
+            
+            
+          var jb = $('h1').detach();//remove랑같으나 변수에 저장가능.
+            $(jb).prependTo($('body'));//다시 사용할 수 있다.
+            
+            
+            
+        };
+    </script>
+
+</head>
+
+<body>
+
+
+    <h1>append, appendTo, prepend, prependTo, before, insertBefore, after, insertAfter</h1>
+    <p>캐러셀 $('ul').append(document.querySelector('li')); </p>
+    <div>
+        <ul>
+            <li><img src="img/samsek1.jpg" alt=""></li>
+            <li><img src="img/samsek2.jpg" alt=""></li>
+            <li><img src="img/samsek3.jpg" alt=""></li>
+            <li><img src="img/samsek4.jpg" alt=""></li>
+            <li><img src="img/samsek5.jpg" alt=""></li>
+            <li><img src="img/samsek.jpg" alt=""></li>
+        </ul>
+    </div>
+
+
+</body></html>

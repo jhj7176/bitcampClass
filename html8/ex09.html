@@ -41,6 +41,7 @@
                     console.log(idx, $(eles).attr('id'));
                 };
             });
+            console.log($(':checkbox').attr('id'));
             //each()메서드가 수행되면서  체크박스에 idx부여함. 
             //체크박스를 선택하면 onchange메서드가 수행되면서
             //idx와 박스id와 checked true인지 출력한다
@@ -50,6 +51,11 @@
                             console.log($(':checkbox').prop('checked'));
                         };*/
 
+            $(':checkbox').each(function(idx, ele) {
+                if ($(ele).prop('checked')) {
+                    console.log('id = ch'+(idx+1));
+                }
+            }); //현재 체크되어있는 체크박스 콘솔에 출력
 
             var sel = document.querySelector('select');
             sel.onchange = function(e) {

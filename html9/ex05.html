@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        #target3 {
+            border: 1px solid;
+            overflow: hidden;
+            width: 600px;
+        }
+
+        #target3>ul {
+            list-style: none;
+            padding: 0px;
+            width: 1500px;
+        }
+
+        #target3>ul>li {
+            float: left;
+        }
+
+        #target3>ul>li>img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var cnt = 0;
+
+        function func01() {
+            cnt++;
+
+            var ele = $('<img/>');
+            ele.attr('src', 'img/samsek' + cnt + '.jpg')
+            $('#target2').html(ele);
+
+
+            $('#target1').html('<img src = "img/samsek' + cnt + '.jpg"/>');
+            if (cnt == 5) cnt = 0;
+            setTimeout(func01, 1000);
+        }
+
+
+
+        function func02() {
+
+            var la = $('ul>li').filter(':last');
+            var tmp = $('<ol/>').html(la);
+
+            //$('#target3>ol>li').html(la+'</li>'); 
+            //     var first = $('ul>li').eq(0);
+            //           var temp = $('<ol/>').html(first);
+            $('ul').html(tmp.html() + $('ul').html());
+            //            
+
+            setTimeout(func02, 1000);
+
+
+        }
+        window.onload = function() {
+            var lis = document.querySelectorAll('li');
+            func01();
+
+
+
+
+            func02();
+
+        }; //onload
+    </script>
+
+</head>
+
+<body>
+
+    <h1>캐러셀</h1>
+
+    <div id="target1"></div>
+    <p></p>
+    <p></p>
+    <div id="target2"></div>
+
+    <div id="target3">
+
+        <ul>
+            <li><img src="img/samsek1.jpg" alt=""></li>
+            <li><img src="img/samsek2.jpg" alt=""></li>
+            <li><img src="img/samsek3.jpg" alt=""></li>
+            <li><img src="img/samsek4.jpg" alt=""></li>
+            <li><img src="img/samsek5.jpg" alt=""></li>
+        </ul>
+    </div>
+
+
+</body></html>

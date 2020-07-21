@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function() {
+
+            $('li').html(function(idx, ele) { //each처럼 li하나씩 다 수행함
+                console.log(idx, ele);
+                return '<a href="ex0' + (idx + 1) + '.html">' + ele + '</a>';
+            });
+
+        };
+    </script>
+</head>
+
+<body>
+
+
+    <h1>캐러셀</h1>
+
+
+    <div id="target">
+
+        <ul>
+            <li><img src="img/samsek1.jpg" alt=""></li>
+            <li><img src="img/samsek2.jpg" alt=""></li>
+            <li><img src="img/samsek3.jpg" alt=""></li>
+            <li><img src="img/samsek4.jpg" alt=""></li>
+            <li><img src="img/samsek5.jpg" alt=""></li>
+        </ul>
+    </div>
+
+</body></html>
