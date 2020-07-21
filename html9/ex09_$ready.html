@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        #target {
+            background-color: azure;
+            widows: 200px;
+            height: 200px;
+            overflow: scroll;
+        }
+    </style>
+    <script type="text/javascript">
+        $(window).load(function() { //jQuery Event
+
+            $('h1').text('test');
+            console.log('window load');
+        });
+
+        $(document).ready(function() {
+            console.log('document ready event');
+            //문서내용이 먼저 만들어지고 window가 나중에 load된다. 
+            //
+        });
+
+        $(function() {
+            console.log('dom ready1');
+
+            var msg = 'd u m m y';
+            for (var i = 0; i < 500; i++) {
+                msg += 'd u m m  y';
+            }
+            $('#target').append(msg);
+
+
+            $('div').scroll(function(e) {
+                console.log($(this).scrollTop);
+            });
+
+
+        });
+        jQuery(function($) {
+            console.log('dom ready2');
+        });
+
+
+
+        $(window).resize(function() {
+            console.log('창크기 risize');
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+    <h1>onload event</h1>
+
+    <div id="target"></div>
+</body></html>

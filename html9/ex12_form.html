@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        .err {
+            color: red;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $('#id,#pw').focus(function(e) {//마우스커서가 생길때
+                $(e.target).next().remove();
+            });
+
+            $('#id,#pw').blur(function(e) {//마우스커서가 없어질때
+                if ($(e.target).val().trim() == '') {
+                    $('<span class="err">&nbsp;정보를 입력하세요.</span>').insertAfter(e.target);
+                } else if ($(e.target).val().length < 4) {
+                    //                    $(e.target).focus();
+                    $(e.target).select();
+                    $('<span class="err">&nbsp;길이가 짧습니다.</span>').insertAfter(e.target);
+                } else if ($('#id,#pw').val().length >= 4) {
+                    $('#id,#pw').next().remove();
+                }
+            });
+
+
+            $('#id').select(function(e) { // 드래그했을 때 value의 길이, 글자수
+                console.log($(e.target).val().length + '자')
+            });
+
+
+            $('select').change(function(e) {
+                console.log($(e.target).val());
+            }); //select option 누르면 value 출력
+
+            $(':radio').change(function(e) {
+                console.log($(e.target).attr('id'));
+            });
+            $(':checkbox').change(function(e) {
+                console.log($(e.target).attr('id'));
+            });
+
+
+
+            $('form').submit(function() {
+
+                $('.err').remove(); //전송버튼 누를 때 마다 err 메세지 초기화.
+
+
+                /*          if ($('#id').val().trim() == '' && $('#id').blur()) {
+                    $('#id').focus();
+                    $('<span class="err">&nbsp;id를 입력하세요.</span>').insertAfter('#id');
+                    return false;
+                }
+                if ($('#pw').val().trim() == '') {
+                    $('#pw').focus(); //마우스 커서를 입력창에 띄운다.
+                    $('<span class="err">&nbsp;pw를 입력하세요.</span>').insertAfter('#pw');
+                    return false;
+
+                }
+
+*/
+
+
+
+
+
+
+                return true;
+            })
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>회원가입</h1>
+    <form action="#">
+
+        <div>
+            <label for="id">id</label>
+            <input type="text" name="id" id="id">
+        </div>
+        <div>
+            <label for="pw">pw</label>
+            <input type="password" name="pw" id="pw">
+        </div>
+        <div>
+            <label for="ra">ra</label>
+            <input type="radio" name="ra" id="ra1">
+            <input type="radio" name="ra" id="ra2">
+            <input type="radio" name="ra" id="ra3">
+        </div>
+        <div>
+            <label for="checkbox">ch</label>
+            <input type="checkbox" name="ch" id="ch1">
+            <input type="checkbox" name="ch" id="ch2">
+            <input type="checkbox" name="ch" id="ch3">
+        </div>
+
+        <div>
+            <label for="select">sel</label>
+            <select>
+                <option>item1</option>
+                <option>item2</option>
+                <option>item3</option>
+                <option>item4</option>
+            </select>
+        </div>
+
+        <div>
+            <button>submit</button>
+        </div>
+    </form>
+
+
+</body>
+
+</html>

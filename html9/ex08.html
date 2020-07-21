@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        #target {
+            width: 600px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #target>a {
+
+            cursor: pointer;
+            color: white;
+            font-size: 160%;
+            position: absolute;
+            line-height: 35px;
+            left: 0px;
+            top: 100px;
+            height: 40px;
+            width: 25px;
+            background-color: chocolate;
+            text-align: center;
+            vertical-align: middle;
+            opacity: 50%;
+            border-radius: 35px;
+            display: inline-block;
+
+        }
+
+        #target>a:last-child {
+            left: 575px;
+            width: 25px;
+        }
+
+        #target>ul {
+            list-style: none;
+            padding: 0px;
+            width: 1200px;
+        }
+
+        #target>ul>li {
+            float: left;
+        }
+
+        #target>ul>li>img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function nextImg() {
+            $('ul>li').first().appendTo('ul');
+        }
+
+        function prevImg() {
+            $('ul>li').last().prependTo('ul');
+        }
+
+        window.onload = function() {
+            var prev = $('<a/>').text('<');
+            var next = $('<a/>').text('>');
+
+            $('#target').prepend(prev).append(next);
+
+            prev.click(prevImg);
+            next.click(nextImg);
+            console.log(prev);
+           
+
+
+
+        }; //onload
+    </script>
+
+</head>
+
+<body>
+
+    <h1>캐러셀</h1>
+
+    <div id="target">
+        <ul>
+            <li><img src="img/samsek1.jpg" alt="" /></li>
+            <li><img src="img/samsek2.jpg" alt="" /></li>
+            <li><img src="img/samsek3.jpg" alt="" /></li>
+            <li><img src="img/samsek4.jpg" alt="" /></li>
+            <li><img src="img/samsek5.jpg" alt="" /></li>
+            <li><img src="img/samsek6.jpg" alt="" /></li>
+        </ul>
+
+    </div>
+
+</body></html>

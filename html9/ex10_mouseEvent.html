@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        #target {
+            background-color: azure;
+            width: 400px;
+            height: 400px;
+            padding: 50px;
+            border: 1px solid;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('div').click(function(e) {
+                console.log('clint xy', e.clientX, e.clientY);
+                //내용위치관계없이 화면상 왼쪽상단이 원점. 상대적임
+                console.log('page xy', e.pageX, e.pageY);
+                //절대좌표. 화면상 문서의원점이 스크롤에 가려도 좌표는 절대좌표
+                console.log('screen', e.screenX, e.screenY);
+                //모니터 기준.
+            });
+
+            $('div').mousedown(function() {
+                console.log('마우스다운');
+            });
+            $('div').mouseup(function() {
+                console.log('마우스업');
+
+            });
+            $('div').dblclick(function() {
+                console.log('더블클릭');
+            })
+
+            $('div').mouseover(function(e) {
+                //                e.stopPropagation();
+                console.log('div오버');
+            });
+            $('div').mouseout(function(e) {
+                e.stopPropagation(); //이벤트 전파 방지.
+                console.log('div아웃');
+            });
+            //
+            //            $('body').mouseover(function(e) {
+            //                console.log('body오버');
+            //            });
+            //            $('body').mouseout(function() {
+            //                console.log('body아웃');
+            //            });
+            $('body').mouseenter(function() {
+                console.log('body enter');
+            });
+            $('body').mouseleave(function() {
+                console.log('body leave');
+            });
+
+            $('div').mousemove(function(e){
+                console.log('mouse move', e.pageX, e.pageY);
+            });
+            
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+
+<h1>마우스 이벤트</h1>
+
+<div id="target"></div>
+
+</html>

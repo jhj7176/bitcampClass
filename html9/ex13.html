@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <script type="text/javascript">
+//                var p;
+        $(document).ready(function() {
+
+             var p = $('<p/>');
+
+            $('h1').click(function(e) {
+                $('h1').after(p.text('내용'));
+
+            });
+
+            $(p).click(function(e) {
+                console.log('클릭p');
+                alert('msg');
+            });
+
+
+            $('img').wrap('<a href="#"></a>');
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+    <h1>event</h1>
+
+
+    <div>
+        <ul>
+            <li><img src="img/samsek1.jpg" alt=""></li>
+            <li><img src="img/samsek2.jpg" alt=""></li>
+            <li><img src="img/samsek3.jpg" alt=""></li>
+            <li><img src="img/samsek4.jpg" alt=""></li>
+            <li><img src="img/samsek5.jpg" alt=""></li>
+        </ul>
+    </div>
+
+
+
+</body></html>
