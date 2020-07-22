@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        #box {
+            border: 1px solid;
+            width: 50px;
+            height: 50px;
+            background-color: aliceblue;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        
+        function cb(){
+            $('#box').html($('#box').text()+'<br/>END');
+            console.log('end');
+        }
+        $(function() {
+            //jquery animation은 css를 이용함.
+            $('#box').animate({'width':'600px'},2000,'swing');
+//            $('#box').animate({'width':'100px','height':'100px'},{'duration':4000, 'easing':'swing','done':cb});
+            //easing : swing이 default값이다.
+            //swing 천천히 변하다가 빨라졌다가 다시 천천히 변함. 부드러운 퍼포먼스
+            //linear 일정한 속도를 갖는 퍼포먼스
+            $('#box').animate({'width':'200px','height':'200px','line-height':'100px'},{'duration':4000, 'easing':'linear','done':cb, 'step':function(a,b){
+                console.log('step',a,b);//a property, b는 a등의 정보를 갖는 객체
+            },'progress':function(a,b,c){
+                console.log('progress',a,b,c);
+                console.log(a+"%");
+                $('#box').html("진행률:"+parseInt(b*100)+"%<br/>"+"남은시간:"+parseInt(c/1000)+"s");
+                
+            },'start':function(a){
+                $('#box').after('<p>Perform a custom animation of a set of CSS properties.</p>');
+            }});
+            
+            
+            
+            
+            
+            
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>anmate</h1>
+
+    <div id="box">
+        box
+    </div>
+</body></html>

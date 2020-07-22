@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        #target {
+            width: 500px;
+            height: 400px;
+            background-color: azure;
+            border: 0.5px solid;
+
+
+        }
+
+        div {
+
+            width: 300px;
+            height: 300px;
+/*                        margin: auto;*/
+            background-color: beige;
+            overflow: hidden;
+            border: 0.5px solid;
+
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('div').click(function() {
+              //   $(this).after('<div/>').css('width','200px').css('height','200px').css('border','1px solid');
+                //ready가 될때 event를 달았는데 그 이후로 생기는 div는 이벤트가 적용이안됨
+
+            });
+
+
+            $(document).delegate('div', 'click', function() { //on method로 대체되었음
+                $(this).after('<div/>').css('width','200px').css('height','200px').css('border','1px solid');;
+            });
+
+            $('#target').on('click', 'div', function() {
+                //div보다 상위앨리먼트에 이벤트를 적용해야함.
+                //Selector :A selector string to filter the descendants of the selected //elements
+                //자손에서 찾으므로 selector가 있을 때는 target에 이벤트 적용시켜도 
+                //이벤트가 수행되지 않는다. 
+                $(this).after('<div/>');
+            });
+
+            $()
+
+
+            //bind, on 비슷함. on은 중간에 selector 매개변수 가질수있다.
+            //             $('body').bind('click' ,function(){
+            //                 $('div').click(function(){
+            //                     $(this).after('<div/>');
+            //                 });
+            //             });
+            //            
+
+            function cb() {
+                console.log('이벤트 호출 콜백');
+            }
+
+            function cb2() {
+                console.log('이벤트 호출 콜백2');
+            }
+
+            function cb3() {
+                console.log('한번만 수행 on>>one');
+            }
+
+            function dblcb() {
+                console.log('더블클릭 호출 콜백');
+            }
+            $('button').eq(0).on('click', cb); //버튼클릭시 cb함수 호출.
+            $('button').eq(0).on('click', cb2); //버튼클릭시 cb2함수 호출.
+            $('button').eq(0).on('dblclick', dblcb); //버튼클릭시 cb함수 호출.
+            $('button').eq(1).on('click', function() { //btn버튼의 cb함수호출 이벤트 삭제
+                $('button').eq(0).off('click', cb);
+                //콜백함수 명시하지 않으면 클릭이벤트에 관련된 모든 함수 삭제.
+                //cb만 삭제했으므로 더블클릭이벤트는 남아 있다. 
+                //cb2를 콜백하는 클릭이벤트도 남아있다. 
+                //cb와 연관된 클릭 이벤트만 off
+            });
+
+
+            $('button').eq(0).one('click', cb3); //버튼클릭시 cb3함수 호출.
+            $('button').eq(1).on('click', function(){
+                $('button').eq(0).off(); //모든 이벤트
+            }); 
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+
+    <h1>event binding</h1>
+    <button>btn</button>
+    <button>off</button>
+
+
+    <div id="target"></div>
+</body>
+
+</html>

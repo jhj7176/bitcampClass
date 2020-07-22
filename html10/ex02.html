@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+
+    </style>
+
+    <script type="text/javascript">
+        $(document).on('ready', function() { //.ready()보다 속도가 느림.
+            console.log('on ready');
+        });
+
+        function idIn() {
+            if ($(this).val().trim() == 'id 입력하시오.') {
+                $(this).val('');
+            }
+
+        } //idin
+
+        $(document).ready(function() {
+            console.log('ready');
+
+            //            $('#id').on('click', function(e) {
+            //                //                 $(e.target).val('');
+            //                if ($(this).val().trim() == 'id 입력하시오.') {
+            //                    $(this).attr('value', '');
+            //                }
+            //            });
+            //            $('#id').on('focusin', function(e) {
+            //                //                 $(e.target).val('');
+            //                if ($(this).val().trim() == 'id 입력하시오.') {
+            //                    $(this).attr('value', '');
+            //                }
+            //            });
+            //위 두개의 이벤트를 한줄로 요약. 
+            $('#id').on('click focusin', idIn);
+
+            $('#id').on('focusout, blur', function(e) {
+                //                 $(e.target).val('');
+                if ($(e.target).val().trim() == '') {
+                    $(e.target).val('id 입력하시오.');
+                }
+            });
+
+            $('#pw').on('click', function(e) {
+                //                 $(e.target).val('');
+//                if ($('#id').val().trim() == '') {
+//                    $('#id').val('id 입력하시오.');
+//                }
+            });
+
+
+
+        });
+        $(window).load(function() { //젤 느림
+            console.log('load');
+        });
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>회원가입</h1>
+    <form action="#">
+
+        <div>
+            <label for="id">id</label>
+            <input type="text" name="id" value="id 입력하시오." id="id" />
+        </div>
+        <div>
+            <label for="pw">pw</label>
+            <input type="password" name="pw" id="pw" />
+        </div>
+
+
+        <div>
+            <button>submit</button>
+        </div>
+    </form>
+
+</body>
+
+</html>

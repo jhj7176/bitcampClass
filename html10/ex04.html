@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script type="text/javascript" src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        div {
+            overflow: hidden;
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            background-color: azure;
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            //        $('button').click(function(){
+            //            console.log($(':text').val());
+            //        });
+
+            $('#btn').on('click', ['a', 'ab'], function(e, a, b) {
+                //첫번째 매개변수는 항상 이벤트
+                console.log(e.data, a, b);
+                console.log($(':text').val());
+
+                /*Data to be passed to the handler in event.data when an event is triggered.*/
+            });
+            $('input').keyup(function(e) { //텍스트가 입력되어 있을 때 enter키를 누르면 버튼 클릭이벤트 실행.
+                if (e.keyCode == 13) {
+                    $('#btn').trigger('click', ['b', 'bb']);//enter치면 b와 bb가 #btn의 클릭콜백함수에 매개변수로 전달됨.
+                    
+                    //                $('button').click();
+                }
+            });
+
+            $('#hi').click(function() {
+                //                $('div').hide('slow');
+                //                $('div').fadeOut('slow');
+//                $('div').slideUp('slow', cb); //두번째 파라미터로 콜백함수 받는다.
+                $('div').fadeTo('slow', 0.7); //두번째 투명도. 
+            });
+            $('#sh').click(function() {
+                //                $('div').show('fast');
+                $('div').slideDown(3000); //시간.ms
+            });
+
+            $('#to').click(function() {
+                //                $('div').show('fast');
+                $('div').toggle(3000); //시간.ms
+            });
+
+
+        }); //ready
+
+        function cb() {
+            alert('끝');
+        }
+    </script>
+</head>
+
+<body>
+
+    <input type="text" /> <button id="btn">btn</button>
+
+    <button id="hi">hide</button>
+    <button id="sh">show</button>
+    <button id="to">toggle</button>
+    <div>asdfsadlkfjsadlkfjsajdfa;lksfjfsajf</div>
+
+
+</body></html>

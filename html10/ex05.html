@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <style rel="stylesheet" type="text/css">
+        #menu {}
+
+        #menu>ul {
+            padding: 0px;
+            /* display: block;*/
+            /* display: table;*/
+            width: 410px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            list-style: none;
+            overflow: hidden;
+        }
+
+        #menu>ul>li {
+            background-color: bisque;
+            border: 1px solid;
+            float: left;
+            width: 100px;
+
+        }
+
+        #menu>ul>li>ol {
+            overflow: hidden;
+            list-style: none;
+            padding: 0px;
+            /*            display: none;*/
+            background-color: chocolate;
+            color: white;
+        }
+
+        #menu>ul>li>ol>li {
+            height: 30px;
+            width: 80px;
+            margin: auto;
+            border: 1px solid;
+        }
+
+
+        #box {
+            width: 406px;
+            height: 400px;
+            background-color: aliceblue;
+     
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+
+            $('#menu>ul ol').hide();
+
+            $('ul').mouseenter(function() {
+                //                 $('#menu>ul ol').show();
+
+                $(this).find('ol').stop().slideDown(1000);
+            });
+            $('ul').mouseleave(function() {
+                //                 $('#menu>ul ol').show();
+                $(this).find('ol').stop().slideUp(1000);
+            });
+
+
+            $('#box').animate({
+                'margin-left': '500px'
+            }, {
+                'duration': 2000
+            });
+            $('#box').animate({
+                'margin-top': '300px'
+            }, {
+                'duration': 2000
+            });
+            $('#box').animate({
+                'margin-left': '0px'
+            });
+            $('#box').animate({
+                'margin-top': '0px'
+            });
+            //            $('#box').stop();
+            //            $('#box').stop();하나의  animate()만 멈출수있다. 윗line부터멈춤
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <div id="menu">
+
+
+        <ul>
+            <li>menu1
+                <ol>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                    <li>item4</li>
+                </ol>
+            </li>
+            <li>menu2
+                <ol>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                    <li>item4</li>
+                </ol>
+            </li>
+            <li>menu3
+                <ol>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                    <li>item4</li>
+                </ol>
+            </li>
+            <li>menu4
+                <ol>
+                    <li>item1</li>
+                    <li>item2</li>
+                    <li>item3</li>
+                    <li>item4</li>
+                </ol>
+            </li>
+        </ul>
+
+
+    </div>
+
+
+    <div id="box">
+
+
+    </div>
+</body></html>
