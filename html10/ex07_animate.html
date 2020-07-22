@@ -7,6 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> Title </title>
     <script src="jq/jquery-1.12.4.js"></script>
+    <script src="jq/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <!--jQuery UI는 반드시 jQuery 다음에 import하도록.
+    jquery ui에서 easing api에서 여러가지 애니메이션 참고.
+    -->
     <style rel="stylesheet" type="text/css">
         #box {
             border: 1px solid;
@@ -26,12 +30,12 @@
         }
         $(function() {
             //jquery animation은 css를 이용함.
-            $('#box').animate({'width':'600px'},2000,'swing');
+            $('#box').animate({'width':'600px'},2000,'easeOutBack');
 //            $('#box').animate({'width':'100px','height':'100px'},{'duration':4000, 'easing':'swing','done':cb});
             //easing : swing이 default값이다.
             //swing 천천히 변하다가 빨라졌다가 다시 천천히 변함. 부드러운 퍼포먼스
             //linear 일정한 속도를 갖는 퍼포먼스
-            $('#box').animate({'width':'200px','height':'200px','line-height':'100px'},{'duration':4000, 'easing':'linear','done':cb, 'step':function(a,b){
+            $('#box').animate({'width':'200px','height':'200px','line-height':'100px'},{'duration':4000, 'easing':'easeOutBounce','done':cb, 'step':function(a,b){
                 console.log('step',a,b);//a property, b는 a등의 정보를 갖는 객체
             },'progress':function(a,b,c){
                 console.log('progress',a,b,c);

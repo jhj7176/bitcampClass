@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <script src="jq/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <!--jQuery UI는 반드시 jQuery 다음에 import하도록.
+    jquery ui에서 easing api에서 여러가지 애니메이션 참고.
+    -->
+    <style rel="stylesheet" type="text/css">
+        #box {
+            width: 400px;
+            overflow: hidden;
+            
+        }
+
+        #box>ul {
+            padding: 0px;
+            list-style: none;
+            width: 1200px;
+            overflow: hidden;
+        }
+
+        #box>ul>li {
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+
+        #box>ul>li>img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        function carousel() {
+            
+            $('ul')
+                .animate({
+                    'margin-left': '-400px'
+                }, 1000)
+           
+            .delay(300)
+            
+            .animate({
+                    'margin-left': '-800px'
+                }, 1000)
+//            .animate({
+//                    'margin-left': '-1200px'
+//                }, 1000)
+         
+            .animate({
+                    'margin-left': '-800px'
+                }, 1000).delay(300)
+            
+            .animate({
+                    'margin-left': '-400px'
+                }, 1000).delay(300)
+            
+                .animate({
+                    'margin-left': '0px'
+                }, 1000).delay(300);
+            
+            
+            
+//              $('li').animate({'background-image':'img/samsek1.jpg'}, 1000);
+
+            
+            setTimeout(carousel);
+
+        }
+        $(function() {
+//            setInterval(carousel);
+        
+            carousel();
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>동작제어</h1>
+
+    <div id="box">
+        <ul>
+            <li><img src="img/samsek1.jpg" alt=""></li>
+            <li><img src="img/samsek2.jpg" alt=""></li>
+            <li><img src="img/samsek3.jpg" alt=""></li>
+            <li><img src="img/samsek4.jpg" alt=""></li>
+            <li><img src="img/samsek5.jpg" alt=""></li>
+            <li><img src="img/samsek6.jpg" alt=""></li>
+
+        </ul>
+
+
+    </div>
+</body></html>

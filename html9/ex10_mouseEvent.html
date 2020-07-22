@@ -24,7 +24,7 @@
                 console.log('clint xy', e.clientX, e.clientY);
                 //내용위치관계없이 화면상 왼쪽상단이 원점. 상대적임
                 console.log('page xy', e.pageX, e.pageY);
-                //절대좌표. 화면상 문서의원점이 스크롤에 가려도 좌표는 절대좌표
+                //절대좌표. 화면상 div박스의 원점이 스크롤에 올라가도 좌표는 절대좌표
                 console.log('screen', e.screenX, e.screenY);
                 //모니터 기준.
             });
@@ -32,10 +32,13 @@
             $('div').mousedown(function() {
                 console.log('마우스다운');
             });
+            var a;
             $('div').mouseup(function() {
                 console.log('마우스업');
-
+                a = '리턴';    
+                
             });
+            
             $('div').dblclick(function() {
                 console.log('더블클릭');
             })

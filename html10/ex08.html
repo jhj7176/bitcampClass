@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+    <script src="jq/jquery-1.12.4.js"></script>
+    <script src="jq/jquery-ui-1.12.1/jquery-ui.js"></script>
+    <!--jQuery UI는 반드시 jQuery 다음에 import하도록.
+    jquery ui에서 easing api에서 여러가지 애니메이션 참고.
+    -->
+    <style rel="stylesheet" type="text/css">
+        #box {
+            border: 1px solid;
+            width: 90px;
+            height: 90px;
+            background-color: aliceblue;
+            text-align: center;
+            line-height: 90px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        $(function() {
+
+            for(var i = 0;i<10;i++){
+            $('#box')
+                .animate({
+                    'margin-left': '300px'
+                }, 2300)
+                .delay(1000)//delay시간 기다렸다가 동작수행
+                .animate({
+                    'margin-top': '300px'
+                }, 2300)
+                .animate({
+                    'margin-left': '0px'
+                }, 2300)
+                .animate({
+                    'margin-top': '0px'
+                }, 2300);
+            }
+
+            $('button').click(function(){
+//                $('#box').finish();
+                /*
+                stop는 현재 running중인 animation 멈춤.
+                finish는 모든 애니메이션 멈춤.
+                Stop the currently-running animation, 
+                remove all queued animations, and complete 
+                all animations for the matched elements.*/
+               
+                
+//                $('#box').stop(true, true);
+//                $('#box').stop();
+                /*boolean type 2개  clearQueue여부, jumpToEnd여부
+                현재 큐에 쌓인 애니메이션 전부 제거 여부 default false 제거안함.
+                현재 애니메이션의 끝으로 설정되어있는 css property 값으로. 
+                default false.
+                */
+                
+                $('#box').dequeue();
+                /*Execute the next function 
+                on the queue for the matched elements.
+                큐에 쌓여있는 순서대로, 
+                When .dequeue() is called, the next function on the queue is removed from the queue, and then executed. This function should in turn (directly or indirectly) cause .dequeue() to be called, so that the sequence can continue.
+                */
+                
+                
+                console.log($('#box').queue().length);//큐에쌓인작업수
+                
+            })
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+    <h1>동작제어</h1>
+    <button>btn</button>
+
+    <div id="box">
+        box
+    </div>
+</body></html>
