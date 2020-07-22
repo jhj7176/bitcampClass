@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Title </title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+    <!--    <script src="css/jquery.min.js"></script>-->
+    <script src="css/jquery.bxslider.min.js"></script>
+    <script src="jq/jquery-ui-1.12.1/"></script>
+
+
+    <script type="text/javascript">
+        $(function() {
+
+
+            $(document).ready(function() {
+                $('.slider').bxSlider({
+                    slideWidth: '200px',
+                    mode: 'horizontal',
+                    captions: 'true',
+                    minSlides: 3,
+                    maxSlides: 3,
+                    moveSlides: 1,
+                    randomStart: 'true',
+                    hideControlOnEnd: 'false',
+                    touchEnabled: 'true',
+                    //auto: 'true',
+                    //infiniteLoop: 'true',
+                    speed: 2000,
+                    controls: 'true',
+                    onSliderLoad: function() {
+                        console.log('슬라이더 풀 로드');
+                    },
+                    onSliderResize: function(idx) {
+                        console.log('슬라이더리사이즈',idx);
+                    },
+                    onSlideBefore: function(a,b,c) {
+                        console.log('슬라이더 before',a,b,c);
+                    }
+                });
+
+            });
+
+
+
+        });
+    </script>
+    <style rel="stylesheet" type="text/css">
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="slider">
+        <div><img src="img/samsek1.jpg" title="1"></div>
+        <div><img src="img/samsek2.jpg" title="2"></div>
+        <div><img src="img/samsek3.jpg" title="3"></div>
+        <div><img src="img/samsek4.jpg" title="4"></div>
+        <div><img src="img/samsek5.jpg" title="5"></div>
+        <div><img src="img/samsek6.jpg" title="6"></div>
+
+    </div>
+</body></html>
