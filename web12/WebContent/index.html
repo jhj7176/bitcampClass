@@ -36,12 +36,12 @@
 	}
 
 	function getEmpList() {
+		var msg = "";
 		$.ajax('emp.bit', {
 			'method' : 'get',
 			'dataType' : 'json',
 			'success' : function(data) {
 				var arr = data.emp;
-				var msg = "";
 				/*  {} {} {} {} */
 				arr.forEach(function(ele, idx) {
 					msg += "<tr>";
@@ -56,7 +56,7 @@
 				$('table').append(msg);
 			}
 		});
-
+		return msg;
 	}
 
 	function home() {
@@ -109,30 +109,27 @@
 			return false;
 		});
 
-		menu3_1
-				.on(
-						'click',
-						function() {
-							$('#content').hide();
-							$('#content')
-									.html(
-											'<h1>EMP TABLE</h1><table><tr><th>empno</th><th>ename</th><th>job</th><th>hiredate</th><th>mgr</th><th>comm</th><th>deptno</th>');
-							getEmpList();
-							$('#content').slideDown(1000);
-							return false;
-						});
+		menu3_1.on('click', function() {
+			var msg = '<h1>EMP TABLE</h1><table><tr><th>empno</th><th>ename'
+					+ '</th><th>job</th><th>hiredate</th>'
+					+ '<th>mgr</th><th>comm</th><th>deptno</th>';
+			$('#content').hide();
+			$('#content').html(msg);
+			getEmpList();
+			$('#content').delay(50).slideDown(1000);
+			return false;
+		});
 
-		menu3_2
-				.on(
-						'click',
-						function() {
-							$('#content')
-									.html(
-											'<h1>DEPT TABLE</h1><table><tr><th>deptno</th><th>dname</th><th>loc</th>');
-							getList();
+		menu3_2.on('click', function() {
+			var msg = '<h1>DEPT TABLE</h1><table><tr>'
+					+ '<th>deptno</th><th>dname</th><th>loc</th>';
+			$('#content').hide();
+			$('#content').html(msg);
+			getList();
+			$('#content').delay(50).slideDown(1000);
 
-							return false;
-						});
+			return false;
+		});
 		$('#menu>ul>li>ol').hide();
 
 		$('#menu>ul>li:nth-child(3)').on('mouseenter', function() {
@@ -271,7 +268,7 @@ li:hover {
 }
 
 #content {
-	margin-top: 30px;
+	margin-top: 0px;
 }
 
 #footer {
@@ -313,10 +310,18 @@ li:hover {
 	text-align: center;
 }
 
+#content tr:nth-child(odd) {
+	background-color: "#fefed2";
+}
+
 #content th {
 	border: 1px solid;
 	padding: 5px;
 	width: 200px;
+}
+
+#content td {
+	
 }
 </style>
 
