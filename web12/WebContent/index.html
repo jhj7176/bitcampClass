@@ -8,7 +8,6 @@
 <script src="jquery/jquery-1.12.4.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="css/dist/jquery.bxslider.css" />
-<!--    <script src="css/jquery.min.js"></script>-->
 <script src="css/dist/jquery.bxslider.min.js"></script>
 <script src="jquery/jquery-ui.min.js"></script>
 
@@ -36,53 +35,33 @@
 		});
 	}
 
-	function home() {
-		/* $.ajax("index.html", {
-			'method':'get',
-			'dataType':'html',
-			'success':function(data){
-				var msg = $(data).find('#big');
-				var msg2 = $(data).find('#thumb');
-				
-				var a = $(msg).bxSlider({
-					'slideWidth' : '400px',
-					'minSlides' : 2,
-					'maxSlides' : 2,
-					'moveSlides' : 1,
-					'pager' : 'false',
-					'controls' : 'false',
-					'mode' : 'horizontal'
-
+	function getEmpList() {
+		$.ajax('emp.bit', {
+			'method' : 'get',
+			'dataType' : 'json',
+			'success' : function(data) {
+				var arr = data.emp;
+				var msg = "";
+				/*  {} {} {} {} */
+				arr.forEach(function(ele, idx) {
+					msg += "<tr>";
+					msg += "<td>" + ele.empno + "</td>";
+					msg += "<td>" + ele.ename + "</td>";
+					msg += "<td>" + ele.job + "</td>";
+					msg += "<td>" + ele.hiredate + "</td>";
+					msg += "<td>" + ele.mgr + "</td>";
+					msg += "<td>" + ele.comm + "</td>";
+					msg += "<td>" + ele.deptno + "</td></tr>";
 				});
-
-				var b = $(msg2).bxSlider({
-					'slideWidth' : '200px',
-					'mode' : 'horizontal',
-					'minSlides' : 3,
-					'maxSlides' : 3,
-					'moveSlides' : 1,
-					'randomStart' : 'true',
-					'touchEnabled' : 'true',
-					'auto' : 'true',
-					'infiniteLoop' : 'true',
-					'speed' : 2000,
-					'controls' : 'true',
-					'onSlideBefore' : function(a, b, c) {
-						big.goToSlide(c);
-					}
-				});
-
-				
-				
-				
-				console.log(msg);
-				$('#car').append($(a)).append($(b)); 
+				$('table').append(msg);
 			}
-		}); */
-		location.reload();
+		});
 
 	}
-	
+
+	function home() {
+		location.reload();
+	}
 
 	$(function() {
 		big = $('#big').bxSlider({
@@ -113,7 +92,6 @@
 			}
 		});
 
-
 		menu1 = $('#menu>ul>li').eq(0);
 		menu2 = $('#menu>ul>li').eq(1);
 		menu3 = $('#menu>ul>li').eq(2);
@@ -125,24 +103,36 @@
 			home();
 			return false;
 		});
-		
+
 		menu3.on('click', function() {
 
 			return false;
 		});
 
-		menu3_1.on('click', function() {
-			$('#content').html('<h1>EMP TABLE</h1');
+		menu3_1
+				.on(
+						'click',
+						function() {
+							$('#content').hide();
+							$('#content')
+									.html(
+											'<h1>EMP TABLE</h1><table><tr><th>empno</th><th>ename</th><th>job</th><th>hiredate</th><th>mgr</th><th>comm</th><th>deptno</th>');
+							getEmpList();
+							$('#content').slideDown(1000);
+							return false;
+						});
 
-			return false;
-		});
+		menu3_2
+				.on(
+						'click',
+						function() {
+							$('#content')
+									.html(
+											'<h1>DEPT TABLE</h1><table><tr><th>deptno</th><th>dname</th><th>loc</th>');
+							getList();
 
-		menu3_2.on('click',function() {
-			$('#content').html('<h1>DEPT TABLE</h1><table><tr><th>deptno</th><th>dname</th><th>loc</th>');
-			getList();
-
-			return false;
-		});
+							return false;
+						});
 		$('#menu>ul>li>ol').hide();
 
 		$('#menu>ul>li:nth-child(3)').on('mouseenter', function() {
@@ -320,7 +310,7 @@ li:hover {
 }
 
 #content tr {
-	
+	text-align: center;
 }
 
 #content th {

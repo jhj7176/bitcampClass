@@ -21,6 +21,17 @@
   <servlet-name>Ex04</servlet-name>
   <url-pattern>/ex04.net</url-pattern>
   </servlet-mapping>
+
+
+  <servlet>
+  <servlet-name>Emp</servlet-name>
+  <servlet-class>com.bit.emp.Emp</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Emp</servlet-name>
+  <url-pattern>/emp.bit</url-pattern>
+  </servlet-mapping>
   
   
   <servlet>
