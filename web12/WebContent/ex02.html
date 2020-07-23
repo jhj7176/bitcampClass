@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		/* 	jQuery.get('ex01.jsp'); */
+
+		/* ex01.jsp페이지 호출함.  */
+		var tg = document.querySelector('#target');
+
+		$.get('ex01.jsp', function(data) {
+			/* 1번방법. 자바스크립트 셀릭터. innerHTML 
+				
+			tg.innerHTML = data; */
+
+			
+			/* 2번방법 제이쿼리 html()로 String data를 html로 바꿔서 target에 append하기 */
+			var aa = $('<div/>').append(data).html();//doctype바깥에 div가 있는셈이라 target에 붙일땐 무시된다.
+				//String 편집해서 이미지부분만 잘라서 html로 바꾸는것이 더 좋음 substring이나 slice
+			console.log(aa);
+			$(aa).appendTo('#target');
+			
+			/* 
+			   3번방법 제이쿼리 필터 $(data).filter('img').appendTo('#target'); 
+			*/
+		});
+
+	});
+</script>
+
+
+</head>
+<body>
+
+	<h1>GET</h1>
+	<div id="target"></div>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+
+    <script src="jq/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css" />
+    <!--    <script src="css/jquery.min.js"></script>-->
+    <script src="css/jquery.bxslider.min.js"></script>
+    <script src="jq/jquery-ui-1.12.1/"></script>
+
+    <script type="text/javascript">
+        var big;
+        $(function() {
+
+            $('#menu>ul>li>ol').stop().slideUp();
+
+            $('#menu>ul>li:nth-child(3)').on('mouseenter', function() {
+                $('#menu>ul>li>ol').stop().slideDown();
+
+            });
+            $('#menu>ul>li:nth-child(3)').on('mouseleave', function() {
+                $('#menu>ul>li>ol').stop().slideUp();
+
+            });
+            big = $('#big').bxSlider({
+                'slideWidth': '400px',
+                'pager': 'false',
+                'controls': 'false',
+                'mode': 'vertical'
+
+            });
+
+
+
+            $('#thumb').bxSlider({
+                'slideWidth': '200px',
+                'slideHeight':'200px',
+                'mode': 'horizontal',
+                'minSlides': 3,
+                'maxSlides': 3,
+                'moveSlides': 1,
+                'randomStart': 'true',
+                'touchEnabled': 'true',
+                'auto': 'true',
+                'infiniteLoop': 'true',
+                'speed': 2000,
+                'controls': 'true',
+                'onSlideBefore': function(a, b, c) {
+                    big.goToSlide(c);
+                }
+            });
+
+
+
+        });
+    </script>
+
+
+    <!-- <link rel="stylesheet" type="text/css" href="css/header.css" /> -->
+    <style rel="stylesheet" type="text/css">
+        img {
+            width: 400px;
+            height: 400px;
+        }
+
+        /*
+        #thumb>img {
+            width: 200px;
+            height: 200px;
+        }
+*/
+
+        #header {
+            overflow: hidden;
+        }
+
+        #header>h1 {
+            width: 200px;
+            height: 60px;
+            float: left;
+            text-indent: -9099px;
+            background-image: url("img/char.png");
+        }
+
+        #header>form {
+            float: right;
+            width: 400px;
+        }
+
+        #header>form>div {
+            display: block;
+            margin-left: 210px;
+            width: 190px;
+        }
+
+        #header>form>div:last-child {
+            margin-left: 212px;
+            width: 300px;
+
+        }
+
+        #header>form>div>label {
+            display: inline-block;
+            width: 20px;
+        }
+
+        #header>form>div>input {
+
+            width: 98px;
+        }
+
+        #header>form>div>button {}
+
+        #menu {
+            z-index: 1;
+            margin: 0px auto;
+            clear: both;
+            overflow: hidden;
+            height: 52px;
+            background-color: #fefed2;
+        }
+
+        #menu>ul {
+            list-style: none;
+            overflow: hidden;
+            width: 410px;
+            margin: 0px auto;
+            padding: 0px;
+        }
+
+        #menu>ul>li {
+            border: 1px solid;
+            padding: 0px;
+            float: left;
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        li:hover {
+            background-color: antiquewhite;
+        }
+
+        #menu>ul>li>a {
+            text-align: center;
+            text-decoration: none;
+            color: black;
+            display: block;
+            text-decoration: none;
+        }
+
+        #menu>ul>li>ol {
+            position: absolute;
+            list-style: none;
+            padding: 0px;
+            margin: 0px;
+            background-color: #fefed2;
+            border-bottom: 1px solid;
+            text-align: center;
+            z-index: 1;
+        }
+
+        #menu>ul>li>ol>li {
+            width: 100px;
+            height: 50px;
+        }
+
+        #menu>ul>li>ol>li>a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+
+        #footer {
+            background-color: #fefed2;
+        }
+
+
+
+
+
+        #footer>div {
+            width: 300px;
+            margin: 50px auto;
+        }
+
+        #car {
+            width: 400px;
+            margin: 0px auto;
+            z-index: -2;
+        }
+
+        #car img {
+            z-index: -1;
+        }
+
+        #big {
+            float: left;
+        }
+
+        #thumb {
+            float: left;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+
+    <div id="header">
+        <h1>비트교육센터</h1>
+
+        <form action="">
+
+            <div>
+                <label for="id">id</label> <input type="text" id="id" name="id" />
+            </div>
+
+            <div>
+                <label for="pw">pw</label> <input type="text" id="pw" name="pw" />
+            </div>
+
+            <div>
+                <button type="submit">로그인</button>
+                <button type="button">회원가입</button>
+            </div>
+
+        </form>
+
+    </div>
+
+    <div id="menu">
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Intro</a></li>
+            <li><a href="#">B B S</a>
+                <ol>
+                    <li><a href="#">E M P</a></li>
+                    <li><a href="#">DEPT</a></li>
+                </ol>
+            </li>
+            <li><a href="#">Etc</a></li>
+        </ul>
+
+    </div>
+
+
+
+    <div id="content">
+
+
+
+
+        <div id="car">
+
+            <div id="big">
+                <div><img src="img/samsek1.jpg" /></div>
+                <div><img src="img/samsek2.jpg" /></div>
+                <div><img src="img/samsek3.jpg" /></div>
+                <div><img src="img/samsek4.jpg" /></div>
+                <div><img src="img/samsek5.jpg" /></div>
+                <div><img src="img/samsek6.jpg" /></div>
+            </div>
+            <div id="thumb">
+                <div><img src="img/samsek1.jpg" /></div>
+                <div><img src="img/samsek2.jpg" /></div>
+                <div><img src="img/samsek3.jpg" /></div>
+                <div><img src="img/samsek4.jpg" /></div>
+                <div><img src="img/samsek5.jpg" /></div>
+                <div><img src="img/samsek6.jpg" /></div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+
+    <div id="footer">
+        <div>
+            <address>비트캠프 서울시 서초구 강남대로 459</address>
+            (주)비트컴퓨터 서초본원<br /> Copyright &copy; 비트캠프 All rights reserved.
+        </div>
+
+    </div>
+
+
+</body></html>

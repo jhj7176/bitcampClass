@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	$(function() {
+
+		/*  	$.post('ex04.net','id=admin관리자', function(data){
+		 $('#target').text(data);
+		 });
+		
+		 */
+
+		$.ajax('dept.bit', {
+			'type' : 'get',
+			'data' : 'id=4444',
+			'dataType' : 'html',
+			'success' : function(data, textStatus, jqXHR) {
+				console.log(jqXHR);
+				$(data).find('students').each(function(){
+				
+					var num = $(this).find('num').text();
+					var name = $(this).find('name').text();
+					var kor = $(this).find('kor').text();
+					var eng = $(this).find('eng').text();
+					var math = $(this).find('math').text();
+					
+					var info = "<td>"+num+"</td>"
+					+"<td>"+name+"</td>"
+					+"<td>"+kor+"</td>"
+					+"<td>"+eng+"</td>"
+					+"<td>"+math+"</td>";
+					
+					$('table').append('<tr>'+info+'</tr>');
+					
+				} 
+				
+				
+	
+			
+			}
+
+		});//ajax 
+
+	});//ready
+</script>
+
+<style rel="stylesheet" type="text/css">
+table {
+	text-align: center;
+	width: 600px;
+	border-collapse: collapse;
+}
+
+tr {
+	text-align: center;	
+	border: 1px solid;
+}
+
+th {
+	width:100px;
+}
+</style>
+</head>
+<body>
+
+	<h1>servlet</h1>
+
+	<div id="target"></div>
+	<table>
+
+		<tr>
+			<th>학번</th>
+			<th>이름</th>
+			<th>국어</th>
+			<th>영어</th>
+			<th>수학</th>
+		</tr>
+
+	</table>
+
+</body>
+</html>

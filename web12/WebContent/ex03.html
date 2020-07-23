@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="jquery/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+	//https://api.jquery.com/jQuery.ajax/#jQuery-ajax-url-settings
+	$(document).ready(function() {
+		$.ajax('ex01.jsp', {
+			'type' : 'get', //type or method : post or get 
+			'data' : 'name=sam&cnt=2', //GET방식으로 서버에 파라미터 전달함.
+			'dataType' : 'html', //원하는 형식으로 반환해준다. 
+			'success' : function(data, textStatus, jqXHR) {
+				console.log('success', typeof data, data, textStatus, jqXHR);//연결성공
+
+				$('#target').append(data);
+
+			},
+			'error' : function(jqXHR, textStatus, errorThrown) {//통신객체, 에러메세지, 에러원인
+				//status : timeout error abort parseerror
+				//errorThrown :HTTP status, such as "Not Found" or "Internal Server Error." (in HTTP/2 it may instead be an empty string)
+
+				console.log('error', a, b, c);//연결실패
+			}
+
+		});
+
+	});//ready
+</script>
+
+</head>
+<body>
+
+
+	<h1>Ajax 통신</h1>
+	<div id="target"></div>
+
+</body>
+</html>

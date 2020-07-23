@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="jquery/jquery-1.12.4.min.js" type="text/javascript">
+	
+</script>
+<script type="text/javascript">
+	$(function() {
+/* 
+		$('#target').load('ex01.jsp',{'name':'thumb','cnt':'3'}, function() {
+			$('img').css('width', '100px');
+		});
+		
+		 */
+		$('#target').load('ex01.jsp','name=sam&cnt=4', function() {
+			$('img').css('width', '100px');
+		});
+		
+		
+		
+		
+		$('button').click(plus);
+
+	});
+
+	function plus() {
+		$('img').css('width', '100px');
+
+	}
+</script>
+<style type="text/css">
+</style>
+
+</head>
+<body>
+
+	<h1>통신</h1>
+	<div id="target"></div>
+
+	<p>파일내용 불러오기</p>
+	<button>btn</button>
+</body>
+</html>

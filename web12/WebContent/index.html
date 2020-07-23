@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script src="jquery/jquery-1.12.4.js"></script>
+<link rel="stylesheet" type="text/css"
+	href="css/dist/jquery.bxslider.css" />
+<!--    <script src="css/jquery.min.js"></script>-->
+<script src="css/dist/jquery.bxslider.min.js"></script>
+<script src="jquery/jquery-ui.min.js"></script>
+
+<script type="text/javascript">
+	var big, thumb, menu1, menu2, menu3, menu4;
+	var mn3_1, mn3_2;
+
+	function getList() {
+		$.get("dept.bit", function(data) {
+			console.log(data);
+			var arr = data.students;
+			var msg = "";
+			for (var i = 0; i < data.students.length; i++) {
+
+				msg += "<tr align='center'>";
+				msg += "<td>" + arr[i].deptno + "</td>";
+				msg += "<td>" + arr[i].dname + "</td>";
+				msg += "<td>" + arr[i].loc + "</td>";
+				msg += "</tr>";
+
+			}
+			msg += "</table>";
+			$('table').append(msg);
+
+		});
+	}
+
+	function home() {
+		/* $.ajax("index.html", {
+			'method':'get',
+			'dataType':'html',
+			'success':function(data){
+				var msg = $(data).find('#big');
+				var msg2 = $(data).find('#thumb');
+				
+				var a = $(msg).bxSlider({
+					'slideWidth' : '400px',
+					'minSlides' : 2,
+					'maxSlides' : 2,
+					'moveSlides' : 1,
+					'pager' : 'false',
+					'controls' : 'false',
+					'mode' : 'horizontal'
+
+				});
+
+				var b = $(msg2).bxSlider({
+					'slideWidth' : '200px',
+					'mode' : 'horizontal',
+					'minSlides' : 3,
+					'maxSlides' : 3,
+					'moveSlides' : 1,
+					'randomStart' : 'true',
+					'touchEnabled' : 'true',
+					'auto' : 'true',
+					'infiniteLoop' : 'true',
+					'speed' : 2000,
+					'controls' : 'true',
+					'onSlideBefore' : function(a, b, c) {
+						big.goToSlide(c);
+					}
+				});
+
+				
+				
+				
+				console.log(msg);
+				$('#car').append($(a)).append($(b)); 
+			}
+		}); */
+		location.reload();
+
+	}
+	
+
+	$(function() {
+		big = $('#big').bxSlider({
+			'slideWidth' : '400px',
+			'minSlides' : 2,
+			'maxSlides' : 2,
+			'moveSlides' : 1,
+			'pager' : 'false',
+			'controls' : 'false',
+			'mode' : 'horizontal'
+
+		});
+
+		thumb = $('#thumb').bxSlider({
+			'slideWidth' : '200px',
+			'mode' : 'horizontal',
+			'minSlides' : 3,
+			'maxSlides' : 3,
+			'moveSlides' : 1,
+			'randomStart' : 'true',
+			'touchEnabled' : 'true',
+			'auto' : 'true',
+			'infiniteLoop' : 'true',
+			'speed' : 2000,
+			'controls' : 'true',
+			'onSlideBefore' : function(a, b, c) {
+				big.goToSlide(c);
+			}
+		});
+
+
+		menu1 = $('#menu>ul>li').eq(0);
+		menu2 = $('#menu>ul>li').eq(1);
+		menu3 = $('#menu>ul>li').eq(2);
+		menu4 = $('#menu>ul>li').eq(3);
+		menu3_1 = $('#menu>ul>li>ol>li').eq(0);
+		menu3_2 = $('#menu>ul>li>ol>li').eq(1);
+
+		menu1.on('click', function() {
+			home();
+			return false;
+		});
+		
+		menu3.on('click', function() {
+
+			return false;
+		});
+
+		menu3_1.on('click', function() {
+			$('#content').html('<h1>EMP TABLE</h1');
+
+			return false;
+		});
+
+		menu3_2.on('click',function() {
+			$('#content').html('<h1>DEPT TABLE</h1><table><tr><th>deptno</th><th>dname</th><th>loc</th>');
+			getList();
+
+			return false;
+		});
+		$('#menu>ul>li>ol').hide();
+
+		$('#menu>ul>li:nth-child(3)').on('mouseenter', function() {
+			$('#menu>ul>li>ol').stop().slideDown();
+
+		});
+		$('#menu>ul>li:nth-child(3)').on('mouseleave', function() {
+			$('#menu>ul>li>ol').stop().slideUp();
+
+		});
+
+	});
+</script>
+
+
+<!-- <link rel="stylesheet" type="text/css" href="css/header.css" /> -->
+<style rel="stylesheet" type="text/css">
+img {
+	width: 200px;
+	height: 200px;
+}
+
+/*
+        #thumb>img {
+            width: 200px;
+            height: 200px;
+        }
+*/
+/* div {
+	border: 1px solid;
+} */
+#header {
+	overflow: hidden;
+}
+
+#header>h1 {
+	width: 200px;
+	height: 60px;
+	float: left;
+	text-indent: -9099px;
+	background-image: url("img/char.png");
+}
+
+#header>form {
+	/* 	border:1px solid red; */
+	top: 0px;
+	position: relative;
+	float: right;
+	width: 410px;
+}
+
+#header>form>div {
+	display: inline;
+	float: left;
+	width: 140px;
+}
+
+#header>form>div:last-child {
+	display: inline;
+	float: left;
+	width: 110px;
+}
+
+#header>form>div>label {
+	display: inline-block;
+	width: 20px;
+}
+
+#header>form>div>input {
+	display: inline-block;
+	width: 98px;
+}
+
+#header>form>div>button {
+	display: inline-block;
+}
+
+#menu {
+	z-index: 1;
+	margin: 0px auto;
+	clear: both;
+	overflow: hidden;
+	height: 52px;
+	background-color: #fefed2;
+}
+
+#menu>ul {
+	list-style: none;
+	overflow: hidden;
+	width: 410px;
+	margin: 0px auto;
+	padding: 0px;
+}
+
+#menu>ul>li {
+	border: 1px solid;
+	padding: 0px;
+	float: left;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+}
+
+li:hover {
+	background-color: antiquewhite;
+}
+
+#menu>ul>li>a {
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	display: block;
+	text-decoration: none;
+}
+
+#menu>ul>li>ol {
+	position: absolute;
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	background-color: #fefed2;
+	border-bottom: 1px solid;
+	text-align: center;
+	z-index: 1;
+}
+
+#menu>ul>li>ol>li {
+	width: 100px;
+	height: 50px;
+}
+
+#menu>ul>li>ol>li>a {
+	text-decoration: none;
+	color: black;
+	display: block;
+}
+
+#content {
+	margin-top: 30px;
+}
+
+#footer {
+	background-color: #fefed2;
+}
+
+#footer>div {
+	width: 300px;
+	margin: 50px auto;
+}
+
+#car {
+	width: 400px;
+	margin: 0px auto;
+	z-index: -2;
+}
+
+#car img {
+	z-index: -1;
+}
+
+#content h1 {
+	text-align: center;
+}
+
+#big {
+	float: left;
+}
+
+#thumb {
+	float: left;
+}
+
+#content table {
+	margin: auto;
+}
+
+#content tr {
+	
+}
+
+#content th {
+	border: 1px solid;
+	padding: 5px;
+	width: 200px;
+}
+</style>
+
+
+</head>
+
+<body>
+
+
+
+	<div id="header">
+		<h1>비트교육센터</h1>
+
+		<form>
+
+			<div>
+				<label for="id">id</label> <input type="text" id="id" name="id" />
+			</div>
+
+			<div>
+				<label for="pw">pw</label> <input type="password" id="pw" name="pw" />
+			</div>
+			<div>
+				<button type="submit">login</button>
+				<button type="button">join</button>
+			</div>
+
+		</form>
+
+	</div>
+
+	<div id="menu">
+
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Intro</a></li>
+			<li><a href="#">B B S</a>
+				<ol>
+					<li><a href="#">E M P</a></li>
+					<li><a href="#">DEPT</a></li>
+				</ol></li>
+			<li><a href="#">Etc</a></li>
+		</ul>
+
+	</div>
+
+
+
+	<div id="content">
+
+
+
+
+		<div id="car">
+
+			<div id="big">
+				<div>
+					<img src="img/samsek1.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek2.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek3.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek4.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek5.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek6.jpg" />
+				</div>
+			</div>
+			<div id="thumb">
+				<div>
+					<img src="img/samsek1.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek2.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek3.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek4.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek5.jpg" />
+				</div>
+				<div>
+					<img src="img/samsek6.jpg" />
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+	</div>
+
+
+	<div id="footer">
+		<div>
+			<address>비트캠프 서울시 서초구 강남대로 459</address>
+			(주)비트컴퓨터 서초본원<br /> Copyright &copy; 비트캠프 All rights reserved.
+		</div>
+
+	</div>
+
+
+</body>
+</html>
