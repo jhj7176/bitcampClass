@@ -34,7 +34,27 @@ public class Dept {
 		}
 		
 		return list;
-
 	}
+	
+	public DeptDto getOne(int deptno) {
+		DeptDto bean = new DeptDto();
+		String sql = "select * from dept where deptno="+ deptno;
+		
+		try {
+			Connection conn = MyOracle.getConnection();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				bean.setDeptno(rs.getInt("deptno"));
+				bean.setDname(rs.getString("dname"));
+				bean.setLoc(rs.getString("loc"));
+			}//while
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bean;
+	}//deptno
+	
 
 }

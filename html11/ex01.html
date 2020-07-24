@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+<script src="jq/jquery-1.12.4.js"></script>
+<script type="text/javascript">
+    
+    $(function(){
+     /*   $.get('http://localhost:8080/web12/index.html', function(data){
+            console.log(data);
+        });*/
+        /*
+        Access to XMLHttpRequest at 'http://localhost:8080/web12/emp.bit' from origin
+        
+        'http://127.0.0.1:57549' has been blocked by CORS policy: 
+        
+        No 'Access-Control-Allow-Origin' header is present on the requested resource.
+        
+        
+        */
+        
+        
+        $.ajax({
+            'URL':'http://localhost:8080/web12/ex02.jsp',
+            'type':'get',
+            'dataType':'jsonp',
+            'success':function(data){
+            console.log(data);
+        }
+        });
+        
+        
+    });
+    
+    </script>
+        </head>
+
+	<body>
+
+
+
+<h1></h1>
+<div id="target"></div>
+</body>
+</html>

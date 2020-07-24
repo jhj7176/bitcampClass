@@ -4,7 +4,13 @@ import java.sql.Date;
 
 public class EmpVO {
 
-	private int empno, mgr, comm, deptno;
+	private int empno, mgr, comm, deptno,sal;
+	public int getSal() {
+		return sal;
+	}
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
 	private String ename, job;
 	private Date hiredate;
 	public int getEmpno() {
