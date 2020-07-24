@@ -11,23 +11,23 @@ import com.bit.model.MyOracle;
 
 public class EmpDao {
 
-	
-	public List<EmpVO> getList(){
-		
+	public List<EmpVO> getList() {
+
 		List<EmpVO> list = new ArrayList<EmpVO>();
-		String sql="select * from emp";
-		
+		String sql = "select * from emp";
+
 		try {
 			Connection conn = MyOracle.getConnection();
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			while(rs.next()) {
+			while (rs.next()) {
 				EmpVO bean = new EmpVO();
 				bean.setEmpno(rs.getInt("empno"));
 				bean.setEname(rs.getString("ename"));
 				bean.setJob(rs.getString("job"));
 				bean.setHiredate(rs.getDate("hiredate"));
 				bean.setMgr(rs.getInt("mgr"));
+				bean.setSal(rs.getInt("sal"));
 				bean.setComm(rs.getInt("comm"));
 				bean.setDeptno(rs.getInt("deptno"));
 				list.add(bean);
@@ -36,13 +36,57 @@ public class EmpDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+
 		return list;
+	}
+
+	public void insert(int empno, String ename, String job, int deptno) throws SQLException {
+
+		String sql = "insert into emp (empno, ename, job, deptno, sal, hiredate) values (";
+		sql += empno + ", ' " + ename + " ' ,' " + job + " ', " + deptno + ", 1800, sysdate)";
+
+		System.out.print(sql);
+		try {
+			Connection conn = MyOracle.getConnection();
+			Statement stmt = conn.createStatement();
+			stmt.executeQuery(sql);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}//insert
+	
+	public EmpVO getOne(int empno) {
+		
+		String sql = "select * from emp where empno ="+empno;
+		
+		EmpVO bean = new EmpVO();
+		
+		try {
+			Connection conn = MyOracle.getConnection();
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery(sql);
+			while(rs.next()) {
+				bean.setEmpno(rs.getInt("empno"));
+				bean.setEname(rs.getString("ename"));
+				bean.setJob(rs.getString("job"));
+				bean.setDeptno(rs.getInt("deptno"));
+				bean.setHiredate(rs.getDate("hiredate"));
+				bean.setSal(rs.getInt("sal"));
+				bean.setComm(rs.getInt("comm"));
+				bean.setMgr(rs.getInt("mgr"));
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return bean;
 	}
 	
 	
 	
+	
+
 }

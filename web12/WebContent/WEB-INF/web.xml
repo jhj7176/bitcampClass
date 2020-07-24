@@ -33,6 +33,35 @@
   <url-pattern>/emp.bit</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  <servlet-name>EmpAdd</servlet-name>
+  <servlet-class>com.bit.emp.EmpAdd</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>EmpAdd</servlet-name>
+  <url-pattern>/empadd.bit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>EmpOne</servlet-name>
+  <servlet-class>com.bit.emp.EmpOne</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>EmpOne</servlet-name>
+  <url-pattern>/empone.bit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>EmpXml</servlet-name>
+  <servlet-class>com.bit.emp.EmpXML</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>EmpXml</servlet-name>
+  <url-pattern>/empxml.bit</url-pattern>
+  </servlet-mapping>
+  
   
   <servlet>
   <servlet-name>Json04</servlet-name>
@@ -43,5 +72,7 @@
   <servlet-name>Json04</servlet-name>
   <url-pattern>/dept.bit</url-pattern>
   </servlet-mapping>
+  
+
   
 </web-app>

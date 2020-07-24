@@ -34,6 +34,7 @@ public class Emp extends HttpServlet {
 			String job = bean.getJob();
 			Date hiredate = bean.getHiredate();
 			int mgr = bean.getMgr();
+			int sal = bean.getSal();
 			int comm = bean.getComm();
 			int deptno = bean.getDeptno();
 
@@ -45,6 +46,7 @@ public class Emp extends HttpServlet {
 			out.print(",\"job\" : \"" + job + "\"");
 			out.print(",\"hiredate\" : \"" + hiredate + "\"");
 			out.print(",\"mgr\" : " + mgr);
+			out.print(",\"sal\" : " + sal);
 			out.print(",\"comm\" : " + comm);
 			out.print(",\"deptno\" : " + deptno + "}");
 		}
