@@ -1,9 +1,11 @@
 package com.bit.emp;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,9 +85,40 @@ public class EmpDao {
 			e.printStackTrace();
 		}
 		return bean;
+	}//getOne
+	
+	public void deleteOne(int empno) {
+		
+		String sql = "delete from emp where empno="+empno;
+		
+		try {
+			Connection conn = MyOracle.getConnection();
+			Statement stmt = conn.createStatement();
+			stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}//delete
+
+	public void Update(int empno, String ename, String job, int mgr, int sal, String hiredate, int comm) {
+		String sql = "update emp set ename = val, where empno = "+empno;
+		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+//		Date hireDate = sdf.parse(hiredate);
+		
+		
+		try {
+			Connection conn = MyOracle.getConnection();
+			Statement stmt = conn.createStatement();
+			stmt.executeQuery(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
-	
-	
 	
 	
 

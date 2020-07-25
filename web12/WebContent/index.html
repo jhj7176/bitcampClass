@@ -338,10 +338,10 @@
 					 $('#content').slideUp(1000,function(){
 						 empList();
 						$('#content').delay(40).slideDown(1000);
-					});
-				 }
+					});//slideup
+				 }//success
 				
-			}); 
+			}); //ajax
 			 
 			}else if($(this).prev().text()=='상세페이지'){
 				$('.detail').remove();
@@ -351,22 +351,22 @@
 				
 				$('#empForm').hide();
 				
-/* 				 $.ajax('empadd.bit',{
+				 $.ajax('empupdate.bit',{
 					 'method':'post',
 					 'data':$(this).serialize(),
 					 'success':function(data){
 						 $('#empForm').click();
 						 $('#content').slideUp(1000,function(){
-							 empList();
+							 /* empList(); */
 						});
 					 }//success
-			}//ajax */
+			}//ajax 
 							 empList();
 							$('#content').delay(40).slideDown(1000);
-			}
+			}//elseif
 			
 			return false;
-		});
+		});//form submit
 				 
 				 
 	 	$('#empForm,#deptForm').hide(); 
@@ -378,7 +378,7 @@
 		
 		$('#empForm>h2, #empForm>form, #deptForm>h2, #deptForm>form').on('click',function(e){
 			e.stopPropagation();
-		});
+		});//클릭이벤트 전파방지,버블링x
 		
 		
 		
@@ -818,11 +818,6 @@ color: chocolate;
 		</div>
 
 
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 1170fca88dd4ef8f29a3898eae170d093b0fb017
 	</div>
 
 
