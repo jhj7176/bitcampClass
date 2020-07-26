@@ -86,47 +86,64 @@
 	
 	
 	function empList(){
-		var msg = '<h1>EMP TABLE</h1><a href="#">Add</a><a href="#">Delete</a>'
+		var msg = '<h1>EMP TABLE</h1><a href="#">Add</a><a href="#">Select</a>'
 			+'<table><tr><th>empno</th><th>ename'
 			+ '</th><th>job</th><th>hiredate</th>'
 			+ '<th>mgr</th><th>sal</th><th>comm</th><th>deptno</th>';
 	$('#content').html(msg);
 	getEmpXmlList();
 	
-	$('#content>h1+a').click(function(){		
+	$('#content>h1+a').click(function(){		//add <a/>
 		addShow();
 		$('#empForm').fadeIn();
 		console.log('check');
 		return false;
 	});
-	$('#content>h1+a+a').click(function(){	
-		$('.idx').show();
+	$('#content>h1+a+a').click(function(){		//delete <a/>
+		$('.idx').show();						//checkbox show
+		$('.idx').on('click', function(e){		//bubbling stop. tr클릭방지. 
+			e.stopPropagation();
+		});
 		console.log('check');
+		
+		if($(this).text()=='Delete'){
+			deleteEmps();
+			$('.idx').hide();
+			$(this).text('Select');
+		}else{
+			
+		$(this).text('Delete');
+		
+		}
+		
+		
+		
 		return false;
-	});
+	});//delete a
 
 	}
 	
 	function deleteEmps(){
-		var empNumbers;
+		var empNumbers = 'empNumbers=';
 		$('.idx').each(function(){
 			if($(this).prop('checked')==true){
-				empNumbers += $(this).val();+'-';
+				empNumbers += $(this).val()+',';
+		console.log(empNumbers);
 			}
 		});//each
-		
 		$.post('empdelete.bit',empNumbers,function(data){
 			console.log(data);
 		});//post
+		 $('#content').slideUp(1000,function(){
+			 empList();
+		});
+			$('#content').delay(100).slideDown(1000);
+		
 	}//deleteemps
 	
 	
 	function home() {
 		location.reload();
-	}
-	
-	function deleteShow(){
-				
 	}
 	
 	function addShow(){
@@ -392,10 +409,10 @@
 			$(this).hide();
 		});
 		
-		$('#empForm>h2, #empForm>form, #deptForm>h2, #deptForm>form,.idx, #content>table tr').on('click',function(e){
+		$('#empForm>h2, #empForm>form, #deptForm>h2, #deptForm>form').on('click',function(e){
 			e.stopPropagation();
 		});//클릭이벤트 전파방지,버블링x
-		
+
 	
 	/* 	
 		$(document).on('click','#content>table input',function(e){
@@ -403,7 +420,8 @@
 			console.log($(this).val());
 		}); */
 		
-	});
+		
+	});//document ready
 </script>
 
 
@@ -579,7 +597,7 @@ z-index: 0;
 }
 
 #content tr:nth-child(odd) {
-	background-color: "#fefed2";
+	background-color: beige;
 }
 
 #content th {
@@ -592,17 +610,20 @@ z-index: 0;
 	heigtht:30px;
 }
 
-#content h1+a{
+#content h1+a, h1+a+a{
 	text-align:center;
-	border-radius:25px;
-	width: 100px;
-	height: 50px;
-	line-height:50px;
+	border-radius:5px;
+	width: 80px;
+	height: 20px;
+	line-height:20px;
 	display:inline-block;
 	font-size:120%;
 	background-color:#fefed2;
 	text-decoration:none;
 	color: black;
+	padding: 3px;
+	border:0.5px solid;
+	margin: 10px 10px 10px 10px;
 
 
 }

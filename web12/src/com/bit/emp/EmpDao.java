@@ -38,7 +38,7 @@ public class EmpDao {
 		}
 
 		return list;
-	}//getlist
+	}// getlist
 
 	public void insert(int empno, String ename, String job, int deptno) throws SQLException {
 
@@ -87,12 +87,15 @@ public class EmpDao {
 
 	public void deleteOne(String empno) {
 
-		String sql = "delete from emp where empno=" + empno;
+		String sql = "delete from emp where empno in (" + empno+")";
+		System.out.println(sql);
 
 		try {
 			Connection conn = MyOracle.getConnection();
 			Statement stmt = conn.createStatement();
+			System.out.println("aa");
 			stmt.executeQuery(sql);
+			System.out.println("bb");
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -122,6 +125,6 @@ public class EmpDao {
 			e.printStackTrace();
 		}
 
-	}//update
+	}// update
 
-}//EmpDao Class
+}// EmpDao Class
