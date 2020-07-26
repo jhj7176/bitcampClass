@@ -1,11 +1,9 @@
 package com.bit.emp;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +38,7 @@ public class EmpDao {
 		}
 
 		return list;
-	}
+	}//getlist
 
 	public void insert(int empno, String ename, String job, int deptno) throws SQLException {
 
@@ -52,25 +50,25 @@ public class EmpDao {
 			Connection conn = MyOracle.getConnection();
 			Statement stmt = conn.createStatement();
 			stmt.executeQuery(sql);
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
-	}//insert
-	
+	}// insert
+
 	public EmpVO getOne(int empno) {
-		
-		String sql = "select * from emp where empno ="+empno;
-		
+
+		String sql = "select * from emp where empno =" + empno;
+
 		EmpVO bean = new EmpVO();
-		
+
 		try {
 			Connection conn = MyOracle.getConnection();
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(sql);
-			while(rs.next()) {
+			while (rs.next()) {
 				bean.setEmpno(rs.getInt("empno"));
 				bean.setEname(rs.getString("ename"));
 				bean.setJob(rs.getString("job"));
@@ -85,12 +83,12 @@ public class EmpDao {
 			e.printStackTrace();
 		}
 		return bean;
-	}//getOne
-	
-	public void deleteOne(int empno) {
-		
-		String sql = "delete from emp where empno="+empno;
-		
+	}// getOne
+
+	public void deleteOne(String empno) {
+
+		String sql = "delete from emp where empno=" + empno;
+
 		try {
 			Connection conn = MyOracle.getConnection();
 			Statement stmt = conn.createStatement();
@@ -99,16 +97,22 @@ public class EmpDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-	}//delete
 
-	public void Update(int empno, String ename, String job, int mgr, int sal, String hiredate, int comm) {
-		String sql = "update emp set ename = val, where empno = "+empno;
-		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
+	}// delete
+
+	public void update(int empno, String ename, String job, int mgr, int sal, String hiredate, int comm, int deptno) {
+
+		String toDate = hiredate.replace("-", "");
+		System.out.print(toDate + job);
+
+		String sql = "update emp set ename = '" + ename + "', job = '" + job + "', mgr=" + mgr + ", sal=" + sal
+				+ ", comm=" + comm + ", deptno=" + deptno + ", hiredate = to_date('" + toDate
+				+ "','YYYYMMDD') where empno = " + empno;
+//		SimpleDateFormat sdf = new SimpleDateFormat("yy-MM-dd");
 //		Date hireDate = sdf.parse(hiredate);
-		
-		
+
+		System.out.print(sql);
+
 		try {
 			Connection conn = MyOracle.getConnection();
 			Statement stmt = conn.createStatement();
@@ -117,9 +121,7 @@ public class EmpDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-	}
-	
-	
 
-}
+	}//update
+
+}//EmpDao Class

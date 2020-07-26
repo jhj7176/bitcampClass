@@ -18,10 +18,17 @@ public class EmpDelete extends HttpServlet {
 		
 		req.setCharacterEncoding("utf-8");
 		PrintWriter out = resp.getWriter();
-		String param = req.getParameter("idx");
-		int empno = Integer.parseInt(param);
+		String param = req.getParameter("empNumbers").replace("-", " and ");
+		
+		int lastAndIdx = param.lastIndexOf("and");
+		param.substring(0, lastAndIdx).trim();
+		
+		
+		String empno = param;
+		System.out.println(param);
 		
 		com.bit.emp.EmpDao dao = new com.bit.emp.EmpDao();
+		
 		try {
 			dao.deleteOne(empno);
 		} catch (Exception e) {

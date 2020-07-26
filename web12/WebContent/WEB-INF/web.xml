@@ -71,6 +71,16 @@
   <servlet-name>EmpXml</servlet-name>
   <url-pattern>/empxml.bit</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+  <servlet-name>EmpDelete</servlet-name>
+  <servlet-class>com.bit.emp.EmpDelete</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>EmpDelete</servlet-name>
+  <url-pattern>/empdelete.bit</url-pattern>
+  </servlet-mapping>
   
   
   <servlet>
