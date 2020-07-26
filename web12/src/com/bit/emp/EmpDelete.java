@@ -19,7 +19,9 @@ public class EmpDelete extends HttpServlet {
 		req.setCharacterEncoding("utf-8");
 		PrintWriter out = resp.getWriter();
 		String param = req.getParameter("empNumbers");
-		System.out.println(param);
+		if(param.trim()=="")return;
+		
+		System.out.println("param "+param);
 		String[] emps = param.split(",");
 		
 		String condition = "";
