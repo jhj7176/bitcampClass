@@ -43,7 +43,7 @@ public class EmpDao {
 	public void insert(int empno, String ename, String job, int deptno) throws SQLException {
 
 		String sql = "insert into emp (empno, ename, job, deptno, sal, hiredate) values (";
-		sql += empno + ", ' " + ename + " ' ,' " + job + " ', " + deptno + ", 1800, sysdate)";
+		sql += empno + ", upper(' " + ename + " ') ,upper(' " + job + " '), " + deptno + ", 1800, sysdate)";
 
 		System.out.print(sql);
 		try {
