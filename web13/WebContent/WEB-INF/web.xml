@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>web13</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <context-param>
+  <param-name>driver</param-name>
+  <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+  <param-name>user</param-name>
+  <param-value>scott</param-value>
+  </context-param>
+  <context-param>
+  <param-name>password</param-name>
+  <param-value>tiger</param-value>
+  </context-param>
+  <context-param>
+  <param-name>url</param-name>
+  <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  
+  
+  
+  
+  <servlet>
+  <servlet-name>Ex01</servlet-name>
+  <servlet-class>com.bit.step01.Ex01</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex01</servlet-name>
+  <url-pattern>/ex01.bit</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Ex02</servlet-name>
+  <servlet-class>com.bit.step01.Ex02</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex02</servlet-name>
+  <url-pattern>/ex02.bit</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+  <servlet-name>Ex03</servlet-name>
+  <servlet-class>com.bit.step01.Ex03</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex03</servlet-name>
+  <url-pattern>/ex03.bit</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>Ex04</servlet-name>
+  <servlet-class>com.bit.step01.Ex04</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex04</servlet-name>
+  <url-pattern>/ex04.bit</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>Ex05</servlet-name>
+  <servlet-class>com.bit.step01.Ex05</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex05</servlet-name>
+  <url-pattern>/ex05</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Ex06</servlet-name>
+  <servlet-class>com.bit.step01.Ex06</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex06</servlet-name>
+  <url-pattern>/ex06</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Ex07</servlet-name>
+  <servlet-class>com.bit.step01.Ex07</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex07</servlet-name>
+  <url-pattern>/ex07</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>Ex08</servlet-name>
+  <servlet-class>com.bit.step01.Ex08</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex08</servlet-name>
+  <url-pattern>/ex08</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  <servlet-name>Ex09</servlet-name>
+  <servlet-class>com.bit.step03.Ex09</servlet-class>
+  <init-param>
+  <param-name>msg1</param-name>
+  <param-value>param 1111value</param-value>
+  </init-param>
+  <init-param>
+  <param-name>msg2</param-name>
+  <param-value>param 22222value</param-value>
+  </init-param>
+  <init-param>
+  <param-name>msg3</param-name>
+  <param-value>param 33333value</param-value>
+  </init-param>
+  <init-param>
+  <param-name>msg4</param-name>
+  <param-value>param 44444value</param-value>
+  </init-param>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex09</servlet-name>
+  <url-pattern>/ex09</url-pattern>
+  </servlet-mapping>
+  
+
+  
+  <servlet>
+  <servlet-name>Ex10</servlet-name>
+  <servlet-class>com.bit.step03.Ex10</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Ex10</servlet-name>
+  <url-pattern>/ex10</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>Ex10</servlet-name>
+  <url-pattern>/ex10.bit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  <servlet-name>Ex10</servlet-name>
+  <url-pattern>/ex10.html</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</web-app>
