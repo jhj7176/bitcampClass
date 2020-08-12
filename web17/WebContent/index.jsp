@@ -6,27 +6,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-   dl{
-      border: 1px solid gray;
-      margin:0px auto;
-   }
-   dl>dt{
-      width: 100px;
-      display: inline-block;
-      float: left;
-   }
-   dl>dd{
-      width: 300px;
-      display: inline-block;
-   }
-   dl>dd>div{
-      width: 140px;
-      display: inline-block;
-   }
-</style>
+
+<link rel="stylesheet" type="text/css" href="css/header.css"/>
 </head>
 <body>
+<%@ include file = "template/header.jspf" %>
     <h1>리스트페이지</h1>
     <dl>
        <dt>deptno</dt>
@@ -37,12 +21,14 @@
     </dl>
     <c:forEach items="${list }" var="bean">
     <dl>
-       <dt>${bean.deptno }</dt>
+       <dt><a href="detail.bit?idx=${bean.deptno }">${bean.deptno }</a></dt>
        <dd>
           <div>${bean.dname }</div>
           <div>${bean.loc }</div>
        </dd>
     </dl>
     </c:forEach>
+    
+    <a href="add.bit">ADD</a>
 </body>
 </html>

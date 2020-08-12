@@ -8,9 +8,9 @@ public class Dept04Dto {
 
 	public Dept04Dto(int deptno, String dname, String loc) {
 		super();
-		this.deptno = deptno;
-		this.dname = dname;
-		this.loc = loc;
+		this.setDeptno(deptno);
+		this.setDname(dname);
+		this.setLoc(loc);
 	}
 	
 	public Dept04Dto() {}

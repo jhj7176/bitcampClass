@@ -1,33 +1,63 @@
-#header {
-	
-}
+<style type="text/css">
 
-#header>h1 {
-	width: 200px;
-	height: 60px;
-	text-indent: -9099px;
-	background-image:url("../img/char.png);
-}
 
-#header>form {
-	float:right;
-	width: 400px;
-}
+	#header{}
+	#header>img{}
+	#header>ul{
+		overflow:hidden;
+		padding:0px;
+		width:306px;
+		height:42px;
+		list-style:none;
+		text-align:center;
+		margin:auto;
+	}
+	#header>ul>li{
+		width:100px;
+		height:40px;
+		line-height:40px;
+		float:left;
+		display:block;
+		border-left:1px solid;
+		padding:0px;
+	}
+	#header>ul>li+li+li{
+		border-right:1px solid;
+	}
+	#header>ul>li>a{
+		display:block;
+		text-decoration:none;
+		color:black;
+		
+	}
+	#header>ul>li:hover{
+		background-color:beige;	
+	}
+	#header>ul>li>a:hover{
+		color:chocolate;
+		text-shadow:3px 3px #cccccc;
+	}
 
-#header>form>div {
-	display: inline-block;
-	width: 190px;
-}
-
-#header>form>div>label {
-	display: inline-block;
-	width: 50px;
-}
-
-#header>form>div>input {
-	width: 100px;
-}
-
-#header>form>div>button {
-	
-}
+   dl{
+      border: 1px solid gray;
+      width:450px;
+      margin:0px auto;
+   }
+   dl>dt{
+      width: 100px;
+      display: inline-block;
+      float: left;
+   }
+   dl>dd{
+      width: 300px;
+      display: inline-block;
+   }
+   dl>dd>div{
+      width: 140px;
+      display: inline-block;
+   }
+   h1{
+   text-align:center;
+   }
+   
+</style>

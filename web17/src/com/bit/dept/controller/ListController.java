@@ -1,6 +1,8 @@
 package com.bit.dept.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,9 +30,13 @@ public class ListController extends HttpServlet {
     	// TODO Auto-generated method stub
 
     	Dept04Dao dao = null;
-    	
-    	dao = new Dept04Dao();
-    	req.setAttribute("list", dao.selectAll());
+    	try {
+    		dao = new Dept04Dao();
+			req.setAttribute("list", dao.selectAll());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	
     	req.getRequestDispatcher("/index.jsp").forward(req, resp);
     	

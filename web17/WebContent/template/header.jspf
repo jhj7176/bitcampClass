@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div id="header">
+	<img alt="" src="img/bitcamp_logo.png" />
+	
+	<span>${login.name }<br/>${login.lvl}</span>
+	<ul>
+		<li><a href="index.bit">Home</a></li>
+		<li><a href="upload.bit">List</a></li>
+		<li><c:if test="${login eq null }">
+				<a href="login.bit">Login</a>
+
+			</c:if> <c:if test="${login ne null }">
+				<a href="logout.bit">LogOut</a>
+
+			</c:if></li>
+			 
+	</ul>
+</div>
