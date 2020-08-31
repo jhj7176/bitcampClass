@@ -9,6 +9,9 @@
 <body>	
 
 
-<h1>스트럿츠 프로젝트 시작</h1>
+<h1>ex05 page</h1>
+
+<h1>id = ${id }</h1>
+<h1>num = ${num }</h1>
 </body>
 </html>

@@ -9,6 +9,6 @@
 <body>	
 
 
-<h1>스트럿츠 프로젝트 시작</h1>
+<h1>ex04 page</h1>
 </body>
 </html>
