@@ -22,18 +22,17 @@ public class EmpDelete extends HttpServlet {
 		if(param.trim()=="")return;
 		
 		System.out.println("param "+param);
-		String[] emps = param.split(",");
-		
-		String condition = "";
-		for (int i = 0; i < emps.length; i++) {
-			condition += emps[i];
-			if(i!=emps.length-1) {
-				condition += ",";
-			}//if
-		}//for
-		System.out.println(condition);
+		int lastIdx = param.lastIndexOf(",");
+		/*
+		 * String[] emps = param.split(",");
+		 * 
+		 * String condition = ""; for (int i = 0; i < emps.length; i++) { condition +=
+		 * emps[i]; if(i!=emps.length-1) { condition += ","; }//if }//for
+
+		 *System.out.println(condition);
+		 */		
 		 
-		String empno = condition;		
+		String empno = param.substring(0, lastIdx);		
 		com.bit.emp.EmpDao dao = new com.bit.emp.EmpDao();
 		
 		try {

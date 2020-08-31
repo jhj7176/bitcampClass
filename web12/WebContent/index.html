@@ -65,6 +65,7 @@
 			'dataType':'xml',
 			'success':function(data){
 				//<input type="checkbox" name="idx" id="empno" value="'+$(this).children().eq(0).text()+'"/>
+				
 				$(data).find('worker').each(function(){
 					$('<tr>').append('<td><input type="checkbox" name="idx" class="idx" value="'+$(this).children().eq(0).text()+'"/>'+$(this).children().eq(0).text()+'</td>')
 					.append('<td>'+$(this).children().eq(1).text()+'</td>')
@@ -86,20 +87,20 @@
 	
 	
 	function empList(){
-		var msg = '<h1>EMP TABLE</h1><a href="#">Add</a><a href="#">Select</a>'
+		var msg = '<h1>EMP TABLE</h1><div class="dml"><a href="#">Add</a><a href="#">Select</a></div>'
 			+'<table><tr><th>empno</th><th>ename'
 			+ '</th><th>job</th><th>hiredate</th>'
 			+ '<th>mgr</th><th>sal</th><th>comm</th><th>deptno</th>';
 	$('#content').html(msg);
 	getEmpXmlList();
 	
-	$('#content>h1+a').click(function(){		//add <a/>
+	$('#content>.dml>a:first-child').click(function(){		//add <a/>
 		addShow();
 		$('#empForm').fadeIn();
 		console.log('check');
 		return false;
 	});
-	$('#content>h1+a+a').click(function(){		//delete <a/>
+	$('#content>.dml>a:last-child').click(function(){		//delete <a/>
 		$('.idx').show();						//checkbox show
 		$('.idx').on('click', function(e){		//bubbling stop. tr클릭방지. 
 			e.stopPropagation();
@@ -180,7 +181,7 @@
 		
 		$(document).on('click','#content>table tr',function(){
 			
-			if($(this).parent().parent().prev().prev().prev().text()=='EMP TABLE'){
+			if($(this).parent().parent().prev().prev().text()=='EMP TABLE'){
 			console.log($(this).children().first().text());
 			var param ='idx='+$(this).children().first().text();
 			$('.detail').remove();
@@ -588,6 +589,7 @@ li:hover {
 #content table {
 
 	margin: auto;
+	clear: both;
 }
 
 #content tr {
@@ -610,10 +612,11 @@ z-index: 0;
 	heigtht:30px;
 }
 
-#content h1+a, h1+a+a{
+
+#content>.dml>a, a+a{
 	text-align:center;
 	border-radius:5px;
-	width: 80px;
+	width: 70px;
 	height: 20px;
 	line-height:20px;
 	display:inline-block;
@@ -623,10 +626,19 @@ z-index: 0;
 	color: black;
 	padding: 3px;
 	border:0.5px solid;
-	margin: 10px 10px 10px 10px;
-
-
+	margin: 0px 5px 0px 0px;
 }
+
+#content>.dml{
+    text-align:center;
+	/* border:1px solid; */
+	display: block;
+	margin: auto;
+	width: 200px;
+	height: 30px;
+	
+}
+
 #content>table a{
 text-decoration: none;
 color: black;
